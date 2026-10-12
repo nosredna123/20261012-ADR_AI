@@ -617,3 +617,41 @@ English query versus Portuguese applicability input and richer retrieval
 catalog fields remain comparison limitations, not causally tested explanations.
 Task 2.4's generation findings are not implemented here. Internal hashes/links
 and ranking IDs in this audit remain subject to Task 1.9 release review.
+
+## Task 2.4: ADR-generation completion and provenance
+
+The ADR-generation Results subsection reuses
+[prepare_adr_protocol.py](scripts/prepare_adr_protocol.py) and
+[prepare_study_values.py](scripts/prepare_study_values.py), without adding a
+duplicate data-processing pipeline. The existing ADR audit verifies every final
+record against its selected pair and reconstructed prompt, checks nonempty
+title/context/decision/consequences strings and exact field membership, requires
+Proposed status, and validates source/prompt hashes, model configuration,
+response metadata and strict-output flags. It requires the final pair set to
+equal the complete positive set, including the approved pilot exactly once.
+
+The original compiler is called in memory: the ADR-field CSV and current
+ADR-enriched selected-pair CSV must match the frozen output bytes.
+The generation source hash is checked against the preserved pre-ADR CSV,
+not the enriched file. Attempt-history checks require the archived connection
+failure for SYS04-US03/003 and explicitly authorized linked retry; neither is
+an additional final ADR. Failed dispatch is unknown, so no total API-call
+count is inferred from completed outputs.
+
+From this directory:
+
+```sh
+python -B scripts/prepare_adr_protocol.py --check
+python -B scripts/prepare_study_values.py --check
+python -B -m unittest discover -s tests -p 'test_adr_protocol.py'
+```
+
+These checks are read-only. Existing regression tests reject incorrect
+source/prompt hashes, changed call metadata/status, empty/extra fields,
+unapproved retries, duplicate JSON keys and missing source backup.
+No new count, dataset, prompt or model run is introduced in Task 2.4;
+the central count macros and existing audit remain authoritative.
+Completion/provenance checks do not establish semantic adequacy, usefulness
+or expert endorsement. No requirement-bearing example is published, since
+it adds little beyond the existing structure description and release
+permission remains pending. Expert findings/placeholders belong to later tasks.

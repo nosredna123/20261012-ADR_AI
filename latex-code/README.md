@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9 and 2.1--2.3 review draft
+# Tasks 1.1--1.9 and 2.1--2.4 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -105,8 +105,7 @@ figure before the manuscript whenever these counts change.
 Configuration and expert-preparation macros remain separate.
 JSONL, assessment exports, compiled positive/summary CSVs, final ADRs and
 ADR-enriched CSVs are reconciled offline; no external rerun or expert responses
-are used. Task 2.2 adds RQ1 below; other computational Results remain for
-Task 2.4; RQ2 is described below.
+are used. Tasks 2.2--2.4 add the computational Results described below.
 
 Task 2.2 adds [RQ1 Results](sections/04-results.tex) and the generated
 [applicability table](tables/applicability-results.tex). The compact table
@@ -118,7 +117,8 @@ central count macros. Regeneration and audit details are in
 [the processing README](../processing/README.md#task-22-rq1-applicability-outcomes).
 No chart is added because the compact table provides exact counts and
 denominators without a second visual repeating them.
-ADR-completion results and expert placeholders remain later tasks.
+ADR-completion results are added in Task 2.4 below; expert placeholders remain
+a later task.
 
 Task 2.3 adds the RQ2 subsection to [Results](sections/04-results.tex) and
 the generated [RAG comparison table](tables/rag-comparison.tex). It reports
@@ -130,3 +130,13 @@ computed from total matches/positives, not an average of story percentages.
 See [processing documentation](../processing/README.md#task-23-rq2-retrieval-overlap)
 for audit and regeneration commands. No retrieval models are rerun, and
 overlap is not presented as precision, recall, accuracy or superiority.
+
+Task 2.4, approved after human review, adds ADR-generation completion/provenance to
+[Results](sections/04-results.tex). It uses the central ADR/positive counts
+and the existing [offline ADR audit](../processing/outputs/adr-protocol-audit.json)
+to report exact pair coverage, nonempty fields, Proposed status, byte-identical
+compiled outputs and the authorized technical retry. No new numerical
+derivation or generator is needed. No example is included: Methodology already
+defines the structure, the page budget is tight, and requirement-bearing
+examples remain subject to disclosure permission. Completion is explicitly
+distinguished from architectural quality or expert acceptance.

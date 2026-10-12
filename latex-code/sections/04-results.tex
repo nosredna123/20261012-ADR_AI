@@ -67,3 +67,38 @@ Section~\ref{sec:rag-baseline}, the baseline uses English queries and a
 richer catalog representation than the Portuguese-input applicability
 assessment. Consequently, observed overlap differences cannot be
 attributed solely to the selection mechanism.
+
+\subsection{ADR-Generation Completion and Provenance}
+\label{sec:adr-results}
+
+The frozen generation outputs contain \StudyAdrCount{} unique ADRs for the
+\StudyApplicableCount{} LLM-positive story--pattern pairs. The output pair
+set equals the selected-pair set: every selected pair has exactly one final
+ADR, with no missing or additional pair. The approved
+\texttt{SYS01-US01}--Pattern~\texttt{001} pilot is included in this total,
+not counted again as a separate observation.
+
+All \StudyAdrCount{} records contain nonempty string-valued title, context,
+decision, and consequences fields and the fixed status \texttt{Proposed}.
+The offline validation checks exact field membership, pair identifiers,
+source and rendered-prompt hashes, model configuration, response metadata,
+and stored strict-output validation flags. Recompiling the frozen records
+reproduces both the ADR-field CSV and the ADR-enriched selected-pair CSV
+byte-for-byte. The source hash refers to the preserved pre-ADR selection
+file, rather than its subsequently enriched version.
+
+The execution history retains a \emph{Connection error} for
+\texttt{SYS04-US03}--Pattern~\texttt{003}, followed by an explicitly
+authorized retry linked to the original attempt. The failed attempt and
+retry authorization are execution metadata, not additional ADRs;
+the final record for that pair is counted once. The connection failure
+does not establish whether the failed request reached the provider, so
+the completed-record count is not a verified total of all API dispatches.
+
+These results establish artifact availability, field completeness, and
+traceable one-to-one generation for the selected pairs. Nonempty fields,
+schema conformity, and reproducible compilation do not demonstrate that
+the decisions are correct, sufficiently grounded, useful, or accepted by
+architects. \texttt{Proposed} is an application-assigned status, not an
+expert endorsement. Quality judgments are reserved for the separate
+expert assessment; no such finding is asserted here.
