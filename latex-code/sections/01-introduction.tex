@@ -1,0 +1,53 @@
+% !TeX root = ../main.tex
+\section{Introduction}
+\label{sec:introduction}
+
+Translating requirements into architectural decisions requires more than
+identifying components that implement requested functionality. Architects must
+interpret the operational context, consider quality attributes, and justify
+choices whose consequences affect subsequent system evolution~\cite{jansen2005decisions,kruchten2006architectural}.
+For AI-enabled systems, this task also involves concerns spanning data
+preparation, model training, deployment, and monitoring~\cite{washizaki2019patterns,heiland2023patterns}.
+A user story and its acceptance criteria may describe expected behavior without
+specifying the data and model lifecycle assumptions needed to select an
+architectural solution. Decision support must therefore distinguish what the
+requirements establish from what would require additional information.
+
+Architectural patterns provide a vocabulary of reusable solutions to recurring
+problems. Catalogs for AI-based systems organize this knowledge and make
+candidate solutions accessible~\cite{heiland2023patterns,aiPatternsRepository}.
+However, the existence of a relevant pattern does not establish its applicability
+to a particular requirement. Selection requires examining the pattern's problem,
+context, and consequences against the available requirement evidence, rather
+than relying on shared terminology alone. Reuse also needs an explicit rationale:
+an Architectural Decision Record (ADR) can document the context, proposed
+decision, and consequences so that the choice remains inspectable and can be
+revisited~\cite{nygard2011adr}. Pattern identification and decision documentation
+are thus connected but distinct architectural activities.
+
+Large language models (LLMs) offer opportunities to assist these activities by
+interpreting natural-language inputs and drafting architectural
+artifacts~\cite{cervantes2026assistants,dhar2024generating}.
+Nevertheless, fluent output is not evidence of a sound architectural decision.
+Empirical research on LLM architectural knowledge identifies limitations in
+precision and the recovery of design rationale~\cite{soliman2025architectural}.
+A plausible recommendation may depend on assumptions absent from the
+requirements, while a well-structured ADR may still contain unsupported
+reasoning. Neither a model-generated applicability judgment nor successful
+document generation should therefore be treated as validation of architectural
+correctness.
+
+The problem motivating ADR4AI is how to support the transition from industrial
+requirements to candidate AI-system patterns and inspectable ADR drafts while
+preserving the evidence behind each recommendation. Such support should expose
+the requirement passages used to justify applicability, distinguish insufficient
+information from a supported decision, and retain links between requirements,
+selected patterns, and generated records. Expert review is needed to assess
+whether the recommendations and their documented rationale are adequate for the
+stated requirements. The intended role is traceable decision support for
+architects, not autonomous acceptance of architectural decisions.
+
+\noindent\textbf{TBD---Expert review of pattern recommendations and ADR drafts
+pending Phase~3 execution and consolidation.}
+The assessment of recommendation adequacy and documented rationale remains
+pending; no expert-validation outcome is claimed in this Introduction.

@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, and 6.1--6.4 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, 6.1--6.4, and partial 7.1 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -25,6 +25,8 @@ The LaTeX build needs no external datasets, API access, or data processing.
 
 ## Review scope
 
+- [Introduction opening](sections/01-introduction.tex): Task 7.1 motivation and
+  problem statement only; Tasks 7.2--7.4 remain unfinished.
 - [Methodology fragment](sections/03-methodology.tex): protocol scope,
   questionnaire constructs, interpretation limits, and the claim-to-evidence
   matrix in source comments.
@@ -341,7 +343,16 @@ The text contrasts abstract pattern solution generation with requirement-grounde
 ADR authoring, and RAG comparison. It concludes with a synthesis of the overarching research gap that ADR4AI addresses.
 With Task 6.4 completed, Phase 6 (Background and Related Work) is fully drafted with verified citations.
 
-
+Task 7.1 adds the [Introduction opening](sections/01-introduction.tex).
+It motivates the requirement-to-architecture problem for AI-enabled systems,
+contextual pattern reuse, ADR documentation, and traceable decision support
+subject to expert review. It uses existing bibliography entries and makes no
+claim of completed expert validation or demonstrated architectural correctness.
+An explicit, visible TBD placeholder beside the expected expert review marks
+recommendation adequacy and documented rationale as pending Phase 3 execution
+and consolidation. Task 7.1 is partial pending that evidence, and existing
+expert-result placeholders remain unresolved. The approach overview, RQs/contributions, and results/roadmap
+paragraphs are reserved for Tasks 7.2--7.4, so the Introduction is not yet complete.
 
 
 

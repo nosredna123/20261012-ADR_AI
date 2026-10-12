@@ -1292,6 +1292,25 @@ The deliverable has passed compilation and visual inspection; commit permission 
 
 ### Task 7.1 — Motivate the problem
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — motivation approved with an explicit expert-review TBD; commit authorized (2026-10-12).**
+
+Task 7.1 can be drafted with the current data because its opening motivation
+and problem statement depend on the established study scope and existing
+literature, not on pending Phase 3 expert outcomes. The user authorized proceeding.
+The opening in `latex-code/sections/01-introduction.tex` motivates the difficulty
+of translating AI-enabled-system requirements into architectural decisions,
+contextual pattern reuse, ADR documentation, and traceable, expert-reviewed
+decision support. It does not claim model reliability, architectural correctness,
+or completed expert validation. At the user's request, a visible TBD placeholder
+beside the expected expert review explicitly marks recommendation adequacy and
+documented rationale as pending Phase 3 execution and consolidation. Task 7.1
+remains partial until this evidence is reconciled; existing expert-result TBDs
+remain unresolved. Tasks 7.2--7.4 remain unfinished,
+and Phase 7 is not complete. The 17-page review PDF compiles without undefined
+citations/references or overfull boxes; the existing unresolved-expert warning
+and underfull-box notices remain. Pages 1--2 were rendered and visually checked.
+The user approved the partial deliverable and authorized its separate commit.
+
 **Work**
 
 - Explain why translating requirements for AI-enabled systems into architectural decisions is difficult.
