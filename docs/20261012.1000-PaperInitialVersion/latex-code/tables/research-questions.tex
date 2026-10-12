@@ -1,0 +1,29 @@
+\begin{table*}[t]
+\caption{Research questions, units of analysis, and evidence mapping.}
+\label{tab:research-questions}
+\centering
+\small
+\begin{tabular}{p{0.05\textwidth} p{0.36\textwidth} p{0.49\textwidth}}
+\hline
+\textbf{ID} & \textbf{Research question} & \textbf{Unit, evidence, and intended analysis} \\
+\hline
+RQ1 &
+How does the LLM classify architectural-pattern applicability across the requirement cases, and which patterns does it identify as applicable? &
+Unit: one user-story--pattern pair.
+Evidence: the official exhaustive assessment log, original requirements, and pattern catalog.
+Analysis: distributions of the three classifications and applicable-pattern sets by story and system, retaining zero-positive stories. \\
+\hline
+RQ2 &
+To what extent do the patterns classified as applicable by the LLM overlap with the frozen RAG baseline's final Top-5 candidates for the same requirement cases? &
+Unit: one LLM-positive user-story--pattern pair, grouped by story.
+Evidence: official applicability assessments and the frozen final Top-5 rankings.
+Analysis: membership-intersection counts by story and overall, with the LLM-positive set as an explicit denominator; no applicability-accuracy metric. \\
+\hline
+RQ3 &
+How do experts assess the applicability of the LLM-selected patterns and the adequacy, grounding, consequences, and perceived usefulness of the corresponding generated ADRs? &
+Unit: one expert's rating of one selected pair and its ADR on one questionnaire item.
+Evidence: consolidated expert responses to Q1--Q5 and optional comments for the prepared cases.
+Analysis: item-specific ordinal distributions and case-level summaries with response counts; comments contextualize ratings. Aggregation and inclusion rules must be specified before consolidated analysis. \\
+\hline
+\end{tabular}
+\end{table*}

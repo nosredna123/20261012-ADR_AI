@@ -1,0 +1,80 @@
+\section{Methodology}
+\label{sec:methodology}
+
+\subsection{Research Questions and Study Scope}
+\label{sec:research-questions}
+
+We organize the study around three research questions
+(Table~\ref{tab:research-questions}). The computational protocol treats a user
+story and its acceptance criteria as a requirement case, with the system purpose
+providing context. It assesses each catalog pattern against each case
+independently. The assessment distinguishes applicability, non-applicability,
+and insufficient information; a positive classification requires a supporting
+user-story or acceptance-criterion reference. These classifications are model
+outputs, not independently established ground truth.
+
+\input{tables/research-questions}
+
+RQ1 characterizes the model's classification outcomes rather than measuring
+their correctness. RQ2 compares the patterns classified as applicable with a
+separate retrieval baseline. This baseline retrieves catalog candidates and
+reranks them to a final Top-5 without making an LLM-based applicability judgment.
+Overlap is therefore a descriptive relationship between two output sets, not
+evidence of either approach's precision, recall, or superiority.
+
+ADR generation is a separate stage: each pair classified as applicable supplies
+the requirement case, selected pattern, and applicability evidence for one
+generated ADR. Generation completeness and stored provenance establish the
+availability and traceability of these records, not their architectural quality.
+RQ3 examines expert assessments of these selected pairs and their corresponding
+ADRs, rather than adding another automatic applicability classification.
+
+The prepared questionnaire measures decision adequacy for the stated
+requirements (Q1), decision grounding (Q2), presentation of relevant
+consequences and trade-offs (Q3), perceived usefulness as a decision record
+(Q4), and pattern applicability (Q5). These are five separate expert-assessed
+dimensions; they are not a validated composite quality score. Optional comments
+provide context for the ratings. Neither implementation feasibility, cost
+savings, novelty, nor actual improvement in architectural practice is directly
+measured by these items.
+
+Experts evaluate cases for a system they know, and only pairs selected by the
+LLM are presented. Consequently, RQ3 can characterize expert judgments of the
+presented recommendations but cannot identify missed applicable patterns or
+estimate recall over the full set of assessed pairs. Expert agreement with a
+recommendation does not by itself establish implementation success or objective
+correctness. Repeated ratings from an expert and multiple cases from a system
+must not be treated as independent replications when interpreting the results.
+Conclusions remain bounded to the sampled requirements, catalog, generated
+records, and participating experts.
+
+% Claim-to-evidence matrix for Task 1.1. Paths are relative to the paper directory;
+% these comments are provenance pointers, not external LaTeX build inputs.
+% E1: ../20261012.0933-InitialArtifacts/adr4ai_app/experiments/pattern_selection/
+%     assess_pattern.py and outputs/assessments.jsonl.
+% E2: ../20261012.0933-InitialArtifacts/adr4ai_app/data/user_histories_orig.csv
+%     and catalogs/patterns/.
+% E3: ../20261012.0933-InitialArtifacts/adr4ai_app/experiments/rag/
+%     README.md and outputs/rag_baseline.csv (not reproduction or pilot outputs).
+% E4: ../20261012.0933-InitialArtifacts/adr4ai_app/research_results/
+%     adr_generation_results.csv and compile_adr_results.py;
+%     ../20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/
+%     generate_adr.py and outputs/*.json (excluding attempts/).
+% E5: ../20261012.0933-InitialArtifacts/adr4ai_app/research_results/google_forms/
+%     create_expert_evaluation_form.gs, EVALUATION_QUESTIONS, and README.md;
+%     research_results/expert_evaluation_cases_pt.csv.
+% E6: Future frozen/consolidated expert-response dataset and documented analysis.
+%     Researcher reports preliminary responses; no response data inspected here.
+%
+% C1 / RQ1: generated label distributions and positive sets -> E1 + E2.
+%     Allowed: descriptive counts/sets. Excluded: expert-confirmed correctness.
+% C2 / RQ2: final Top-5 membership overlap -> E1 + E3, joined by story/pattern ID.
+%     Allowed: intersection counts. Excluded: precision, recall, superiority.
+% C3 / generation: one traceable ADR per selected pair -> E4 plus E1.
+%     Allowed: completeness/provenance once verified. Excluded: semantic quality.
+% C4 / RQ3 constructs: Q1--Q4 ADR dimensions; Q5 pattern applicability -> E5.
+%     Allowed now: instrument description. Ratings/results require E6.
+% C5 / RQ3 findings: observed expert ratings/comments -> E5 + E6.
+%     Blocked pending consolidation; no synthetic or favorable mock findings.
+%     Excluded: missed-pattern recall, population-wide effectiveness, deployment
+%     success, cost savings, and a composite score without justification.
