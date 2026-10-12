@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, and partial 4.3 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, and 4.4 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -211,3 +211,24 @@ Q1--Q5 do not directly measure implementation feasibility or effort; comments
 or separate evidence are required for those claims. No new statistics,
 processing pipeline, synthetic data or expert observation is introduced.
 Task 4.3 is not complete, and Task 4.4 is not authorized by this exception.
+
+Task 4.4 adds [research implications and future work](sections/05-discussion.tex)
+under a separate researcher-authorized exception to the pending Phase 3 and
+expert-dependent Discussion work. It distinguishes inspectable requirement
+references and exhaustive coverage from verified semantic grounding, and
+selection-to-ADR traceability from independent decision-quality evidence.
+The subsection has been completed and approved after human review; no expert findings,
+new statistics or processing outputs are introduced.
+
+Additional systems/catalogs, controlled model/prompt comparisons,
+context enrichment, independent non-positive/all-pattern references and
+end-to-end cost/latency studies are explicitly unexecuted future experiments.
+No numeric TBD is needed for experiments outside the current study, and
+existing expert-result warnings/TBDs remain. Spec-driven development is
+omitted because it is not directly evaluated; the proposed context-enrichment
+experiment addresses the evidenced classification/context question without
+claiming a development-process benefit. This exception does not complete
+Phase 3, Tasks 4.1/4.3 or authorize Phase 5.
+The current PDF has 12 pages with content on page 12 before References.
+It is not page-limit compliant; the disclosed issue remains deferred to
+later compression, not waived for submission.

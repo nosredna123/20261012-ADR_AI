@@ -137,3 +137,52 @@ eligible comments or separately documented evidence support doing so.
 No such feedback is asserted here, and its absence must not be replaced
 with assumed benefits. Final recommendations remain contingent on the
 observed coverage, assessed cases and limitations.
+
+\subsection{Research Implications and Future Work}
+\label{sec:research-implications}
+
+Requirement-grounded, pattern-by-pattern assessment makes the unit of
+recommendation explicit and preserves an inspectable link between each
+positive classification and its cited requirement evidence.
+Exhaustive coverage also retains non-positive outcomes rather than
+reporting recommendations alone (Table~\ref{tab:applicability-results}).
+This provides an auditable basis for studying selection behavior, not
+proof of semantic grounding. The predominance of insufficient-information
+labels motivates testing how architectural context affects classification,
+but does not identify missing context as the cause of those labels.
+Catalog scope, prompt rules and model behavior are alternative factors
+that the current run does not disentangle.
+
+The study connects selection to documentation through a one-to-one
+story--pattern-to-ADR mapping (Section~\ref{sec:adr-results}).
+This connection permits examining the proposed decision together with
+the selection rationale and requirements. However, the stages are
+dependent: an unsupported selection can lead to a complete but
+inappropriate ADR. Reproducible compilation validates artifact lineage,
+not decision quality, and the generated ADR is not independent
+confirmation of its underlying classification.
+
+\emph{Proposed follow-up experiments---not evaluated.}
+Replication with additional systems and catalogs should vary domain,
+requirement detail and pattern coverage explicitly rather than imply
+generalization from this sample. Controlled comparisons of models and
+prompt variants should keep requirement inputs and catalog versions
+fixed, retain all classifications and record repeated-run variability.
+A context-enrichment experiment could compare the same cases before
+and after adding verified architectural constraints, distinguishing
+changes in output frequencies from independently assessed improvements.
+
+Independent expert assessment of sampled non-positive pairs, or an
+all-pattern reference for a bounded subset, could examine applicability
+beyond the selected cases and support classification-error measures
+when the reference judgments are sufficiently established. The planned
+selected-pair questionnaire alone cannot do so. Selection and ADR quality
+should also be assessed separately to distinguish recommendation
+limitations from documentation limitations.
+Cost and latency evaluation should measure end-to-end execution,
+including failed attempts, retrieval/reranking and human review where
+applicable, rather than infer savings from completed-output counts.
+The shortlist experiment proposed in
+Section~\ref{sec:llm-rag-discussion} would then test resource--quality
+trade-offs. None of these extensions has been executed or establishes
+an evaluated contribution of the present study.

@@ -915,6 +915,35 @@ exception does not authorize Task 4.4 or waive Phase 3 requirements.
 
 ### Task 4.4 — Discuss research implications
 
+**Status: COMPLETED AND REVIEWED — computationally grounded
+research implications and explicitly unexecuted future work under an
+authorized dependency exception (2026-10-12).**
+
+The researcher authorized this bounded task despite postponed Phase 3 and
+the unfinished expert-dependent portions of Tasks 4.1/4.3. The subsection
+in `latex-code/sections/05-discussion.tex` uses approved classification
+and ADR-provenance results to discuss auditable pairwise assessment,
+limitations of semantic-grounding claims and dependence between selection
+and documentation. It introduces no expert findings or new numerical result.
+
+Follow-ups cover additional systems/catalogs, controlled model/prompt and
+repeated-run comparisons, verified context enrichment, independent
+non-positive/all-pattern references, separate selection/ADR-quality assessment
+and end-to-end cost/latency evaluation. Each is explicitly future work, not
+an evaluated contribution or promised benefit. Spec-driven development is
+omitted because the study does not directly evaluate it; context enrichment
+is proposed as a controlled experiment, not a demonstrated causal explanation
+of insufficient-information labels.
+
+No numeric TBD is introduced for unexecuted studies outside the current
+experiment; existing expert-result markers remain unresolved. The deliverable
+has passed build, exact-PDF visual inspection and human review; commit
+permission remains separate. The PDF has 12 pages with content on page 12
+before References; the disclosed content-page budget issue was accepted for
+this draft review and still requires later compression, not a submission waiver.
+This exception neither completes Phase 3/Tasks 4.1/4.3
+nor authorizes Phase 5.
+
 **Work**
 
 - Explain the value and limitations of requirement-grounded, pattern-by-pattern assessment.
