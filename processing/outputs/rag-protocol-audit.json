@@ -1,0 +1,165 @@
+{
+  "configuration": {
+    "EMBEDDING_MODEL": "BAAI/bge-small-en-v1.5",
+    "FINAL_CANDIDATES": 5,
+    "RERANKER_MODEL": "BAAI/bge-reranker-base",
+    "VECTOR_CANDIDATES": 15
+  },
+  "criterion_count": 35,
+  "excluded_reproduction_output": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/rag/outputs/rag_baseline_reproduced.csv",
+  "inputs": [
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/rag/src/run_baseline.py",
+      "sha256": "956d6753d5695c7b36ef4d7d60eafb17082048878ec307e03c663f1b82653d6e"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/rag/src/retrieval.py",
+      "sha256": "c76930e4c139948f5fe1f85d359d363e89044c3f5520c18106cd953a03d5d95a"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/rag/src/pattern_catalog.py",
+      "sha256": "ab892bc2dbc88b8287c710a2ec4f9c18c285b1ae473f9ac96817a21a946b5434"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/rag/README.md",
+      "sha256": "011f58543d6d0437e62223e1640161020fcecb683055e6a0bb2a48e20a26bfc6"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/rag/requirements.txt",
+      "sha256": "4fc991668536bb8fef707ec45d39eee31f31825e92c4319f15126f516d063d88"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/rag/data/user_histories_EN.csv",
+      "sha256": "0e50ab011d67ce2217eddc0b1d3ac6ecfe0f00ce9610d2e2b61931e0bfbdc133"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/rag/catalogs/all-patterns.json",
+      "sha256": "a78c91d235dcdf42160dddf3b1f78739f5ef1871bcd583930df181c9a9021d24"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/rag/outputs/rag_baseline.csv",
+      "sha256": "4d3b6394b6d343ef21860a7dbc44172f9e51ab836e6b7933faf780c300ca151b"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/data/user_histories_orig.csv",
+      "sha256": "7a43d6bea96ada7c20cf2b0f2a48d5305283d8832a0950f50087ddc4a76b06d3"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/pattern_selection/prepare_data.py",
+      "sha256": "fffc5769885d3aef281a69f63313a32a6a1821d36b3000dfeb7aa6fe664798a9"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/compile_results.py",
+      "sha256": "1ebe33a95a316144c9ddb2d93797d028cbd8ddfc77fb38f46e5ba67fd0eef61d"
+    }
+  ],
+  "pattern_count": 70,
+  "queries": {
+    "SYS01-US01": {
+      "criterion_ids": [
+        "SYS01-US01-AC01",
+        "SYS01-US01-AC02"
+      ],
+      "query_sha256": "abcd2c6863b331858e16ac21ce165fad000360300295965bbc15be6684e038e1"
+    },
+    "SYS01-US02": {
+      "criterion_ids": [
+        "SYS01-US02-AC01",
+        "SYS01-US02-AC02"
+      ],
+      "query_sha256": "7b501fabdc60a288f762af2834af3619f7c181ca5f874e00b7e8097117740418"
+    },
+    "SYS01-US03": {
+      "criterion_ids": [
+        "SYS01-US03-AC01",
+        "SYS01-US03-AC02"
+      ],
+      "query_sha256": "1ed79c90690ccb3e1f7d4559111a1390465e893e11659459f9800b7da4554801"
+    },
+    "SYS02-US01": {
+      "criterion_ids": [
+        "SYS02-US01-AC01",
+        "SYS02-US01-AC02",
+        "SYS02-US01-AC03",
+        "SYS02-US01-AC04",
+        "SYS02-US01-AC05"
+      ],
+      "query_sha256": "b0694458f70a80ff39478f3710091cec50d6775e5fe305dd03ad8e4f2081b7b9"
+    },
+    "SYS02-US02": {
+      "criterion_ids": [
+        "SYS02-US02-AC01",
+        "SYS02-US02-AC02",
+        "SYS02-US02-AC03"
+      ],
+      "query_sha256": "75b6932c365cb4e9ee353a94bae16ab96e725117f8e70dbc77da3d097da7b740"
+    },
+    "SYS02-US03": {
+      "criterion_ids": [
+        "SYS02-US03-AC01",
+        "SYS02-US03-AC02",
+        "SYS02-US03-AC03"
+      ],
+      "query_sha256": "b1a1e815435c1677075534d6670788dd9cb502859df0cf1f8b9c8baf062fb3cd"
+    },
+    "SYS03-US01": {
+      "criterion_ids": [
+        "SYS03-US01-AC01",
+        "SYS03-US01-AC02"
+      ],
+      "query_sha256": "30656033c500c4577bc3a2801c4701ed7747274c4b97a748267359a3dc72889f"
+    },
+    "SYS03-US02": {
+      "criterion_ids": [
+        "SYS03-US02-AC01",
+        "SYS03-US02-AC02",
+        "SYS03-US02-AC03"
+      ],
+      "query_sha256": "bab18960bec32cd6b771c7a8c14c7ff045bab9e89bc2c6859d0ee9a14bb148b1"
+    },
+    "SYS03-US03": {
+      "criterion_ids": [
+        "SYS03-US03-AC01",
+        "SYS03-US03-AC02"
+      ],
+      "query_sha256": "0033279ed3a27e336428cb50bb9c3b8884b31f074f36347bc9e57069e430be46"
+    },
+    "SYS04-US01": {
+      "criterion_ids": [
+        "SYS04-US01-AC01",
+        "SYS04-US01-AC02",
+        "SYS04-US01-AC03"
+      ],
+      "query_sha256": "2d85b9730018c9df4b8e2a2da82d490db659154e422f20e0f6a1ea13707237b2"
+    },
+    "SYS04-US02": {
+      "criterion_ids": [
+        "SYS04-US02-AC01",
+        "SYS04-US02-AC02",
+        "SYS04-US02-AC03",
+        "SYS04-US02-AC04"
+      ],
+      "query_sha256": "973f84d956ddeec906270527a7ee9766892e1c6d885f4480fb11327a7a0f77d3"
+    },
+    "SYS04-US03": {
+      "criterion_ids": [
+        "SYS04-US03-AC01",
+        "SYS04-US03-AC02",
+        "SYS04-US03-AC03",
+        "SYS04-US03-AC04"
+      ],
+      "query_sha256": "daa5be09d02a098b5054fa57864d325c33de8285e577f29bfd644213601ed972"
+    }
+  },
+  "query_template": "System Purpose:\n<system_purpose>\n\nUser Story:\n[<user_story_id>] <user_story>\n\nAcceptance Criteria:\n[<criterion_id>] <criterion_text>",
+  "same_catalog_field_values": true,
+  "story_count": 12,
+  "task": "1.5",
+  "text_values_differing_from_original": {
+    "acceptance_criterion": 35,
+    "system_purpose": 12,
+    "user_story": 12
+  },
+  "validated_frozen_ranking_rows": 12,
+  "validation_scope": "Frozen-input and ranking structure, not model/index execution or translation equivalence. No overlap results calculated in Task 1.5."
+}

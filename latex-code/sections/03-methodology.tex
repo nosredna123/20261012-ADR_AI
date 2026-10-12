@@ -279,3 +279,91 @@ reproduction from the stored configuration.
 % run_experiment,prepare_data,run_pilot}.py and top-level outputs/*.jsonl.
 % Offline audit/prompt/schema: processing/outputs/applicability-protocol-audit.json.
 % Reproduction/check: processing/scripts/prepare_applicability_protocol.py.
+
+\subsection{Retrieval and Reranking Baseline}
+\label{sec:rag-baseline}
+
+We compare the LLM-positive pairs with a separate retrieval/reranking baseline,
+called the RAG baseline in the artifacts. Despite that name, this pipeline
+performs no generative step: it uses no external LLM to classify applicability
+or generate ADRs. Its final rankings are candidate recommendations, not
+validated applicability judgments.
+
+\paragraph{Query and catalog representation}
+The baseline groups the English requirement CSV by story ID, retaining the
+CSV encounter order. One query per story concatenates labeled system purpose,
+the user story preceded by its bracketed identifier, and all acceptance
+criteria, each preceded by its bracketed identifier. Identifiers are preserved
+in the query and output for traceability, not substituted for requirement text.
+An offline audit verifies that the story/criterion identifiers and their
+ownership match the original sample. The baseline uses the English requirement
+copy, whereas the applicability experiment uses the original Portuguese text;
+this is not a language-controlled comparison, and identifier alignment does
+not itself establish translation equivalence.
+
+The retrieval corpus contains one document per catalog pattern. It includes
+the pattern ID and nonblank source values for name, aliases, motivation,
+solution, consequences, examples, categories, related patterns, and resources;
+list entries are joined with semicolons, omitting blank entries. These catalog
+records match the original pattern fields, but the retrieval representation
+is richer than the five-field applicability input. The Chroma collection is
+versioned by a fingerprint of catalog content, text-format version, and
+embedding-model identifier. Index compatibility checks verify complete IDs,
+document text, and metadata before reuse, rebuilding incompatible contents.
+
+\paragraph{Vector candidates and final ranking}
+The embedding model is \path{BAAI/bge-small-en-v1.5}.
+Chroma vector similarity search retrieves \RagVectorCount{} candidate
+documents per query (vector Top-\RagVectorCount{}), using the library's default
+similarity configuration without overriding the distance metric.
+The cross-encoder \path{BAAI/bge-reranker-base} scores each query--candidate
+pair. Candidates are sorted by descending reranker score, with vector rank
+breaking ties, to retain the final Top-\RagFinalCount{}. The implementation
+requires exactly \RagVectorCount{} vector candidates and one finite reranker
+score per candidate. Thus, Top-\RagFinalCount{} is a reranked subset of
+Top-\RagVectorCount{}, not the first five vector results. The stored output
+preserves the vector ordering and the final reranked ordering separately.
+
+\paragraph{Candidate-overlap measure}
+Let $S$ be the set of sampled stories, $A_s$ the set of pattern IDs classified
+as \texttt{applicable} by the LLM for story $s$, and $R_s$ the set of IDs in
+the frozen final Top-\RagFinalCount{} for that same story. For each LLM-positive
+pair $(s,p)$, define $m(s,p)=1$ when $p \in R_s$, and $m(s,p)=0$ otherwise.
+The per-story overlap count is $o_s=|A_s \cap R_s|$. The pooled
+LLM-positive-set overlap proportion is
+\begin{equation}
+  O = \frac{\sum_{s \in S}|A_s \cap R_s|}
+           {\sum_{s \in S}|A_s|},
+  \qquad \sum_{s \in S}|A_s| > 0.
+  \label{eq:rag-overlap}
+\end{equation}
+This weights positive pairs, not stories equally; it is not an average of
+story-level percentages. A zero-positive story remains in the sample with
+$o_s=0$, but contributes neither a positive pair nor a per-story percentage.
+If no story has a positive pair, $O$ is undefined, not zero.
+Only final Top-\RagFinalCount{} membership enters this measure: vector
+Top-\RagVectorCount{} membership, ranking position, and reranker scores do not.
+Since $A_s$ consists of model predictions rather than independently established
+truth, $O$ measures candidate overlap, not precision, recall, accuracy,
+ground-truth applicability, or superiority of either approach. A nonmatch
+does not demonstrate a missed applicable pattern.
+
+\paragraph{Frozen source and reproducibility limits}
+The comparison uses \path{rag_baseline.csv} in the RAG experiment's
+\texttt{outputs} directory, not the separate
+\path{rag_baseline_reproduced.csv}. An offline audit validates one frozen row
+per story, unique known IDs, ID/name alignment, and final Top-\RagFinalCount{}
+inclusion in vector Top-\RagVectorCount{}, without recomputing rankings.
+The package records fixed model identifiers and pins direct dependencies and
+numerical runtimes, but does not pin downloaded model revisions or fully lock
+transitive dependencies. Rebuilt approximate vector indices and numerical
+hardware differences may change ranks. Catalog/text compatibility checks do
+not eliminate these sources of variation. No embedding models, reranker, or
+index were executed for this manuscript audit, and exact end-to-end
+reproduction is not established by these structural checks.
+
+% Task 1.5 provenance: experiments/rag/src/{run_baseline,retrieval,
+% pattern_catalog}.py, README.md, requirements.txt, and frozen rag_baseline.csv.
+% Overlap definition follows research_results/compile_results.py (not executed).
+% Offline audit: processing/outputs/rag-protocol-audit.json; generation/check:
+% processing/scripts/prepare_rag_protocol.py.

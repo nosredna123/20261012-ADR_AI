@@ -130,3 +130,56 @@ are not statistically independent because they share requirements and a model.
 
 No separate workflow figure is added in Task 1.4: prose suffices for the
 single-pair sequential workflow without introducing a figure dependency.
+
+## Task 1.5: frozen retrieval baseline
+
+[prepare_rag_protocol.py](scripts/prepare_rag_protocol.py) reuses the original
+standard-library `load_cases`, `build_query`, and original-requirement loader.
+It reads retrieval constants with Python's AST without importing the
+model/Chroma dependencies. It validates the 12 frozen ranking rows, 35
+criterion IDs and their story ownership, matching catalog field values,
+unique known Top-15/Top-5 IDs, aligned names, and final Top-5 inclusion in
+vector Top-15. It accepts the archived catalog's concatenated JSON records
+without rewriting them.
+
+Outputs:
+
+- `outputs/rag-protocol-audit.json`: configuration, source/input SHA-256
+  hashes, query hashes and ID mappings, placeholder-only query template, and
+  counts of text values differing from the original requirements;
+- `../latex-code/data/rag-values.tex`: vector/final candidate-count macros.
+
+Inputs are the original `experiments/rag/` source, English requirement CSV,
+catalog, dependency manifest, README, and frozen `outputs/rag_baseline.csv`,
+plus the original requirement CSV/loader and results compiler as provenance.
+The compiler is not executed; it provides the existing final-Top-5 membership
+definition. `rag_baseline_reproduced.csv` is explicitly excluded: missing
+official input fails rather than substituting reproduction output.
+
+This script requires only Python 3.10+ and the standard library. No dependency
+installation, network request, model download, embedding, reranking, or index
+rebuild is performed. It neither writes into the original artifacts nor copies
+requirement text into the audit. The hashes establish traceability, not semantic
+translation equivalence. No empirical overlap counts or result tables are
+generated in this methodology task.
+
+From this directory:
+
+```sh
+python -B scripts/prepare_rag_protocol.py
+python -B scripts/prepare_rag_protocol.py --check
+python -B -m unittest discover -s tests -p 'test_*.py'
+```
+
+All input checks precede output generation. `--check` fails on absent/stale
+outputs without writing. Tests cover preserved query formatting/identifiers,
+invalid ranking lengths, duplicate/unknown IDs, misaligned names, incorrect
+system/story mappings, Top-5 outside Top-15, configuration drift, and missing
+frozen input. Altered fixtures exist only in temporary synthetic test files.
+
+The manuscript measure is pooled final-Top-5 membership among LLM-positive
+pairs, not precision/recall or a macro-average over stories. Zero-positive
+stories have zero overlap count but no defined story-level proportion; if
+there are no positive pairs at all, the pooled proportion is undefined.
+Baseline ranks and their computational reproducibility are not verified by
+these offline structural checks.
