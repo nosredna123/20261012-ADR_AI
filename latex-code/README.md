@@ -1,8 +1,9 @@
-# Tasks 1.1--1.8 review draft
+# Tasks 1.1--1.9 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
-catalog, applicability/RAG/ADR protocols, expert preparation and analysis plan.
+catalog, applicability/RAG/ADR protocols, expert preparation and analysis plan,
+and ethics, data governance and reproducibility procedures.
 It is not the full manuscript.
 Later sections, further bibliography
 entries, result macros, and final metadata
@@ -81,3 +82,13 @@ This is not preregistration before collection. No expert response ingestion,
 statistics, agreement computation, or human-result placeholders disguised
 as observations are generated. Conditional agreement and qualitative procedures
 will be implemented in Phase 3, after actual governance/instrument confirmation.
+
+Task 1.9 adds ethics/governance and reproducibility procedures to
+[Methodology](sections/03-methodology.tex). Organizational authorization,
+external processing/release permissions, expert consent/ethics, and actual
+storage/platform safeguards remain explicit pending confirmations.
+Generic identifiers are not claimed to make requirements or responses
+irreversibly anonymous. The
+[governance and release inputs](../processing/README.md#task-19-governance-and-artifact-availability-inputs)
+distinguish verified evidence from proposed controls and supply Phase 10
+without creating a premature availability statement or public URL.

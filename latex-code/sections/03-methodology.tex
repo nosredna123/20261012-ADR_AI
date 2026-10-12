@@ -680,3 +680,87 @@ response export; this task records choices only.
 % Versioned specification: processing/protocols/expert-analysis.json.
 % Inventory generation/check: processing/scripts/prepare_expert_analysis_plan.py.
 % No respondent dataset read or numerical expert findings produced.
+
+\subsection{Ethics, Data Governance, and Reproducibility}
+\label{sec:ethics-reproducibility}
+
+\paragraph{Authorization and confidentiality}
+The supplied industrial data-scope document defines the intended academic use
+of the bounded requirement sample and requires generic system identifiers.
+It is not evidence of formal organizational authorization, permission to
+transmit requirements to an external model provider, or permission for public
+redistribution. \mbox{\textbf{Confirmation pending:}} document the responsible
+organization's authorization, permitted processing and publication scope,
+and any conditions on reuse. Generic identifiers conceal real system names
+but do not establish irreversible anonymization: requirement text and
+context may still identify the organization. Until disclosure is authorized,
+treat source requirements and requirement-bearing prompts, model outputs,
+translations, and evaluator cases as restricted; derived content does not
+automatically lose its source restrictions.
+
+\paragraph{Expert participation and privacy}
+No formal ethics-board approval, exemption, or completed consent procedure is
+established by the supplied artifacts. \mbox{\textbf{Confirmation pending:}}
+record the applicable ethics determination, participant information and
+documented consent or participation authorization, recruitment and
+voluntariness safeguards, withdrawal conditions, actual platform access,
+authorized custodians, and retention/deletion arrangements. These conditions
+must be resolved before response analysis; a retrospective record must not
+be described as prior approval. The prepared form's settings do not prove
+anonymous administration. Raw exports, timestamps, profiles, comments,
+eligibility records, and any identity-linking keys require controlled access.
+Keep linking keys separate from analysis copies; generic submission IDs
+are pseudonyms, not proof of anonymity. Review small cells, combined
+profiles, and free text for deductive disclosure before publishing
+aggregates or authorized quotations, without selectively removing criticism.
+
+\paragraph{External models and generated content}
+The archived applicability and ADR implementations use the OpenAI Responses
+API with the recorded \texttt{gpt-6-sol} identifier and high reasoning effort;
+the translation audit records model-assisted presentation preparation.
+The retrieval branch uses embedding and reranking models, not an LLM
+generation call. Requirement-bearing generation inputs and outputs must
+therefore be covered by organizational processing permission.
+\mbox{\textbf{Confirmation pending:}} verify the provider/account conditions in
+force at execution, including retention, training use, access, processing
+location, and any contractual safeguards; no zero-retention or
+non-training claim is inferred from source code. This manuscript-preparation
+step makes no model-generation calls. Generated classifications remain model
+judgments and ADRs remain \texttt{Proposed}; schema checks and translation
+corrections do not establish semantic correctness or deployment approval.
+Human review remains necessary before operational use.
+
+\paragraph{Versioning and reproducibility}
+Offline audits preserve source hashes, stable join identifiers, recorded
+configuration, prompt provenance, and output checks; deterministic compilers
+reconstruct derived datasets from frozen computational records without
+reissuing model requests. These checks establish lineage and structural
+consistency, not semantic validity. For expert data, the planned procedure
+is to preserve a read-only original export in approved restricted storage,
+record its checksum and instrument version, and create separately versioned
+cleaning, disposition, coding, and analysis outputs. Never overwrite the raw
+export; retain correction reasons and protocol amendments. Do not place
+respondent-level data or linking keys in the manuscript or public repository.
+Storage controls, custodians, and retention are not yet verified.
+Compiler determinism does not imply deterministic model regeneration:
+external model revisions, unpinned dependencies, approximate retrieval,
+and hardware changes constrain exact end-to-end replication.
+
+\paragraph{Sharing boundaries}
+The planned artifact package may contain disclosure-reviewed manuscript
+sources, processing code, analysis specifications, sanitized prompt templates,
+and permitted aggregate outputs. Public catalog provenance does not alone
+establish redistribution rights; verify source licenses and attribution.
+Requirements and dependent artifacts require explicit release permission
+and disclosure review. Raw expert data and identity-linking records remain
+restricted; approved de-identified derivatives are separate release
+candidates, not substitutes silently presented as raw evidence.
+The initial collection, including its identifying scope document, is not
+an anonymous review package. Review files, metadata, local paths, API response
+identifiers, and repository history before release. No public artifact URL
+or completed access-control implementation is claimed here; the availability
+statement will identify actual releases and restrictions once verified.
+
+% Task 1.9: researcher authorized explicit pending confirmations and
+% restricted-by-default procedures on 2026-10-12.
+% Governance/release inputs for Phase 10: processing/README.md, Task 1.9.

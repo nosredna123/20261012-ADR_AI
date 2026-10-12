@@ -334,3 +334,89 @@ They do **not** test the future statistics, response cleaning, or coding.
 Their implementation and numerical tests belong to Phase 3, after raw export,
 restricted provenance, consent/governance and instrument version are confirmed.
 No actual or synthetic respondent-result dataset is opened or created here.
+
+## Task 1.9: governance and Artifact Availability inputs
+
+On 2026-10-12 the researcher authorized explicit pending confirmations and
+restricted-by-default procedures where governance evidence is absent.
+This records a handling policy for subsequent work, **not** organizational
+permission, completed ethics review, participant consent, or evidence that
+technical storage controls have already been implemented.
+The researcher subsequently approved the Task 1.9 manuscript and proposed
+procedures; this approval does not resolve the external governance gates below.
+
+### Evidence and unresolved gates
+
+- The supplied industrial scope PDF defines intended academic use, a bounded
+  requirement sample and generic system names. It does not prove authority to
+  process the sample externally or redistribute it. The original document
+  identifies the source organization and must not enter an anonymous package.
+- Existing computational audits document model identifiers/configuration,
+  prompt and source hashes, response metadata and deterministic compiler
+  checks. They do not establish provider retention/training policy or
+  contractual permission. Do not issue new external generation requests
+  before permission and account conditions are confirmed.
+- The prepared questionnaire source and analysis protocol do not establish
+  deployment, actual access policy, consent, ethics approval/exemption,
+  voluntariness or unique evaluator identity. Resolve these before Phase 3.
+  If collection has already occurred, record the actual timing and applicable
+  determination; never recast retrospective confirmation as prior approval.
+- Confirm authorized custodians, access controls, storage/processing location,
+  platform/account terms, retention period, deletion responsibility and
+  withdrawal limits. Record evidence in approved restricted administration
+  storage, not in this public-facing documentation.
+
+### Planned restricted-data lifecycle
+
+1. Use approved restricted storage outside the manuscript/public repository
+   for original response exports, administrative evidence and linking keys.
+   Do not choose a repository subdirectory as a substitute for access control.
+2. Preserve the original export read-only and record checksum, export time,
+   instrument version and authorized provenance. Read-only preservation
+   applies during the authorized retention period, not indefinite retention
+   overriding withdrawal/deletion obligations.
+3. Create a separately versioned analysis copy with generic submission IDs.
+   Keep identity keys separately restricted. Pseudonymization is not irreversible
+   anonymization; do not infer distinct people from identical profiles or
+   rating vectors.
+4. Keep disposition/cleaning logs, raw-to-derived mapping, protocol amendments,
+   initial coding logs, reconciliation and analytic versions restricted.
+   Never replace raw values with cleaned values or silently overwrite
+   earlier decisions. Freeze each analysis input and retain its checksum.
+5. Generate manuscript outputs only after eligibility/instrument/governance
+   gates are satisfied. Review profiles, small cells, cross-table linkage,
+   quotations and free text for deductive disclosure. Use consistent
+   suppression/aggregation rules and report their impact without selecting
+   favorable observations. Quotations require explicit authorization.
+6. Approve each release separately; log version, authorization, restrictions,
+   disclosure review and license. Execute retention/deletion under confirmed
+   arrangements, including derived copies and backups where applicable.
+
+No respondent data is ingested, moved, transformed or published in Task 1.9.
+No new processing script is required: this task specifies procedures, not
+statistics or a new derivation. Existing offline auditors remain the source
+of computational lineage evidence.
+
+### Release matrix for Phase 10
+
+The entries below are **release candidates**, not declarations of open access.
+The source collection and current Git history are not an anonymous package.
+
+| Material | Default treatment | Conditions before release |
+|---|---|---|
+| Manuscript, processing code/tests, analysis protocol | Candidate for curated release | Review identities, local paths, fixtures, comments, dependencies and licensing; do not assume current files/history are anonymous. |
+| Public pattern catalog | Public upstream provenance; local redistribution unconfirmed | Verify license/reuse rights and attribution; use a pinned upstream reference if redistribution is not permitted. |
+| Industrial requirements and identifying scope document | Restricted | Organizational authorization for each proposed use/release; remove identifying document/metadata and review contextual disclosure. Generic system names alone are insufficient. |
+| Prompts and evaluator instrument | Requirement-free templates are candidates; instantiated material restricted | Sanitize embedded requirements, examples, cases and identifying context; verify permission and instrument provenance. |
+| Assessments, ADRs, retrieval queries/rankings, translated cases and provenance audits | Restricted when requirement-bearing or source-linking | Apply inherited source restrictions; review model response IDs, hashes/links and contextual identification before release. |
+| Raw expert exports, administrative evidence, profiles, comments and identity keys | Restricted | No raw public release planned; approved access policy and retention/withdrawal terms required. |
+| Cleaned respondent data, coding logs and respondent-level summaries | Restricted | No automatic public release after replacing IDs; consider separately approved de-identified derivatives only with consent, permission and disclosure review. |
+| Aggregate computational/expert tables and figures | Candidate for release | Authorization, small-cell/linkage and confidentiality review; documented disclosure rules with coverage effects. |
+
+Phase 10 must state what is actually available, its version/license/access
+conditions and what remains restricted with reasons. A review URL or archive DOI
+must be supplied only when a curated, tested release exists. Do not label the
+current repository anonymous, invent an open-data commitment, or release raw
+responses to satisfy reproducibility. Stored-output/ compiler reproducibility
+must be distinguished from model reruns: model revisions, unpinned dependencies,
+approximate indexing and hardware differences limit exact regeneration.
