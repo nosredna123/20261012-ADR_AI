@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, 6.1--6.4, partial 7.1--7.4, and partial 8.1 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, 6.1--6.4, partial 7.1--7.4, and partial 8.1--8.2 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -25,8 +25,9 @@ The LaTeX build needs no external datasets, API access, or data processing.
 
 ## Review scope
 
-- [Conclusion opening](sections/07-conclusion.tex): partial Task 8.1 outcome
-  synthesis with an explicit expert-evidence TBD; Task 8.2 remains unfinished.
+- [Conclusion draft](sections/07-conclusion.tex): partial Tasks 8.1--8.2 outcome
+  synthesis, bounded implications, and priority future work with explicit
+  expert-evidence/feedback TBDs; Phase 8 remains partial.
 - [Introduction draft](sections/01-introduction.tex): partial Tasks 7.1--7.4
   motivation, problem statement, gap, approach overview, RQs, and contributions
   plus computational results and a current-section roadmap, with explicit
@@ -400,4 +401,16 @@ A visible TBD reserves the expert-supported synthesis without assuming
 professional acceptance or quality. No new findings or citations are introduced.
 The section is wired into the manuscript, and the Introduction roadmap now
 references the partial Conclusion. Task 8.1 and Phase 8 remain partial pending
-Phase 3 evidence; Task 8.2 implications and future work remain unfinished.
+Phase 3 evidence.
+
+Task 8.2 adds bounded implications and priority future work to the
+[Conclusion draft](sections/07-conclusion.tex), synthesizing the existing
+Discussion without new findings or citations. Outputs remain review material,
+not accepted decisions or evidence of production readiness or reduced effort.
+A visible TBD marks expert-informed practitioner implications pending Phase 3
+feedback. The two follow-up priorities are independent assessment beyond
+selected pairs and controlled replication across systems with aligned inputs
+and catalog representations. The ending retains human responsibility for
+checking evidence, reviewing trade-offs, and accepting or revising decisions.
+The Conclusion is structurally drafted through Tasks 8.1--8.2, but Task 8.2
+and Phase 8 remain partial pending expert evidence and final reconciliation.

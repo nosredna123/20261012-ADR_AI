@@ -1472,6 +1472,28 @@ its separate commit with the `[Task 8.1]` prefix.
 
 ### Task 8.2 — State bounded implications and future work
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — approved with explicit expert-feedback TBD, compiled and visually checked; commit authorized (2026-10-12).**
+
+The user authorized partial drafting with the current evidence.
+`latex-code/sections/07-conclusion.tex` synthesizes the approved Discussion:
+traceable outputs are material for architect review, not accepted decisions or
+proof of correctness, production readiness, or reduced effort. A visible TBD
+reserves expert-informed practitioner implications pending Phase 3 feedback
+consolidation, retaining reservations and negative cases. The two priority
+follow-ups are independent assessment beyond selected pairs and controlled
+replication across systems with aligned requirement inputs and catalog
+representations. The ending retains human responsibility for evidence checks,
+trade-off review, and architectural acceptance. No new findings or citations
+are introduced, and existing expert-synthesis TBDs remain.
+The Conclusion is structurally drafted through Tasks 8.1--8.2, but Task 8.2
+and Phase 8 remain partial until expert evidence and final implications are
+reconciled. The 19-page PDF compiles without undefined citations/references or
+overfull boxes; the unresolved-expert warning and underfull-box notices remain.
+Pages 18--19 were rendered and visually checked, including both Conclusion
+TBDs, the bounded implications, follow-up priorities, and human-oversight ending.
+The user approved the partial deliverable and authorized its separate commit
+with the `[Task 8.2]` prefix.
+
 **Work**
 
 - Present the practical/research implication at the level supported by the data.
