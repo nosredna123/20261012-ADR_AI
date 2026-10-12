@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, 6.1--6.4, and partial 7.1--7.3 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, 6.1--6.4, and partial 7.1--7.4 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -25,9 +25,10 @@ The LaTeX build needs no external datasets, API access, or data processing.
 
 ## Review scope
 
-- [Introduction draft](sections/01-introduction.tex): partial Tasks 7.1--7.3
+- [Introduction draft](sections/01-introduction.tex): partial Tasks 7.1--7.4
   motivation, problem statement, gap, approach overview, RQs, and contributions
-  with explicit expert-review/evidence TBDs; Task 7.4 remains unfinished.
+  plus computational results and a current-section roadmap, with explicit
+  expert-review/evidence/results TBDs; Phase 7 remains partial.
 - [Methodology fragment](sections/03-methodology.tex): protocol scope,
   questionnaire constructs, interpretation limits, and the claim-to-evidence
   matrix in source comments.
@@ -373,7 +374,18 @@ missed-pattern recall or deployment success. A visible TBD marks the expected
 expert-evidence contribution pending Phase 3; existing Introduction TBDs remain.
 No public reproducibility-package contribution is claimed because anonymization,
 release permissions, and submission availability remain unconfirmed.
-Task 7.3 is partial pending expert evidence. Results/roadmap paragraphs remain
-reserved for Task 7.4, so the Introduction and Phase 7 are not yet complete.
+Task 7.3 is partial pending expert evidence.
 
+Task 7.4 adds a concise computational-results summary and roadmap to the
+[Introduction draft](sections/01-introduction.tex). Centralized macros report
+36/840 applicable labels (4.29%), 773/840 insufficient-information labels
+(92.02%), same-story Top-5 overlap of 5/36 selected pairs (13.89%), and exactly
+one structurally complete, traceable Proposed ADR for each of 36 selected pairs.
+The text preserves the denominators and distinguishes these findings from
+accuracy, comparative superiority, and architectural quality. A visible TBD
+reserves the principal expert findings pending Phase 3, without predicting
+their direction. The compact roadmap references only existing sections;
+it will need a Conclusion entry after Phase 8 supplies that section.
+The Introduction is structurally drafted through Tasks 7.1--7.4, but Task 7.4
+and Phase 7 remain partial pending expert evidence and final reconciliation.
 

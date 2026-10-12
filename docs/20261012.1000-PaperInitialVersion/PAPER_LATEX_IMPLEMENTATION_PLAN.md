@@ -1393,6 +1393,30 @@ with a task-identifying commit-message prefix.
 
 ### Task 7.4 — Summarize results and paper organization
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — approved with explicit expert-results TBD, compiled and visually checked; commit authorized (2026-10-12).**
+
+The user authorized partial drafting with the current data.
+`latex-code/sections/01-introduction.tex` summarizes the verified computational
+findings using centralized macros: 36/840 applicable labels (4.29%), 773/840
+insufficient-information labels (92.02%), 5/36 selected pairs in the frozen
+same-story Top-5 (13.89%), and one structurally complete, traceable Proposed ADR
+for every selected pair (36 records). It explicitly preserves the denominators
+and distinguishes label frequencies, overlap, and generation completeness from
+accuracy, superiority, and architectural quality. A visible TBD reserves the
+principal expert findings pending Phase 3 execution and consolidation.
+The roadmap references only existing Background, Methodology, Results,
+Discussion, and Threats sections; add the Conclusion entry when Phase 8 produces
+that section. Existing Introduction expert-review and contribution TBDs remain.
+Tasks 7.1--7.4 now supply the structural Introduction draft, but Task 7.4 and
+Phase 7 remain partial pending expert evidence and final claim/roadmap
+reconciliation. Summary percentages were independently checked against their
+stated denominators. The 18-page PDF compiles without undefined
+citations/references or overfull boxes; the unresolved-expert warning and
+underfull-box notices remain. Pages 2--3 were rendered and visually checked,
+including the computational summary, visible expert-results TBD, and resolved
+roadmap references. The user approved the partial deliverable and authorized
+its separate commit with the `[Task 7.4]` prefix.
+
 **Work**
 
 - Add only the most important final quantitative findings.
