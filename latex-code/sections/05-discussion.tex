@@ -92,3 +92,48 @@ alongside generation costs, and independently assess candidates both
 inside and outside the shortlist. Until those trade-offs are measured,
 retrieval-first assessment remains a proposed alternative rather than
 a validated replacement for exhaustive assessment.
+
+\subsection{Practical Implications for Architects (Partial)}
+\label{sec:practitioner-implications}
+
+The current evidence supports treating ADR4AI outputs as material for
+decision review, not autonomous architectural authority.
+Requirement references and explicit pattern rationales identify claims
+an architect can inspect; source/prompt provenance and structured ADR
+drafts preserve what was generated for each selected pair
+(Sections~\ref{sec:applicability-experiment} and~\ref{sec:adr-results}).
+These features make the reasoning available for scrutiny, but do not
+establish that references entail the recommendation, that consequences
+are complete, or that drafts improve practice. Their value as review aids
+remains a hypothesis pending professional assessment.
+
+\emph{Proposed review checkpoints---not a validated workflow.}
+Before generation, confirm permission to process the requirements and
+whether the supplied story and acceptance criteria capture the necessary
+architectural context. For each recommendation, check the cited evidence
+against the requirements, examine the pattern's fit and alternatives,
+and identify unsupported assumptions or missing constraints.
+Before accepting an ADR, review its decision and consequences against
+system-specific quality requirements and implementation constraints;
+record revisions and explicit architect approval separately from
+generation completion. External processing and release require the
+governance confirmations in Section~\ref{sec:ethics-reproducibility};
+the artifacts do not establish that these safeguards are operational.
+
+Unsafe uses include treating the application-assigned \texttt{Proposed}
+status as acceptance, nonempty/schema-valid fields as semantic correctness,
+or an insufficient-information label as proof that a pattern is unsuitable.
+Neither a retrieved rank nor an LLM-positive classification warrants
+automatic deployment. The available evidence does not justify replacing
+architect review, claiming production readiness, or promising reduced
+decision effort.
+
+\noindent\textbf{TBD---expert-feedback integration pending.}
+After Phase 3, revise these implications using verified item-specific
+judgments and eligible comments on usefulness, grounding and clarity,
+retaining reservations and negative cases. Implementation feasibility and
+effort are not directly measured by Q1--Q5; discuss them only where actual
+eligible comments or separately documented evidence support doing so.
+No such feedback is asserted here, and its absence must not be replaced
+with assumed benefits. Final recommendations remain contingent on the
+observed coverage, assessed cases and limitations.

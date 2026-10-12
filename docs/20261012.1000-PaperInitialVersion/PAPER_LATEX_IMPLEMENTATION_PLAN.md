@@ -867,6 +867,37 @@ not completion of a placeholder in this manuscript.
 
 ### Task 4.3 — Discuss practical implications for architects
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — bounded practitioner
+implications approved; expert-feedback integration remains TBD pending Phase 3
+(2026-10-12).**
+
+The researcher explicitly authorized this partial scope as an exception to
+Phase 4's pending Phase 3 dependency. The subsection in
+`latex-code/sections/05-discussion.tex` treats outputs as inspectable
+decision-support material, identifies proposed human-review checkpoints and
+unsafe uses, and makes no validated usefulness, productivity or
+production-readiness claim. Governance confirmations remain unresolved;
+the proposed checkpoints are not reported as deployed or evaluated controls.
+
+**Remaining work and resume conditions**
+
+- Complete and approve Phase 3, then integrate verified usefulness,
+  grounding and other relevant item judgments and eligible comments, retaining
+  negative/mixed findings and the actual coverage limitations.
+- Q1--Q5 do not directly measure implementation feasibility or effort.
+  Discuss these aspects only when actual eligible comments or separately
+  documented evidence support them; otherwise state the measurement limit.
+- Reassess the proposed implications and recommendations against the expert
+  evidence without assuming favorable findings or production readiness.
+- Resolve the visible `TBD---expert-feedback integration pending` paragraph
+  only when the supported integration and its limitations have been reviewed;
+  do not invent observations to finish the subsection.
+
+The partial deliverable has passed exact-PDF validation and human review;
+commit permission remains separate. The 11-page draft still exceeds the
+content-page budget and requires later compression. Task 4.3 remains incomplete, and this
+exception does not authorize Task 4.4 or waive Phase 3 requirements.
+
 **Work**
 
 - Interpret the approach as decision support rather than autonomous architectural authority.

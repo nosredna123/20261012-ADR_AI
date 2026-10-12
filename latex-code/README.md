@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, and 4.2 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, and partial 4.3 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -193,3 +193,21 @@ This exception does not authorize Task 4.3 or other later tasks.
 The current PDF has 11 pages with Discussion extending onto page 11 before
 References; the 10-content-page limit is not yet met. Later compression is
 required, without silently deleting approved material or changing the format.
+
+Task 4.3 adds [partial practitioner implications](sections/05-discussion.tex)
+under a separate researcher-authorized Phase 3 dependency exception.
+Traceability and structured drafts are discussed as inspectable review
+material, not demonstrated productivity or quality improvements.
+Human-review checkpoints are proposed, not a validated deployed workflow;
+unsafe interpretations of Proposed status, schema checks and classification
+labels are explicit. No operational permission or production readiness is
+assumed. The partial subsection has been approved after human review;
+expert-feedback integration remains unresolved.
+
+The visible `TBD---expert-feedback integration pending` paragraph preserves
+the unfinished scope: incorporate verified judgments and eligible comments
+after Phase 3, including critical/mixed evidence, and reassess recommendations.
+Q1--Q5 do not directly measure implementation feasibility or effort; comments
+or separate evidence are required for those claims. No new statistics,
+processing pipeline, synthetic data or expert observation is introduced.
+Task 4.3 is not complete, and Task 4.4 is not authorized by this exception.
