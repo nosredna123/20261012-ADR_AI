@@ -1,8 +1,9 @@
-# Tasks 1.1--1.2 review draft
+# Tasks 1.1--1.3 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
-claim boundaries and the industrial requirement sample. It is not the full
-manuscript. Later sections, bibliography, result macros, and final metadata
+claim boundaries, industrial requirement sample, and architectural pattern
+catalog. It is not the full manuscript. Later sections, further bibliography
+entries, result macros, and final metadata
 configuration have not been implemented.
 
 ## Build
@@ -30,6 +31,9 @@ The LaTeX build needs no external datasets, API access, or data processing.
   Regeneration and verification are documented in
   [the processing README](../processing/README.md); the LaTeX build itself
   does not need the research data or processing scripts.
+- The catalog subsection uses [verified catalog values](data/catalog-values.tex)
+  and [source citations](bibliography/references.bib). Catalog and public-source
+  verification commands are documented in the processing README.
 
 RQ3 is defined for the prepared questionnaire. Preliminary responses have been
 reported by the researcher but have not been supplied as a consolidated dataset

@@ -1,0 +1,10 @@
+{
+  "compared_files": 70,
+  "comparison": "Git blob SHA-1 over exact file bytes",
+  "local_audit_sha256": "a6e57313086ebf1622a88cb1841b3aa6fee6bf3588ae97bda12b46c64d04f00a",
+  "matching_files": 70,
+  "mismatched_or_missing_files": [],
+  "repository": "https://github.com/SWE4AI/ai-patterns",
+  "revision": "9ff3e611583b7d0f71032c62f9a9812ce93e2fd0",
+  "tree_url": "https://api.github.com/repos/SWE4AI/ai-patterns/git/trees/9ff3e611583b7d0f71032c62f9a9812ce93e2fd0?recursive=1"
+}

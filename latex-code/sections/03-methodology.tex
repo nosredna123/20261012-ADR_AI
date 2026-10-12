@@ -125,3 +125,53 @@ release.
 % Generated counts/table and audit: processing/scripts/prepare_dataset_summary.py
 % and
 % processing/outputs/dataset-summary-audit.json, relative to the project root.
+
+\subsection{Architectural Pattern Catalog}
+\label{sec:pattern-catalog}
+
+We use \StudyPatternCount{} pattern records from the repository associated
+with Heiland et al.'s multivocal literature review of design patterns for
+AI-based systems~\cite{heiland2023patterns,aiPatternsRepository}.
+For provenance verification, we compared the local files with the public
+repository at revision
+\texttt{9ff3e61} (the full revision is recorded in the artifact audit).
+All \StudyPatternCount{} records matched the corresponding repository files
+byte-for-byte, as checked using Git blob hashes. This identifies the source
+snapshot of the catalog; it does not establish the effectiveness of the
+individual patterns.
+
+Each pattern is stored as one JSON record with a stable three-digit identifier,
+from \texttt{001} through \texttt{070}. The applicability prompt supplies exactly
+five catalog fields: \emph{ID}, identifying the record; \emph{name}, naming
+the pattern; \emph{motivation}, describing the problem or need;
+\emph{solution}, describing its proposed response; and \emph{consequences},
+describing resulting effects and trade-offs. Identifiers remain strings,
+preserving leading zeros and enabling joins with the assessment and ADR
+artifacts. Source text is preserved rather than normalized or rewritten.
+
+The records also contain aliases, examples, related-pattern identifiers,
+categories, and resource identifiers. These additional fields are not supplied
+to the applicability model. Resource identifiers provide source pointers within
+the repository, not independently verified bibliographic descriptions in the
+local catalog. We therefore attribute the collection to the verified repository
+and its associated publication rather than infer individual source citations
+from numeric resource codes.
+
+All five input fields are present as strings in every record. Explicitly empty
+motivation or consequences strings are retained as empty inputs, without
+inventing replacement descriptions. A missing field or non-string value is an
+input-validation failure, not an invitation to repair the source. This
+preservation policy keeps the assessed catalog traceable while acknowledging
+uneven descriptive completeness.
+
+The catalog includes general architectural patterns, such as Client--Server,
+alongside patterns concerning machine-learning safeguards and model serving.
+We use the records as a bounded candidate set, not as equally mature,
+mutually independent, or universally applicable solutions. Catalog inclusion
+alone does not establish applicability to a requirement case; that relationship
+is assessed separately.
+
+% Task 1.3 provenance: processing/outputs/catalog-summary-audit.json and
+% processing/outputs/catalog-upstream-verification.json (project-root paths).
+% Bibliographic metadata checked on 2026-10-12 against Crossref's DOI record
+% 10.1109/CAIN58948.2023.00035 and the pinned SWE4AI/ai-patterns repository.
