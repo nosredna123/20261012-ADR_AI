@@ -1442,6 +1442,28 @@ its separate commit with the `[Task 7.4]` prefix.
 
 ### Task 8.1 — Synthesize the study outcome
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — approved with explicit expert-synthesis TBD, compiled and visually checked; commit authorized (2026-10-12).**
+
+The user authorized a partial exception to Phase 8's final-Results/Discussion
+dependency. The current computational evidence supports a bounded outcome
+synthesis, but the combined expert-supported conclusion cannot yet be finalized.
+`latex-code/sections/07-conclusion.tex` restates the problem and approach and
+synthesizes the approved classification outcomes, frozen-baseline overlap, and
+one-to-one ADR completion/provenance using existing macros. It preserves the
+claim boundaries, including input-language and catalog-representation differences,
+without new results or citations. A visible TBD reserves the synthesis of
+expert judgments pending Phase 3 execution and consolidation; no favorable
+outcome, professional acceptance, missed-pattern recall, or deployment success
+is assumed. The section is wired into the manuscript, and the Introduction
+roadmap now references the partial Conclusion.
+Task 8.1 and Phase 8 remain partial until expert evidence is reconciled;
+Task 8.2 remains unfinished. The 18-page PDF compiles without undefined
+citations/references or overfull boxes; the unresolved-expert warning and
+underfull-box notices remain. Pages 2, 17, and 18 were rendered and visually
+checked, including the resolved Conclusion roadmap reference and visible
+expert-synthesis TBD. The user approved the partial deliverable and authorized
+its separate commit with the `[Task 8.1]` prefix.
+
 **Work**
 
 - Restate the problem, approach, and strongest evidence in compact form.

@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, 6.1--6.4, and partial 7.1--7.4 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, 6.1--6.4, partial 7.1--7.4, and partial 8.1 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -25,6 +25,8 @@ The LaTeX build needs no external datasets, API access, or data processing.
 
 ## Review scope
 
+- [Conclusion opening](sections/07-conclusion.tex): partial Task 8.1 outcome
+  synthesis with an explicit expert-evidence TBD; Task 8.2 remains unfinished.
 - [Introduction draft](sections/01-introduction.tex): partial Tasks 7.1--7.4
   motivation, problem statement, gap, approach overview, RQs, and contributions
   plus computational results and a current-section roadmap, with explicit
@@ -385,7 +387,17 @@ The text preserves the denominators and distinguishes these findings from
 accuracy, comparative superiority, and architectural quality. A visible TBD
 reserves the principal expert findings pending Phase 3, without predicting
 their direction. The compact roadmap references only existing sections;
-it will need a Conclusion entry after Phase 8 supplies that section.
+Task 8.1 adds a reference to the partial Conclusion once that section exists.
 The Introduction is structurally drafted through Tasks 7.1--7.4, but Task 7.4
 and Phase 7 remain partial pending expert evidence and final reconciliation.
 
+Task 8.1 adds the [Conclusion opening](sections/07-conclusion.tex), restating
+the requirement-to-pattern-to-ADR problem and synthesizing the approved
+computational evidence with existing macros. It retains the interpretation
+limits on insufficient-information labels, overlap, and generation completeness,
+including input-language and catalog-representation differences.
+A visible TBD reserves the expert-supported synthesis without assuming
+professional acceptance or quality. No new findings or citations are introduced.
+The section is wired into the manuscript, and the Introduction roadmap now
+references the partial Conclusion. Task 8.1 and Phase 8 remain partial pending
+Phase 3 evidence; Task 8.2 implications and future work remain unfinished.

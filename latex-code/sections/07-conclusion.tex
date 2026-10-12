@@ -1,0 +1,40 @@
+% !TeX root = ../main.tex
+\section{Conclusion}
+\label{sec:conclusion}
+
+ADR4AI investigates how to connect industrial requirements to AI-system
+architectural patterns and inspectable decision records without treating
+model-generated recommendations as established architectural choices.
+The approach exhaustively assesses requirement--pattern pairs, retains
+requirement evidence for positive classifications, and generates Proposed
+ADR drafts linked to those selected pairs. A separate frozen
+retrieval/reranking baseline enables a descriptive candidate-overlap comparison.
+
+Within the bounded sample of \StudyStoryCount{} user stories from
+\StudySystemCount{} systems and \StudyPatternCount{} patterns, the
+\StudyAssessmentCount{} assessments predominantly yielded insufficient
+information (\StudyInsufficientInformationCount{} pairs;
+\RqOneInsufficientInformationPercent{}\%), with
+\StudyApplicableCount{} pairs classified as applicable.
+The prevalence of insufficient information limits conclusions about pattern
+applicability; it does not establish that the requirements are defective or
+that the unresolved patterns are unsuitable.
+Only \StudyRagOverlapCount{} of the \StudyApplicableCount{} LLM-positive
+pairs (\RqTwoOverlapPercent{}\%) appeared in the same-story final
+Top-\RagFinalCount{} retrieval set. This divergence describes candidate
+membership, not the superiority of either approach, particularly given the
+protocols' differing input languages and catalog representations.
+All \StudyApplicableCount{} selected pairs have one structurally complete,
+traceable Proposed ADR, establishing generation completion and provenance
+for \StudyAdrCount{} records, rather than semantic quality or professional
+acceptance.
+
+\noindent\textbf{TBD---Expert-supported synthesis of selected-pattern
+applicability and ADR adequacy, grounding, consequences, and perceived
+usefulness pending Phase~3 execution and consolidation.}
+The prepared expert assessment is intended to complement these computational
+findings with item-specific practitioner judgments of the presented pairs and
+records. Whether those judgments corroborate, qualify, or challenge the
+recommendations remains unknown. They cannot establish missed-pattern recall
+or deployment success. The combined study outcome remains unresolved until
+the expert evidence is verified and integrated.
