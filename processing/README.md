@@ -286,3 +286,51 @@ administration, and actual access/privacy arrangements. No such procedure is
 asserted as completed. Profile questions are not eligibility rules; disabling
 email collection does not prove anonymous live access. Response analysis
 choices belong to Task 1.8 and are not implemented here.
+
+## Task 1.8: pre-inspection analysis protocol
+
+[expert-analysis.json](protocols/expert-analysis.json) is the versioned,
+response-independent RQ3 analysis specification. On 2026-10-12 the researcher
+approved exploratory descriptive analysis with no pass/fail cutoff; no numeric
+expertise threshold; documented eligibility/consent/familiarity confirmation;
+available-item primary analysis and complete-route sensitivity; conditional
+within-system ordinal alpha; and independent dual coding/reconciliation.
+Eligibility confirmations and actual administration remain unverified, not
+invented. Collection may already have started; no pre-collection preregistration
+claim is made. Record amendments and exposure to results rather than replacing
+the decision history silently.
+
+The protocol defines route-dependent opportunities and missingness, submission
+versus evaluator identities, inverse-CDF median/interquartile category interval,
+equal-case/equal-story/equal-system aggregation, alpha coincidence/distance
+formula and gate, qualitative coding, and source/computation/display contracts
+for eight planned outputs. No means, composites, success thresholds, imputation,
+cross-system alpha, inferential tests, or population claims are planned.
+Privacy review is required before publication; respondent-level summaries remain
+restricted. No analytic eligibility confirmation is inferred from rating scores.
+
+[prepare_expert_analysis_plan.py](scripts/prepare_expert_analysis_plan.py)
+reads **only** that protocol and the Task 1.7 instrument audit. It validates
+item alignment and approved scope, safe unique output paths, and complete
+source/computation contracts. It writes:
+
+- `../latex-code/tables/expert-analysis-outputs.tex`: planned-output inventory;
+- `outputs/expert-analysis-plan-audit.json`: protocol/instrument-audit hashes,
+  review status and explicit no-response-data validation scope.
+
+From this directory:
+
+```sh
+python -B scripts/prepare_expert_analysis_plan.py
+python -B scripts/prepare_expert_analysis_plan.py --check
+python -B -m unittest discover -s tests -p 'test_*.py'
+```
+
+Python 3.10+ and the standard library suffice. Validation precedes writes;
+`--check` rejects stale/absent outputs without writing. Tests check protocol
+scope, inventory completeness/path safety, questionnaire alignment, escaping
+and rejection of false preregistration, thresholds, or imputation.
+They do **not** test the future statistics, response cleaning, or coding.
+Their implementation and numerical tests belong to Phase 3, after raw export,
+restricted provenance, consent/governance and instrument version are confirmed.
+No actual or synthetic respondent-result dataset is opened or created here.

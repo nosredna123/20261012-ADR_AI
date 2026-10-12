@@ -1,0 +1,149 @@
+{
+  "protocol_id": "ADR4AI-RQ3-v1",
+  "task": "1.8",
+  "decision_date": "2026-10-12",
+  "status": "approved",
+  "timing": {
+    "response_collection_may_have_started": true,
+    "response_values_inspected_for_this_protocol": false,
+    "preregistered_before_collection": false,
+    "interpretation": "Exploratory protocol recorded before this analyst inspects responses; not a prospective preregistration before collection. Record later amendments, reasons, timing and prior exposure to results."
+  },
+  "items": ["Q1", "Q2", "Q3", "Q4", "Q5"],
+  "rating_values": [1, 2, 3, 4, 5],
+  "inclusion": {
+    "required_confirmations": [
+      "Documented consent or applicable participation authorization",
+      "Confirmed familiarity with the selected system",
+      "One recognized system route and compatible administered instrument"
+    ],
+    "confirmation_source": "Restricted administration records may supply confirmations absent from the questionnaire; profile scores are not proof of consent or familiarity.",
+    "minimum_experience_years": null,
+    "minimum_system_knowledge_score": null,
+    "exclude_by_rating_direction": false,
+    "unresolved_eligibility": "Hold out until resolved; retain reason and count. Do not silently treat unknown as eligible or invent confirmations.",
+    "deduplication": "Remove only proven duplicate export rows/submissions using restricted provenance. Do not deduplicate identical rating vectors, timestamps alone, or matching profiles. Hold unresolved duplicate groups out; document disposition without inspecting favorable/unfavorable content.",
+    "identity_limit": "Anonymous submissions cannot automatically be counted as unique people. Report submissions separately from confirmed distinct evaluators; use submission-level IDs for traceability, not a claim of person-level identification.",
+    "primary": "Available valid selected-route items from eligible, route-valid retained submissions.",
+    "sensitivity": "Repeat the same analysis on submissions with every selected-route Q1-Q5 item valid.",
+    "route_conflict": "Quarantine any submission with unknown/multiple route selection or nonblank rating items outside its selected route until instrument/export mapping is resolved.",
+    "profile_missing": "Retain otherwise eligible submissions; report unknown profile values rather than imputing or discarding ratings.",
+    "flow_statuses": ["included", "excluded", "held_pending"],
+    "flow_reconciliation": "Every raw row receives one mutually exclusive final flow status and one primary reason; secondary flags retained. Raw rows = included + excluded + held_pending."
+  },
+  "cell_rules": {
+    "expected": "Selected system's prepared cases crossed with Q1-Q5; verify actual instrument version and case mapping before analysis.",
+    "structural_blank": "Unselected-route blank rating/comment cells are not eligible opportunities and are excluded from all rating denominators.",
+    "missing": "Blank selected-route rating: missing eligible opportunity; retain submission for other valid items.",
+    "invalid": "Any selected-route value other than one exact integer category 1-5 after whitespace trimming is invalid; preserve raw value, exclude that item and report count. No rounding, clipping or inference.",
+    "no_imputation": true,
+    "opportunities": "For each case/item, eligible opportunities = retained submissions on that case's system; valid + missing + invalid must equal opportunities.",
+    "comments": "Blank selected-route comments indicate no optional comment, not disagreement. Off-route comments are mapping flags for restricted review, not selected-system evidence."
+  },
+  "ordinal_summary": {
+    "means": false,
+    "composite_scores": false,
+    "significance_tests": false,
+    "categories": "Report all five counts and percentages among valid items; report opportunities, missing, invalid and valid n separately.",
+    "quantile": "Use the non-interpolated inverse empirical CDF: Q(p) = smallest category k with cumulative proportion through k >= p, for p=0.25,0.50,0.75. For even n the median is the lower category median, not the arithmetic midpoint.",
+    "iqr": "Display Q(0.50) with [Q(0.25), Q(0.75)] as the interquartile category interval. Do not interpret category spacing as equal-scale distances.",
+    "empty": "When valid n is zero, mark proportions and quantiles unavailable, not zero; still report opportunity/missing/invalid counts."
+  },
+  "aggregation": {
+    "case_item": "One distribution per case and Q item, giving each retained valid submission one vote within that case.",
+    "story_item": "Average the case/item category proportions equally across that story's cases with at least one valid rating.",
+    "system_item": "Average story/item distributions equally across that system's stories with at least one observed case/item distribution.",
+    "study_item": "Average the observed system/item distributions equally; report contributing system/story/case counts and absent strata. Never relabel partial coverage as all four systems.",
+    "hierarchical_quantiles": "Apply the same inverse CDF to the averaged category distribution; do not average case medians or flatten all ratings into the primary study distribution.",
+    "respondent_item": "Within each retained submission's selected route, summarize its case ratings separately for Q1-Q5; no across-item score and no public row-level profile/rating linkage.",
+    "zero_positive_story": "Stories without selected pairs are outside expert-rating opportunities, not zero scores or missing expert cases. No claims about rejected or unassessed patterns.",
+    "unbalanced_design": "The primary study distribution balances cases within stories, stories within systems and systems within study. A larger route does not automatically receive larger study weight.",
+    "dependence": "Ratings share evaluators and cases. Do not count item ratings as independent participants or claim population representativeness; omit inferential tests and confidence intervals in this exploratory protocol."
+  },
+  "agreement": {
+    "method": "Ordinal Krippendorff alpha",
+    "stratification": "Separately by system and Q item; units are ADR cases and raters are confirmed distinct evaluators on that system, not unverified anonymous submissions.",
+    "gate": "Compute only with at least two confirmed distinct evaluators sharing a case and positive expected disagreement. Require an unambiguous rater-unit mapping. Otherwise report not estimable with the reason; never switch silently to a different coefficient.",
+    "coincidences": "For a case u with m_u valid confirmed-rater ratings >= 2, add every ordered distinct-rater category pair (c,k) with weight 1/(m_u-1) to o_ck. Cases with fewer than two ratings contribute no coincidences.",
+    "ordinal_distance": "Let n_c = sum_k o_ck and n = sum_c n_c over pairable cases. For c != k, delta(c,k) = (sum of n_g from min(c,k) through max(c,k), minus (n_c+n_k)/2)^2; delta(c,c)=0.",
+    "coefficient": "D_o = sum_ck o_ck*delta(c,k)/n. D_e = sum_ck n_c*n_k*delta(c,k)/(n*(n-1)). Alpha = 1-D_o/D_e when n>1 and D_e>0.",
+    "coverage": "Report confirmed rater count, total observed cases, pairable case count, valid confirmed-rater ratings in pairable cases, missingness, alpha and any non-estimability reason. No pooled cross-system alpha, threshold labels or confidence interval.",
+    "interpretation": "Exploratory agreement/consistency, not agreement with the paper hypothesis, correctness or a pass/fail expert-validation test."
+  },
+  "qualitative": {
+    "unit": "One nonblank eligible selected-route case comment, linked internally to submission/case IDs.",
+    "coding": "Two researchers independently code all eligible comments, then reconcile disagreements and retain both initial assignments, reconciliation reasons and final codes.",
+    "initial_domains": ["pattern applicability", "decision adequacy", "grounding", "consequences/trade-offs", "record usefulness", "clarity", "feasibility", "missing context", "novelty"],
+    "codebook": "Domains guide reading, not questionnaire constructs or guaranteed findings. Develop inductive subcodes, include critical/mixed/counterexample observations, record codebook versions, and recode affected comments after revisions. Multiple codes per comment permitted.",
+    "counts": "Report unique coded comments per theme, optional comment opportunities and nonblank total; also distinguish submissions/cases contributing when privacy permits. Multiple themes may exceed the comment total. No prevalence or representativeness claim.",
+    "quotes": "Use only short quotations with documented quotation authorization and de-identification review; otherwise summarize without quoting. Do not infer consent from survey completion.",
+    "fallback": "If independent dual coding cannot be executed, log the deviation and report the actual single-coder/reviewer procedure, not fictitious dual coding."
+  },
+  "interpretation": {
+    "mode": "exploratory_descriptive",
+    "binary_validated_threshold": null,
+    "favorable_rating_cutoff": null,
+    "criterion": "Describe item-specific professional judgments, heterogeneity, coverage and qualitative reservations. No validated/not-validated label, majority success rule, composite score or post hoc threshold. Hypothesis support must be qualified by the actual item distributions and sampling limits.",
+    "unsupported": ["ground-truth recall", "implementation success", "causal practice improvement", "architectural correctness from agreement alone"],
+    "privacy": "All publication-facing outputs need disclosure review. Do not publish respondent-level rows, small-cell profile combinations, or identifying comments. Withholding/coarsening must be documented without concealing critical findings; privacy rules must be finalized before public export."
+  },
+  "outputs": [
+    {
+      "id": "sample",
+      "target": "latex-code/tables/expert-demographics.tex",
+      "source": "Disposition log, profiles and administration confirmations.",
+      "computation": "Reconcile row statuses; count route submissions, confirmed evaluators and profile categories with valid/unknown denominators.",
+      "display": "Sample composition and flow; disclosure-reviewed categories only."
+    },
+    {
+      "id": "items",
+      "target": "latex-code/tables/expert-evaluation-results.tex",
+      "source": "Eligible ratings and case-story-system mapping.",
+      "computation": "System and balanced study distributions per item using the specified hierarchy; inverse-CDF median/quartiles, raw valid n and coverage.",
+      "display": "Primary item summaries; distinguish weighted proportions from raw counts."
+    },
+    {
+      "id": "cases",
+      "target": "processing/outputs/expert-case-results.csv",
+      "source": "Eligible ratings, cell flags and prepared case/item grid.",
+      "computation": "Every case/item: opportunities, valid/missing/invalid n, category counts/percentages and quantiles; no-data summaries unavailable.",
+      "display": "Disclosure-reviewed aggregate case inventory; no respondent text/identifiers."
+    },
+    {
+      "id": "hierarchy",
+      "target": "processing/outputs/expert-hierarchy-results.csv",
+      "source": "Case/item distributions and prepared mapping.",
+      "computation": "Equal-case story and equal-story system distributions, quantiles and observed/expected coverage; never average medians.",
+      "display": "Aggregate story/system audit supporting primary table."
+    },
+    {
+      "id": "figure",
+      "target": "latex-code/figures/expert-results.pdf",
+      "source": "Primary item table's distributions.",
+      "computation": "Stacked bars of all five ordered categories by system and balanced study summary, with coverage and identical scales.",
+      "display": "Distribution visualization; do not plot missing groups as zero or favorable-only categories."
+    },
+    {
+      "id": "agreement",
+      "target": "latex-code/tables/expert-agreement.tex",
+      "source": "Confirmed-rater IDs joined to eligible ratings.",
+      "computation": "Within-system/item ordinal alpha using the specified coincidence formula and gate; report coverage or non-estimability.",
+      "display": "Conditional agreement with no pass/fail interpretation; no invented coefficient if identity/coverage is insufficient."
+    },
+    {
+      "id": "sensitivity",
+      "target": "processing/outputs/expert-complete-route-sensitivity.csv",
+      "source": "Eligible complete-route submissions.",
+      "computation": "Repeat case, hierarchy and item summaries unchanged; compare distributions and coverage with primary analysis.",
+      "display": "Completeness sensitivity; if subset is empty, report unavailable."
+    },
+    {
+      "id": "themes",
+      "target": "latex-code/tables/expert-comment-themes.tex",
+      "source": "Eligible comments, codebook, independent coding and reconciliation logs.",
+      "computation": "Unique comments per theme with comment/opportunity denominators; preserve negative cases and multiple-code accounting.",
+      "display": "Definitions and counts with privacy review; quotations only if separately authorized."
+    }
+  ],
+  "implementation_boundary": "Task 1.8 records the protocol and output inventory only. Actual response ingestion, statistics, alpha, qualitative coding and figures are implemented and tested in Phase 3 after consent/governance and administered-instrument confirmation. No human results or mock results are produced here."
+}

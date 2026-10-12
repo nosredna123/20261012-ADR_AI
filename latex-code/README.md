@@ -1,8 +1,8 @@
-# Tasks 1.1--1.7 review draft
+# Tasks 1.1--1.8 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
-catalog, applicability/RAG/ADR protocols, and expert-evaluation preparation.
+catalog, applicability/RAG/ADR protocols, expert preparation and analysis plan.
 It is not the full manuscript.
 Later sections, further bibliography
 entries, result macros, and final metadata
@@ -73,3 +73,11 @@ descriptions in the manuscript are explanatory translations, not a replacement
 instrument. Deployment, recruitment/eligibility, consent/ethics,
 administration, and actual access/privacy details remain explicit procedural
 placeholders, as authorized by the researcher. No respondent data is included.
+
+Task 1.8 adds the pre-inspection exploratory analysis subsection and
+[planned-output inventory](tables/expert-analysis-outputs.tex), generated from
+[the versioned protocol](../processing/protocols/expert-analysis.json).
+This is not preregistration before collection. No expert response ingestion,
+statistics, agreement computation, or human-result placeholders disguised
+as observations are generated. Conditional agreement and qualitative procedures
+will be implemented in Phase 3, after actual governance/instrument confirmation.

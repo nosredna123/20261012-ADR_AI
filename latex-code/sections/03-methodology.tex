@@ -561,7 +561,8 @@ inspected for this draft. After collection, replace the pending procedural
 details with confirmed execution information, documenting any differences
 from the prepared instrument. This subsection contains no expert-result
 values or claims of agreement. Response eligibility, ordinal analysis, and
-comment handling will be specified separately before inspecting results.
+comment handling are specified in Section~\ref{sec:expert-analysis} before
+response inspection.
 
 % Task 1.7 provenance: research_results/compile_expert_evaluation.py,
 % translation mappings/inventory/corrections/audit, preparation report,
@@ -569,3 +570,113 @@ comment handling will be specified separately before inspecting results.
 % Verification: processing/scripts/prepare_expert_protocol.py and
 % processing/outputs/expert-preparation-audit.json. Procedural placeholders
 % explicitly authorized by researcher on 2026-10-12; no response data inspected.
+
+\subsection{Pre-Inspection Expert-Analysis Protocol}
+\label{sec:expert-analysis}
+
+We record this exploratory, descriptive protocol before inspecting expert
+responses for manuscript analysis. Since the researcher reports preliminary
+responses already collected elsewhere, this is not a preregistration before
+collection. The versioned protocol records its timing, choices, output
+inventory, and future amendments; any change must disclose its reason and
+whether it followed exposure to results. Table~\ref{tab:expert-analysis-outputs}
+predeclares the expert-result outputs. No response values are analyzed here.
+\input{tables/expert-analysis-outputs}
+
+\paragraph{Inclusion, routing, and missingness}
+Include submissions only after documented consent or applicable participation
+authorization, familiarity with the chosen system, and one recognized route
+with a compatible administered instrument are confirmed. Restricted
+administration records may supply confirmations absent from the form.
+No minimum years of experience or self-rated knowledge cutoff is imposed;
+profile questions alone do not prove eligibility. Unresolved eligibility
+is held pending, not inferred from favorable ratings. Retain an immutable
+raw-to-derived disposition log with included, excluded, and held-pending
+counts reconciling to the raw export.
+
+Remove only proven duplicate export rows or submissions using provenance,
+not matching rating vectors or profiles. Hold unresolved duplicates and route
+conflicts pending investigation; do not silently select the more favorable
+response. Anonymous submissions are not necessarily unique people: report
+submission counts separately from confirmed distinct evaluator counts.
+Missing profile values do not remove otherwise eligible ratings.
+
+Primary analysis retains available valid selected-route items from eligible
+submissions. Selected-route blanks and invalid values are recorded separately;
+neither is imputed. A valid rating is one integer category from 1 through 5,
+after whitespace trimming, without rounding or clipping. Blank cells on
+unselected routes are structural, outside eligible opportunities.
+Nonblank off-route ratings or ambiguous route selection quarantine the
+submission until export/instrument mapping is resolved. For each case/item,
+valid, missing, and invalid counts must sum to eligible opportunities.
+Repeat the analysis on complete-route submissions as a sensitivity check,
+reporting changed coverage even if no such submission remains.
+
+\paragraph{Ordinal summaries and balanced aggregation}
+Analyze Q1--Q5 separately, without means, a composite score, significance
+tests, or treating ratings as independent participants. Report counts and
+percentages for all five categories among valid items, alongside opportunity,
+missing, invalid, and valid-response denominators. Use the non-interpolated
+inverse empirical distribution for the median and quartiles: the smallest
+category whose cumulative proportion reaches 0.50, 0.25, or 0.75, respectively.
+For even sample sizes this yields the lower category median rather than an
+arithmetic midpoint. Display the median with its interquartile category
+interval $[Q_{0.25},Q_{0.75}]$, without assuming equally spaced ratings.
+With no valid rating, summaries are unavailable, not zero.
+
+First compute case/item distributions, giving each retained valid submission
+one vote within a case. Average observed case distributions equally within
+a story, story distributions equally within a system, and system
+distributions equally for the study summary. Apply the same quantile rule
+to these distributions, not to averaged medians. This avoids automatically
+overweighting systems with more recommended patterns. Report contributing
+and absent cases, stories, and systems; an observed-system summary with
+partial coverage must not imply all four systems were assessed. Raw counts
+and balanced percentages have different weighting and must be labeled.
+Retain item-wise within-submission summaries internally, without publishing
+respondent-level links to profiles. Stories with no selected pairs create
+no expert-rating opportunities and are not zero-score cases.
+
+\paragraph{Conditional inter-rater agreement}
+Plan ordinal Krippendorff's alpha separately for each system and item, with
+ADR cases as units and confirmed distinct evaluators as raters. Do not pool
+raters assigned to different systems or equate unverified anonymous
+submissions with distinct raters. Compute alpha only when at least two
+confirmed raters share a case and expected disagreement is positive.
+The artifact specifies ordered-pair coincidence weighting, ordinal distance
+from empirical category marginals, and $\alpha=1-D_o/D_e$.
+Report rater and pairable-case counts, rating coverage, and any
+non-estimability reason; a single rater or invariant ratings do not justify
+an invented coefficient. Agreement is exploratory consistency, not correctness
+or agreement with the study hypothesis; no acceptance threshold is applied.
+
+\paragraph{Comments and interpretation}
+Use each eligible nonblank case comment as the qualitative unit. Two
+researchers independently code the comments and reconcile differences,
+retaining initial assignments, codebook versions, and reconciliation reasons.
+Applicability, adequacy, grounding, consequences, usefulness, clarity,
+feasibility, missing context, and novelty are initial sensitizing domains,
+not guaranteed findings or additional questionnaire scales. Allow inductive
+subcodes and multiple codes, recoding affected comments after codebook changes.
+Preserve critical, mixed, and contradictory observations. Report unique
+comment counts per theme and comment opportunities; multiple themes may
+exceed the nonblank-comment total. Blank optional comments are not negative
+ratings. Quotations require documented authorization and de-identification;
+otherwise summarize without quoting. If dual coding cannot be executed,
+disclose the actual procedure and deviation.
+
+There is no binary ``expert-validated'' criterion, favorable-rating cutoff,
+majority success rule, or post hoc threshold. Interpret the actual
+item-specific distributions and reservations with their coverage, distinguishing
+ADR judgments from Q5 applicability. They cannot establish missed-pattern
+recall, implementation success, or causal improvements in practice.
+All publication outputs require disclosure review; privacy decisions must
+not selectively suppress criticism. Consent/governance, instrument-version
+confirmation, and respondent provenance remain prerequisites to actual
+analysis. Phase~3 will implement and test the calculations against the frozen
+response export; this task records choices only.
+
+% Task 1.8 decisions approved before response inspection on 2026-10-12.
+% Versioned specification: processing/protocols/expert-analysis.json.
+% Inventory generation/check: processing/scripts/prepare_expert_analysis_plan.py.
+% No respondent dataset read or numerical expert findings produced.

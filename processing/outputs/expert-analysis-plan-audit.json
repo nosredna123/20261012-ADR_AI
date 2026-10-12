@@ -1,0 +1,19 @@
+{
+  "planned_output_ids": [
+    "sample",
+    "items",
+    "cases",
+    "hierarchy",
+    "figure",
+    "agreement",
+    "sensitivity",
+    "themes"
+  ],
+  "prepared_instrument_audit_sha256": "48f387f26b7831873826d407323c150a5f9df6522d567fd5722f80a2ed0e25cd",
+  "protocol_id": "ADR4AI-RQ3-v1",
+  "protocol_sha256": "f24500bcc5b89c6374443c962cb7c35f028e12c49469c15049e6f577bab393fd",
+  "response_data_read": false,
+  "review_status": "approved",
+  "task": "1.8",
+  "validation_scope": "Protocol consistency and inventory rendering, not execution of response statistics."
+}
