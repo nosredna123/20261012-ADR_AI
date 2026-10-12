@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, and 4.4 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, and partial 5.1 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -232,3 +232,21 @@ Phase 3, Tasks 4.1/4.3 or authorize Phase 5.
 The current PDF has 12 pages with content on page 12 before References.
 It is not page-limit compliant; the disclosed issue remains deferred to
 later compression, not waived for submission.
+
+Task 5.1 adds [partial construct-validity threats](sections/06-threats-to-validity.tex)
+under a separate researcher-authorized exception to Phase 5's final
+Methodology/Results dependency. It covers architectural context in requirements,
+the operational definitions of applicability/overlap/ADR quality, questionnaire
+coverage and evaluation of selected pairs only. It distinguishes implemented
+structural/reporting safeguards from planned expert checks and future
+context-enrichment/non-positive-reference experiments. No mitigation is claimed
+to have resolved semantic validity, and no instrument validation is invented.
+No new statistics, data processing or empirical evidence is introduced.
+
+The partial subsection has been approved after human review. Its visible
+`TBD---administered-instrument and expert-evidence reconciliation pending`
+marker must remain until Phase 3 permits checking actual wording, routing,
+eligibility, coverage and deviations, then revising the limitations.
+Existing expert-result warnings remain. Task 5.1 is not complete, and this
+exception does not authorize Task 5.2. Page-budget correction remains deferred
+to later compression; no approved material or format is silently changed.

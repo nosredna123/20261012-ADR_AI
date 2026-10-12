@@ -969,6 +969,41 @@ nor authorizes Phase 5.
 
 ### Task 5.1 — Address construct validity
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — current construct
+threats and bounded mitigations approved; administered-instrument/expert-evidence
+reconciliation remains TBD pending Phase 3 (2026-10-12).**
+
+The researcher authorized a partial scope as an explicit exception to
+Phase 5's final Methodology/Results dependency. The subsection in
+`latex-code/sections/06-threats-to-validity.tex` addresses requirement-context
+sufficiency, distinct definitions of applicability/overlap/ADR quality,
+Q1--Q5 coverage and selected-pair-only evaluation. It distinguishes existing
+reference/schema/reporting safeguards from planned professional checks and
+future experiments; no completed semantic or instrument validation is claimed.
+
+**Remaining work and resume conditions**
+
+- Complete and approve Phase 3, confirm the administered questionnaire wording
+  and case/item/route mapping, and reconcile actual eligibility and coverage
+  with the prepared protocol.
+- Document instrument/administration deviations and revisit construct
+  limitations against verified item judgments and eligible comments without
+  implying feasibility, effort or deployment outcomes were directly measured.
+- Retain the selected-pair-only limitations: current expert responses cannot
+  establish missed applicable patterns or catalog-wide classification accuracy.
+  Independent non-positive/all-pattern references remain future work unless
+  separately executed and verified.
+- Resolve the visible `TBD---administered-instrument and expert-evidence
+  reconciliation pending` marker only after these checks and the revised
+  subsection have passed review.
+
+The partial deliverable has passed build, exact-PDF visual inspection and human
+review; commit permission remains separate. Existing expert warnings remain.
+The 12-page draft's disclosed content-page limit violation was accepted for
+this partial review; page-limit compliance still requires later compression.
+Task 5.1 remains
+incomplete; the exception does not authorize Task 5.2.
+
 **Work**
 
 - Discuss whether user stories and acceptance criteria contain enough architectural information.

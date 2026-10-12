@@ -1,0 +1,67 @@
+% !TeX root = ../main.tex
+\section{Threats to Validity}
+\label{sec:threats-to-validity}
+
+\subsection{Construct Validity (Partial)}
+\label{sec:construct-validity}
+
+\emph{Architectural information in requirements.}
+User stories and acceptance criteria describe required behavior but may
+omit quality attributes, deployment constraints or architectural context
+needed to judge a pattern. System purpose supplies context, not sufficient
+evidence of applicability by itself. The protocol retains an
+insufficient-information category and requires requirement references for
+positive classifications (Section~\ref{sec:applicability-experiment}).
+These safeguards avoid forcing every pair into a binary decision, but
+neither validate the adequacy of the supplied context nor explain the
+dominant label distribution in Table~\ref{tab:applicability-results}.
+Reference membership checks do not establish semantic entailment.
+Independent review of the cited evidence is still needed; controlled
+context enrichment is a future mitigation, not an intervention already
+shown to improve classification.
+
+\emph{Applicability, retrieval overlap and ADR quality.}
+Applicability is operationalized as a model judgment under the supplied
+prompt and catalog, not independently established architectural truth.
+Final Top-5 overlap measures same-story candidate membership relative to
+the LLM-positive set (Section~\ref{sec:rag-baseline}); it does not measure
+accuracy, precision or recall. Explicit denominators and separate reporting
+of classification, overlap and ADR completion limit conflation between
+these constructs. ADR schema conformity and nonempty fields establish
+structural completeness, not correctness, sufficient grounding or
+comprehensive trade-offs (Section~\ref{sec:adr-results}).
+The planned professional assessment addresses separate judgment dimensions,
+but cannot convert generation completion into a validated quality measure.
+
+\emph{Questionnaire coverage.}
+The prepared Q1--Q5 items distinguish decision adequacy, grounding,
+consequences, perceived record usefulness and pattern applicability
+(Table~\ref{tab:expert-constructs}). This separation and the predeclared
+item-specific analysis avoid treating different dimensions as an
+unjustified composite score. Nevertheless, explanatory questionnaire
+wording and preparation checks do not establish instrument validity or
+consistent respondent interpretation. Perceived usefulness is not observed
+practice improvement; the items do not directly measure implementation
+feasibility, decision effort or deployment success.
+Optional comments may contextualize judgments, but do not replace missing
+measurements. Confirming the administered wording and case mapping,
+examining actual coverage and retaining critical comments are planned
+safeguards, not completed empirical validations.
+
+\emph{Evaluation of selected pairs only.}
+The prepared questionnaire presents LLM-positive pairs and their generated ADRs.
+This permits assessment of those recommendations, not a catalog-wide
+reference set. Rejected and insufficient-information pairs are outside
+the prepared evaluation, so the design cannot establish missed applicable
+patterns, false-negative rates or comparative selection accuracy.
+Restricting claims to assessed cases is the current mitigation.
+Independent assessment of non-positive pairs or all patterns for a bounded
+subset is proposed future work (Section~\ref{sec:research-implications}),
+not evidence supplied by the selected-pair questionnaire.
+
+\noindent\textbf{TBD---administered-instrument and expert-evidence
+reconciliation pending.} After Phase 3, verify actual wording, routing,
+eligibility and coverage, document deviations from the prepared protocol,
+and revise these construct limits against the supported findings.
+No completed instrument validation or expert-based mitigation effect is
+claimed in this partial draft.
