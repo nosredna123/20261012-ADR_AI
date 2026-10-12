@@ -183,3 +183,54 @@ stories have zero overlap count but no defined story-level proportion; if
 there are no positive pairs at all, the pooled proportion is undefined.
 Baseline ranks and their computational reproducibility are not verified by
 these offline structural checks.
+
+## Task 1.6: immutable ADR-generation protocol
+
+[prepare_adr_protocol.py](scripts/prepare_adr_protocol.py) imports the original
+standard-library validators and compiler functions without invoking their
+generation, execution, or publication entry points. It:
+
+- checks the preserved pre-ADR rows against the official applicable-pair
+  compilation, and validates all 36 unique completed ADR pairs;
+- validates model/response/call metadata, strict-output flags, nonempty ADR
+  fields, fixed Proposed status, and source/rendered-prompt SHA-256 values;
+- compares in-memory compilation with both frozen final CSVs without writing
+  or regenerating them;
+- validates attempt claims, the single recorded connection failure, and its
+  linked, manually authorized retry; includes the approved pilot exactly once.
+
+Outputs are `outputs/adr-protocol-audit.json` (exact prompt template and schema,
+input field names, source/output hashes, response IDs, pair inventory, and
+retry linkage) and `../latex-code/data/adr-values.tex` (count/configuration
+macros). The audit does not copy requirement or generated ADR prose.
+Original input paths and hashes are recorded. The historical source hash uses
+`pattern_selection_results_before_adr.csv`, which retains the exact bytes used
+at generation; the current source CSV has the added ADR column.
+
+From this directory:
+
+```sh
+python -B scripts/prepare_adr_protocol.py
+python -B scripts/prepare_adr_protocol.py --check
+python -B -m unittest discover -s tests -p 'test_*.py'
+```
+
+Python 3.10+ and the standard library suffice. No SDK import, API call, model
+download, original-artifact write, or generation is performed. `--check` is
+read-only; all validation precedes writing manuscript outputs. Tests alter
+only in-memory copies or explicitly synthetic temporary metadata and cover
+provenance mismatch, extra/empty fields, non-Proposed status, call metadata,
+unauthorized retry, duplicate JSON keys, and missing preserved input.
+
+The exact prompt contains an explicitly synthetic one-shot example, not
+expert evidence. Prompt compliance is not proven by structural output checks.
+The failure does not establish dispatch or a completed additional response.
+Protocol pilot approval and manual retry authorization are supported by the
+research README and archived claims, not treated as expert architectural
+approval.
+
+The Nygard citation was checked against the original Cognitect article
+“Documenting Architecture Decisions” (2011-11-15), including its title,
+context, decision, status, and consequences description. The pipeline figure
+is maintained as standalone LaTeX under `../latex-code/figures/`; its build
+commands are in the manuscript README, not a data-processing script.

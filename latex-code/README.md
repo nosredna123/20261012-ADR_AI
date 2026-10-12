@@ -1,8 +1,8 @@
-# Tasks 1.1--1.5 review draft
+# Tasks 1.1--1.6 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
-catalog, exhaustive applicability protocol, and RAG retrieval baseline.
+catalog, applicability protocol, RAG baseline, and ADR-generation protocol.
 It is not the full manuscript.
 Later sections, further bibliography
 entries, result macros, and final metadata
@@ -46,6 +46,20 @@ The LaTeX build needs no external datasets, API access, or data processing.
   [RAG values](data/rag-values.tex) and the
   [frozen-input audit](../processing/outputs/rag-protocol-audit.json) are produced
   offline; no retrieval models are run or overlap findings reported in Task 1.5.
+- The ADR subsection documents the Nygard-inspired prompt, synthetic example,
+  fixed Proposed status, structural validation, immutable provenance, included
+  pilot, and authorized technical retry. [ADR values](data/adr-values.tex) and
+  [audit](../processing/outputs/adr-protocol-audit.json) are generated offline.
+- [Pipeline figure source](figures/approach-overview.tex) and
+  [PDF](figures/approach-overview.pdf) show the expert-results stage as pending.
+  Rebuild the standalone figure after changing it, then rebuild the manuscript:
+
+  ```sh
+  cd figures
+  latexmk -pdf -interaction=nonstopmode -halt-on-error approach-overview.tex
+  cd ..
+  latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+  ```
 
 RQ3 is defined for the prepared questionnaire. Preliminary responses have been
 reported by the researcher but have not been supplied as a consolidated dataset

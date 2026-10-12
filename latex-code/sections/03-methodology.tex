@@ -367,3 +367,99 @@ reproduction is not established by these structural checks.
 % Overlap definition follows research_results/compile_results.py (not executed).
 % Offline audit: processing/outputs/rag-protocol-audit.json; generation/check:
 % processing/scripts/prepare_rag_protocol.py.
+
+\subsection{Architecture Decision Record Generation}
+\label{sec:adr-generation}
+
+Figure~\ref{fig:approach-overview} summarizes the pipeline and its separate
+retrieval comparison branch. ADR generation consumes the
+\StudyAdrCount{} unique $(\texttt{user\_story\_id},\texttt{pattern\_id})$
+pairs classified as \texttt{applicable}. It produces one proposed record per
+pair, not a jointly optimized architecture or an expert-approved decision.
+The accepted protocol pilot is included in the \StudyAdrCount{} records.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/approach-overview.pdf}
+  \caption{ADR4AI pipeline. The retrieval branch supplies candidate rankings
+  for comparison, not ADR-generation input. Dashed comparison arrows denote
+  final-Top-5 membership; the dashed expert stage has no consolidated results
+  in this draft.}
+  \label{fig:approach-overview}
+\end{figure*}
+
+\paragraph{Inputs and prompting}
+Each request supplies the system purpose, identified story and all criteria;
+the selected pattern's ID, name, motivation, solution, and consequences; and
+the prior applicability assessment's evidence references, corresponding
+requirement text, and rationale. RAG rankings and overlap flags are excluded.
+The prompt permits legitimate empty catalog descriptions and limits generation
+to one contextualized architectural decision. It prohibits inventing
+unsupported requirements, technologies, components, protocols, or implementation
+details, or merely repeating that the system will adopt the named pattern.
+System purpose is context, while the story and criteria supply requirements.
+The proposed decision must instantiate the pattern's architectural intent;
+consequences must follow from the supplied information rather than portray
+the decision as universally beneficial.
+
+The Nygard-inspired structure~\cite{nygard2011adr} comprises a short title,
+neutral context describing the relevant forces, an active-voice decision
+phrased as ``We will \ldots'', and relevant positive, negative, and neutral
+consequences. These are prompting rules, not automatically verified semantic
+properties. One synthetic recruitment/compliance example demonstrates the
+transformation using catalog Pattern~\texttt{007}, which is outside the
+selected ADR-generation pairs. The example is instructional, not an empirical
+case. The generated ADR must not mention the model, experiment, applicability
+process, or evidence identifiers. Source references and rationale remain in
+the surrounding research artifacts for traceability.
+
+\paragraph{Configuration and output validation}
+Generation uses \texttt{\AdrModel} with reasoning effort
+\texttt{\AdrReasoningEffort} and one independent Responses API request per
+ADR, without prior generated ADRs in its input. The client disables SDK
+retries and sets a 600-second timeout. No temperature or seed is supplied,
+and the model identifier is not a dated snapshot. Strict JSON-schema output,
+named \texttt{adr\_pilot} for both pilot and full execution, requires exactly
+four string-valued fields: title, context, decision, and consequences,
+disallowing additional properties. Local validation rejects incomplete
+responses, refusals, duplicate JSON keys, incorrect field sets, and empty or
+non-string fields. The application then adds the fixed status
+\texttt{Proposed}; the model neither selects nor outputs that status.
+Neither schema compliance nor a Proposed status establishes architectural
+adequacy or stakeholder acceptance.
+
+Each completed JSON artifact stores its pair identifiers, model and reasoning
+effort, response ID, \texttt{api\_calls=1}, source-file path and SHA-256,
+rendered-prompt SHA-256, strict-output validation flags, and the five ADR
+fields. The source hash identifies the pre-ADR selected-pair CSV bytes,
+now retained in the backup: the current selected-pair CSV additionally
+contains an ADR column and therefore has a different file hash.
+The offline compiler validates pair coverage, metadata, source/prompt hashes,
+and fields before joining outputs by pair IDs. ADR text is retained as
+generated, not normalized, translated, or architecturally corrected.
+
+\paragraph{Pilot, execution, and authorized retry}
+The research artifacts document approval of the
+\texttt{SYS01-US01}--Pattern~\texttt{001} pilot. Full execution reuses that
+record without regenerating it and processes only pending pairs sequentially.
+It validates existing outputs and refuses duplicate or overwritten completed
+records. Persistent attempt claims prevent silent retries after interruptions;
+failure records retain the error, and any failure stops execution.
+Publishing full-run artifacts uses exclusive atomic creation rather than
+replacement.
+
+For \texttt{SYS04-US03}--Pattern~\texttt{003}, the archived failure reports
+``Connection error.'' A second attempt explicitly records manual retry
+authorization and links to the original claim. Both claims and the failure
+remain execution history, separate from the one completed ADR for that pair.
+Because a connection failure may precede dispatch, this failed attempt cannot
+be equated with an additional completed model response. The pilot plus final
+outputs cover exactly \StudyAdrCount{} unique selected pairs; attempt
+metadata is not counted as additional ADRs. Pilot approval concerned the
+generation protocol, not the future experts' judgments. Consolidated expert
+assessment is still pending in this draft.
+
+% Task 1.6 provenance: adr_generation/{generate_adr,run_experiment}.py,
+% top-level outputs and attempts, research_results/README.md and immutable
+% pre-ADR backup. Offline verification: processing/scripts/prepare_adr_protocol.py.
+% Exact prompt/schema, hashes and retry links: processing/outputs/adr-protocol-audit.json.

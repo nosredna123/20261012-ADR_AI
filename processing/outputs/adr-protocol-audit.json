@@ -1,0 +1,682 @@
+{
+  "adr_count": 36,
+  "history": {
+    "authorized_retry_claim": "SYS04-US03_P003.retry-2.json",
+    "claim_count": 36,
+    "failed_request_dispatch_unknown": true,
+    "failure_count": 1,
+    "failure_record": "SYS04-US03_P003.failure.json",
+    "manual_retry_pair": [
+      "SYS04-US03",
+      "003"
+    ],
+    "original_claim": "SYS04-US03_P003.json"
+  },
+  "input_fields": [
+    "system_purpose",
+    "user_story_id",
+    "user_story",
+    "acceptance_criteria",
+    "pattern_id",
+    "pattern_name",
+    "pattern_motivation",
+    "pattern_solution",
+    "pattern_consequences",
+    "evidence_refs",
+    "evidence_text",
+    "rationale"
+  ],
+  "inputs": [
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/generate_adr.py",
+      "sha256": "79a191b4ce5625740441c573d6b2215d95cd50375b60fb83df2cddcd7fb5bc00"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/run_experiment.py",
+      "sha256": "1924b33c32ffbab93d50e0a9cfb3674dcb914bf15d2f98eecd5cd4eb3f01e704"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/compile_adr_results.py",
+      "sha256": "f916c6c6125d4d14f1605517accb9edff7e591b8fc1766f4b1e7bcc938ee8fe7"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/compile_results.py",
+      "sha256": "1ebe33a95a316144c9ddb2d93797d028cbd8ddfc77fb38f46e5ba67fd0eef61d"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/README.md",
+      "sha256": "3904190b7bffdd2abd557d23f176b1be42542fda0731b88895b44b407a7b3ba4"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/pattern_selection_results_before_adr.csv",
+      "sha256": "e73066488063763a57fb2c53d907ccf8549e14353764bf5ee2d6c3382e6a85ad"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/pattern_selection_results.csv",
+      "sha256": "bbfcea8c73fcb5d07c617985d4953f81902e04fc7d75eac977ee5963287104bb"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/adr_generation_results.csv",
+      "sha256": "50222b4ceab5760e0cc41b8f258bd71460ed19ce404d5aed04ba4d132b3880df"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS01-US01_P016.json",
+      "sha256": "0150858d74ade9659d877ed4c1702b79b59e6242adfa72cb696dac008fc67bab"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS01-US01_P060.json",
+      "sha256": "31c69f36a682e6fe319efc25351593d9d246c61e13d098dc381e6d0fb1437309"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS01-US02_P003.json",
+      "sha256": "a046f9a5e69368150fb903a78a62bfeff2ef09c032338dc357d1a47b34649326"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS01-US03_P001.json",
+      "sha256": "b5dbec661178e2d57b1a3472421591c1177cd2f017ff8a5446368d5f3e58b370"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS01-US03_P013.json",
+      "sha256": "7f19c164544eb9e441c2c80ed804a2cb6bda8ced7f23b4e01405dab486b6ec9d"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS01-US03_P060.json",
+      "sha256": "bf0536df9390de11110ad15bb65464e4d6906d7af16da5c61ed2a5a902036dcc"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US01_P002.json",
+      "sha256": "83f3f284e1cc3f64f4f8d0e285120f6f8645f419ea17880d348d2624de67dc38"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US01_P004.json",
+      "sha256": "453e0544f7ef07318655da0bd86ddc8e1e763dd3a103724144fa1199784b39de"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US01_P014.json",
+      "sha256": "1605d186e7fd8ac9884a28ec62468cfbdc3ea9369b8f5084fa8197ca19b18c98"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US01_P045.json",
+      "sha256": "076698c96df90421cf534c83929cecb50b6fbf47b46b4fdbec0a10d882ddb0c1"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US01_P050.json",
+      "sha256": "d6e009ebfd8bde2ce5cc9108acbaf0701fea2d14c046115905cfa44e7d73b12d"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US02_P001.json",
+      "sha256": "5b8a2d9fe433b5e15a86b8bde83008667a272b56302e39e163a22739baf8b3b8"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US02_P002.json",
+      "sha256": "f6375836938227c7b443bb24036c0ae1a1141820cdfc1366d5cf0b7cf81191ab"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US02_P060.json",
+      "sha256": "27c1049792ae3a6bbafe5509372c11a6e32bdf39f145bc030362ea7de6ce5745"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US02_P064.json",
+      "sha256": "9fcef8ca60b6ca018237a5c3807242bb347f4e81ddaf2d048d51503964f14bd9"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US02_P070.json",
+      "sha256": "3c0d204e76137f257350784013b296c154e9a087a5155d3e46437079ab7dec62"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US03_P002.json",
+      "sha256": "16732d3799f365a0379339866966de274eaf675fecef6d6d8fb284ea4048a73e"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS02-US03_P045.json",
+      "sha256": "63d482d66b9a55c76ac68c532491b4d12911703e942f3b37439fa5c786b044bd"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS03-US01_P001.json",
+      "sha256": "6cee64300b1466e75900c764201c2d96e62f3b52cc1657e9792a497bc4f431dc"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS03-US02_P001.json",
+      "sha256": "a8c4c8df744b23348735faf8072d62f67e45a27331dd4c4789aff1369e20f384"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS03-US02_P003.json",
+      "sha256": "27cc1523dd3bae704817defed586c341210e9892289ec2dba7a170be4d69cc39"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS03-US02_P014.json",
+      "sha256": "f58a74321359db5c7a69faaed00f413d18abffed1c9ffd721d5eadada5768ef7"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS03-US02_P044.json",
+      "sha256": "39bc1a8f4b180028360e32b95e5d0c01cf0c8f220a8238a1956c0f1ef8848d25"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS03-US02_P050.json",
+      "sha256": "6e0851a4104d750368acf335dfa5bff8e6b7e95ad8e472835b1ca3bb6f450467"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS03-US03_P003.json",
+      "sha256": "f71b038599e5c91bb12c0f28cd81336364591636b08646dbd9e6d0db8bd85ec7"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS03-US03_P050.json",
+      "sha256": "b2cd0f2665cf85c9b6600b3d2798c91d2cea964134bc11c97def663b9fdb1978"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS04-US02_P003.json",
+      "sha256": "ce85db85020c5e770d5d6aff0c6b19cbaf96864f8579a1c7c9fe75606ad8a2eb"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS04-US02_P028.json",
+      "sha256": "fded524596091cbc013d4ad59ae9f4bd7f88f935e783b52c45e5b3912ee8ef50"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS04-US03_P001.json",
+      "sha256": "257a5b833ccc0d95a1c0b64949e94b4680b206a8d2f93f1f139ea1e8e47d6a2a"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS04-US03_P003.failure.json",
+      "sha256": "1548393811e9cb3d8ebc5dd93e8acdf67b0ef512124ed9ad04186dad4bc30cd0"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS04-US03_P003.json",
+      "sha256": "f7ffcb48ffa737b39adafe83d2ab9964ac32182406862ec648d71bdfb7dda3d0"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS04-US03_P003.retry-2.json",
+      "sha256": "d53e5918d2877213cacd54f1e709ffc3d9eaa92522f878af0f9ad9836e6235a6"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS04-US03_P014.json",
+      "sha256": "6e39ce0aeb3fc3c0cd137310b9ddb709497be275e9cbe9fd53e78a711763b342"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS04-US03_P015.json",
+      "sha256": "fcd1eb06c1f9ec2bcae26268a41db115e1dbbedb568b51870b97b3e8488d4178"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS04-US03_P028.json",
+      "sha256": "b81a020d4f1550f59d4aa5fb5e8417b747ff77c0ab864c72104328c2cb5d6675"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS04-US03_P036.json",
+      "sha256": "ab2ae36452da9ca694ada9257e0862dc3067a4a82d283d5420c38fb016d5e436"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/adr_generation/outputs/attempts/SYS04-US03_P043.json",
+      "sha256": "8c2c9481f416cced3def7e59faf744536d577c0e34e80a3c72dae3237198ef3f"
+    }
+  ],
+  "model": "gpt-6-sol",
+  "pilot_included_in_final_count": true,
+  "pilot_pair": [
+    "SYS01-US01",
+    "001"
+  ],
+  "prompt_template": "You are generating one Architecture Decision Record (ADR) for an AI-based software system.\n\nThe ADR must follow the structure and writing principles proposed by Michael Nygard:\n\n- Title: a short noun phrase describing the architectural decision.\n- Context: describe the forces at play and the architectural problem that motivates the decision. Present the context neutrally.\n- Decision: describe the architectural response to those forces using complete sentences and active voice. State the decision as \"We will ...\".\n- Consequences: describe the resulting context after applying the decision, including relevant positive, negative, and neutral consequences.\n\nThe ADR status is fixed by the experimental protocol as \"Proposed\" and is not part of your output.\n\nYou are given:\n\n1. A REQUIREMENT CASE containing:\n   - System Purpose\n   - User Story\n   - Acceptance Criteria\n\n2. ONE SELECTED ARCHITECTURAL PATTERN containing:\n   - Pattern ID\n   - Name\n   - Motivation\n   - Solution\n   - Consequences\n\n3. APPLICABILITY EVIDENCE from a previous assessment containing:\n   - Evidence References\n   - Evidence Text\n   - Applicability Rationale\n\nYour task is to generate ONE architectural decision grounded in the selected pattern and contextualized to the requirement case.\n\nGROUNDING RULES\n\n- Base the ADR only on the information provided in the Requirement Case, Selected Architectural Pattern, and Applicability Evidence.\n- Use the System Purpose only as contextual information.\n- Treat the User Story and Acceptance Criteria as the source of requirement information.\n- Use the Applicability Evidence to understand why the selected pattern is relevant to this requirement case.\n- Do not introduce requirements, constraints, technologies, components, protocols, products, platforms, or system characteristics that are not supported by the provided information.\n- Do not invent implementation details merely to make the ADR more specific.\n- Do not propose additional architectural decisions beyond the decision grounded in the selected pattern.\n- Generate exactly one architectural decision.\n- The decision must instantiate the architectural intent of the selected pattern in the specific requirement context.\n- Do not merely state that the system will \"use\", \"adopt\", or \"implement\" the named pattern.\n- The Decision must explain what architectural structure or behavior will be established as a consequence of applying the pattern.\n- Do not mention the applicability assessment process, the language model, the experiment, the prompt, or the evidence identifiers in the ADR.\n- Do not include the Pattern ID or pattern name merely as justification for the decision.\n- Do not copy the generic pattern description as the architectural decision. Contextualize it to the requirement case.\n- Consequences must follow from the proposed decision and the provided information. Include relevant benefits and trade-offs when supported by the input, rather than presenting the decision as universally beneficial.\n- If the provided information does not support a specific implementation detail, keep the decision at the appropriate architectural level instead of inventing that detail.\n\nONE-SHOT EXAMPLE\n\nThe following synthetic example demonstrates the expected transformation from requirements and an architectural pattern into a contextualized ADR.\n\nThe requirement case is synthetic and is not part of the experimental dataset.\nThe architectural pattern is an actual pattern from the architectural pattern catalog, but it is not among the patterns evaluated in the ADR generation cases.\n\nREQUIREMENT CASE\n\nSystem Purpose:\nAn AI-based recruitment platform supports organizations in screening job applications and providing candidate recommendations.\n\nUser Story:\n[EX-US01] As a compliance officer, I want users to be able to verify that the AI-based candidate screening service satisfies the organization's responsible AI requirements so that its compliance claims can be independently checked.\n\nAcceptance Criteria:\n[EX-US01-AC01] The system must provide verifiable evidence of compliance with the defined responsible AI requirements.\n[EX-US01-AC02] Authorized users must be able to verify the validity of the compliance evidence.\n[EX-US01-AC03] The compliance evidence must remain maintainable when its validity or underlying requirements change.\n\nSELECTED ARCHITECTURAL PATTERN\n\nPattern ID:\n007\n\nName:\nEthics credentials\n\nMotivation:\nResponsible AI requirements are either omitted or mostly stated as high-level objectives, and not specified explicitly in a verifiable way as expected system outputs. Because of this, users may trust an AI system less, or even refrain from using it.\n\nSolution:\nProvide verifiable ethics credentials for your AI system or component. Using publicly accessible and trusted data infrastructure, the credentials can be verified as proof of ethical compliance. Additionally, users may also have to verify their credentials before getting access to the AI system.\n\nConsequences:\nTrust and system acceptance increases, and awareness of ethical issues is raised. However, a trusted public data infrastructure is needed, and credentials need to be maintained and potentially refreshed from time to time.\n\nAPPLICABILITY EVIDENCE\n\nEvidence References:\nEX-US01-AC01;EX-US01-AC02;EX-US01-AC03\n\nEvidence Text:\n[EX-US01-AC01] The system must provide verifiable evidence of compliance with the defined responsible AI requirements. | [EX-US01-AC02] Authorized users must be able to verify the validity of the compliance evidence. | [EX-US01-AC03] The compliance evidence must remain maintainable when its validity or underlying requirements change.\n\nApplicability Rationale:\nThe acceptance criteria explicitly require responsible AI compliance claims to be represented through verifiable evidence, allow their validity to be checked, and require that this evidence can be maintained as its validity or underlying requirements change. These needs correspond to the pattern's intent of representing ethical compliance through verifiable and maintainable credentials.\n\nEXPECTED ADR\n\nTitle:\nProvide Verifiable Responsible AI Credentials\n\nContext:\nThe candidate screening service is required to provide evidence that its responsible AI requirements are satisfied rather than relying only on compliance claims. Authorized users need to be able to verify this evidence, and the evidence must remain maintainable when its validity or the underlying requirements change. The architecture therefore needs a mechanism through which responsible AI compliance can be represented and independently verified.\n\nDecision:\nWe will represent evidence of responsible AI compliance as verifiable credentials associated with the AI-based screening service. These credentials will provide the evidence required for authorized users to verify compliance claims and will be maintained when their validity or the underlying responsible AI requirements change.\n\nConsequences:\nResponsible AI compliance claims will become explicitly verifiable, supporting transparency and increasing confidence in the screening service. The architecture will also introduce responsibility for maintaining the credentials and keeping them aligned with changes to their validity and the underlying requirements. Verification will additionally depend on the availability of a trusted mechanism through which the credentials can be validated.\n\nEND OF EXAMPLE\n\nNow generate the ADR for the following experimental case.\n\nREQUIREMENT CASE\n\nSystem Purpose:\n{system_purpose}\n\nUser Story:\n[{user_story_id}] {user_story}\n\nAcceptance Criteria:\n{acceptance_criteria}\n\nSELECTED ARCHITECTURAL PATTERN\n\nPattern ID:\n{pattern_id}\n\nName:\n{pattern_name}\n\nMotivation:\n{pattern_motivation}\n\nSolution:\n{pattern_solution}\n\nConsequences:\n{pattern_consequences}\n\nAPPLICABILITY EVIDENCE\n\nEvidence References:\n{evidence_refs}\n\nEvidence Text:\n{evidence_text}\n\nApplicability Rationale:\n{rationale}\n\nGenerate exactly one ADR.",
+  "prompt_template_sha256": "7c14235ed6355e47096b667d5e7aee5846f4bfcd83c66494d8c3651d18072afc",
+  "reasoning_effort": "high",
+  "records": [
+    {
+      "api_calls": 1,
+      "file": "SYS01-US01_P016.json",
+      "pair": [
+        "SYS01-US01",
+        "016"
+      ],
+      "prompt_sha256": "88a9145697ca6c6e595ea2d631970c388aee4e14d56553275e0c0dd7a1ddb7b9",
+      "response_id": "resp_0a440b47ee13293a006ac3090e840c87d1969d734c4f39f3dc",
+      "sha256": "a92c8aa9da5a60a6c14203ae307f58f2d3442c61bc2dde2d60061fa446482893",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS01-US01_P060.json",
+      "pair": [
+        "SYS01-US01",
+        "060"
+      ],
+      "prompt_sha256": "8b3230009fcf216f4afc7135a6157d61f6687c031c50f9af399ef65aa15bfc65",
+      "response_id": "resp_0b8cb5d42c8b1484006ac30914caa087d1ba2cced442b20d52",
+      "sha256": "f0357ad9b729c8de38a316e3ace6d162a3033037aba9f422ca9ae089d3bed37f",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS01-US02_P003.json",
+      "pair": [
+        "SYS01-US02",
+        "003"
+      ],
+      "prompt_sha256": "672fdd9ffe4c807fc1edbe9e184368fc403b9325cf6bed7e4516065697ddc01d",
+      "response_id": "resp_0f5291255a3f60ae006ac3091c9aa887d1a9f33bf202d2785b",
+      "sha256": "0504b8f40f60b346280a2d0810cc427021432c808b5d4e68b2686f141b9b839f",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS01-US03_P001.json",
+      "pair": [
+        "SYS01-US03",
+        "001"
+      ],
+      "prompt_sha256": "970d1dd2828a9f1f4c6fad9d6b9de9e5abe78d43096041d68226789ebfdc9c36",
+      "response_id": "resp_01522c82dab78ae8006ac30926ec1087d1a9e1a0f374eccc2b",
+      "sha256": "0d4e06424ccfd324288eb60ecc7639cc759bee271a3a705a108d81c492feb963",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS01-US03_P013.json",
+      "pair": [
+        "SYS01-US03",
+        "013"
+      ],
+      "prompt_sha256": "368a4e99a9402d560c3495e151fe31fbfa7ee507f3be188e39b4556751c1215b",
+      "response_id": "resp_0821a148fba5d983006ac30930c9d487d1ae156dc173361a0e",
+      "sha256": "3f031bd4eeaee940cd0504bf198a68ec4a22e7207b8feb6cc52bfcc9f7efffac",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS01-US03_P060.json",
+      "pair": [
+        "SYS01-US03",
+        "060"
+      ],
+      "prompt_sha256": "8ecab6acb4cbd46dc01feeb5add49bc3dcafce0d4be318c438b1402f3543dec3",
+      "response_id": "resp_03253484774e95cd006ac3093bb99087d18a4696477ff97706",
+      "sha256": "379acb5a4e37e4a7fafc39d8a35bef10fe4f1f55e5d9746f7204179889da37f3",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US01_P002.json",
+      "pair": [
+        "SYS02-US01",
+        "002"
+      ],
+      "prompt_sha256": "e77dd72aaf674921e07396fb374c1866f00a313d46b9ef6d9d759deff259c902",
+      "response_id": "resp_0c617baea381d6ee006ac309444eac87d1877053c9886148bc",
+      "sha256": "1cb6761ca56f44df026e448fb7d54d2fe520e3a3aa3ec7368741ab6f095ac088",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US01_P004.json",
+      "pair": [
+        "SYS02-US01",
+        "004"
+      ],
+      "prompt_sha256": "47adc7cdec003cb2b59e20137da0ed9934956a51d04afc113bebb1f1f6c1c02f",
+      "response_id": "resp_0df43f4204060c0c006ac3094c68a887d1a90ee083772e3e53",
+      "sha256": "558c52a1b37f9391ef574543def9e6745fb264674bd2757d2929baf656dfa8e8",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US01_P014.json",
+      "pair": [
+        "SYS02-US01",
+        "014"
+      ],
+      "prompt_sha256": "1120ffc55b37a0e351d325382d9486680975e373c46feb39f5dcd3fa68e264a9",
+      "response_id": "resp_05f7cb93846bab97006ac30956fa4087d19a0a480f99677801",
+      "sha256": "f18a01f499dbccecd06ab54aaa783dd79686c3d58322a9edeef3c236ad9f5e88",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US01_P045.json",
+      "pair": [
+        "SYS02-US01",
+        "045"
+      ],
+      "prompt_sha256": "7c00ddc962355e5d385fbae06c3bcdc4b79cf3c5da4ed5f32ba983a5fdc0d978",
+      "response_id": "resp_05de61ebedafeb6c006ac30960142487d19f132c25a22b0bf9",
+      "sha256": "cec51f764e46355ee9f459d5b0669ec3a3dd7891d87da87e28cccb27ae031f89",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US01_P050.json",
+      "pair": [
+        "SYS02-US01",
+        "050"
+      ],
+      "prompt_sha256": "43f6855c24c6c8d1e1f0507bfd6637222da08ec266005042906c6f8bba9039a3",
+      "response_id": "resp_02f7931a32030afa006ac30968d55887d1be1d0e8c6784914e",
+      "sha256": "18d0cb1a259663635ca604b924354d84192f368557a3ce710bb3e352942874f5",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US02_P001.json",
+      "pair": [
+        "SYS02-US02",
+        "001"
+      ],
+      "prompt_sha256": "000b82f1bc2d468fa5745720eeab2d6c073fef3eb830c9b27a4c345d977168fe",
+      "response_id": "resp_0bb0e1aff281cd02006ac30970641c87d1842c82a7434bd21a",
+      "sha256": "ab721f9b3a97a878256634464d1c9df34fd4fc2aaf0b2c017e8135214c3b2520",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US02_P002.json",
+      "pair": [
+        "SYS02-US02",
+        "002"
+      ],
+      "prompt_sha256": "3f2b9c0e5e94a17da5bcee4666c3ea1d1fe00b89e4a4772fbaaf3e53192d62d7",
+      "response_id": "resp_0f2a2b3d78f277d9006ac30979c26887d1ab3c7198dcba76ea",
+      "sha256": "00e946ca4b06e5de8adf43577cb8b304f2ee8bbc930662b57e51194f0585a496",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US02_P060.json",
+      "pair": [
+        "SYS02-US02",
+        "060"
+      ],
+      "prompt_sha256": "d63b10532fdc11b50a267a15a226c37cbf55dff9cc2f8a9e0871e4f97846d29f",
+      "response_id": "resp_07c7252b6f67b038006ac30982384487d19d62ca02c43d5980",
+      "sha256": "2f5a767f8d0091c9841364ed3eafec12b99708acb0dfbab991499a7a8a1ce4d1",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US02_P064.json",
+      "pair": [
+        "SYS02-US02",
+        "064"
+      ],
+      "prompt_sha256": "428624631efb1c649f38113d631bd83236d13e222db5680f14257ea69b0a7d4c",
+      "response_id": "resp_04b0573e16383ecc006ac3098ae04c87d1b7f6b8dc65566a73",
+      "sha256": "a9c2c426a01f1436ea6be68a770ce63389035ac5cbca37e1a345774ecf41adab",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US02_P070.json",
+      "pair": [
+        "SYS02-US02",
+        "070"
+      ],
+      "prompt_sha256": "4360f5d6cce74362071c04b87372b2eaa027e0dc9d077d52ebfd5d15a4fbdb8d",
+      "response_id": "resp_0b29ee4d31e868d0006ac30994bb7087d199865f8d6fdc04ee",
+      "sha256": "942c54fb5fb5ce021e30d7809b95a920ff7936a74f79deeea22e51753c8637ef",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US03_P002.json",
+      "pair": [
+        "SYS02-US03",
+        "002"
+      ],
+      "prompt_sha256": "ffa6c44dece4cbf9e11c9cc9e5ff43043d3529eb568972e8f563854f08a6546c",
+      "response_id": "resp_009b9c62116bb6d5006ac309a145b487d18d3c92375a15278b",
+      "sha256": "ccbcb5770fa68c9814f1fe35a2b06c269787e306ffbf441311411bc9db06e59b",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS02-US03_P045.json",
+      "pair": [
+        "SYS02-US03",
+        "045"
+      ],
+      "prompt_sha256": "fcfe07670e21779df5325d7076097b9e36d9e89ffcab486a0972961ce598fa37",
+      "response_id": "resp_0e21d0a010258fde006ac309a9116087d1a29940cb50400dc3",
+      "sha256": "c6be90c5f2e191d269e10719c73b8d2f407ae73d0cc9319d2747469626b47c23",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS03-US01_P001.json",
+      "pair": [
+        "SYS03-US01",
+        "001"
+      ],
+      "prompt_sha256": "955b2c9334c957934d16073b77ba8326e01c5b2bd61ccd4c91a97e787296e7fd",
+      "response_id": "resp_055adfe3ae691836006ac309b28d1087d18f9ceadd54cb7858",
+      "sha256": "a2064d9de047b4d2edfedfb1e727f017e225766ab5e5e7de215f8abb17102b69",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS03-US02_P001.json",
+      "pair": [
+        "SYS03-US02",
+        "001"
+      ],
+      "prompt_sha256": "4b9ed36b00f4a81a827c3737fc75893b4c5faa954e3f244937bdb01f6dc2cd07",
+      "response_id": "resp_07933107bfec018d006ac309b9f66487d1a3f51312ce9478f9",
+      "sha256": "087a68863b5d6d48dc3b60d5e5e4a5467b7267ab974966a8f5b161c1c6fb4542",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS03-US02_P003.json",
+      "pair": [
+        "SYS03-US02",
+        "003"
+      ],
+      "prompt_sha256": "866e7fee5a241e43fcbfc9662c6af41a15be4fc8a16d8ad0983d1a394a664d58",
+      "response_id": "resp_03c895af66e108b6006ac309c24f5087d1b055864a4ad227a7",
+      "sha256": "1410a5784339676652db58a52c53c5669c65bc8838a95848bd282ccd38ed701e",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS03-US02_P014.json",
+      "pair": [
+        "SYS03-US02",
+        "014"
+      ],
+      "prompt_sha256": "f4e2a92533d2f68f890fd62624824499c67781e61e7b42d06f93f5f75e22ed2f",
+      "response_id": "resp_083d173a756371ce006ac309c98f7087d1bada871be3d90131",
+      "sha256": "528b6c041fe0021e8b4007454f9e360f1bd92099228155d954f35f9049ee23b0",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS03-US02_P044.json",
+      "pair": [
+        "SYS03-US02",
+        "044"
+      ],
+      "prompt_sha256": "b5e94f986d2ea0521735c24e38888439b62feb3306886c170679d1ed28a12d4f",
+      "response_id": "resp_0c9b2c23953fcd41006ac309d2f18887d1a48554d3e90f33db",
+      "sha256": "8e21dd317770f98966147f4deee8ae131d89025c66456a8233d5e6efa6e0aff1",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS03-US02_P050.json",
+      "pair": [
+        "SYS03-US02",
+        "050"
+      ],
+      "prompt_sha256": "f843f230af80601f6f3889940b1d58bc7fc4bb4b39e09b74c9145bdf8e83247e",
+      "response_id": "resp_001d501872bde7ad006ac309dae06087d1b2e7611d24712882",
+      "sha256": "8e6b179810136b5ef4aff156d96e9094b9ba71b8bb5b9e92d4e54f661efddea6",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS03-US03_P003.json",
+      "pair": [
+        "SYS03-US03",
+        "003"
+      ],
+      "prompt_sha256": "dd87d06129bee3f9293fa5d03a54d3a77ea6ea1bd3ebfb119f416d8082c54b7a",
+      "response_id": "resp_06da5f90807f7d6c006ac309e3fa0087d181c4d0a15ba7ed58",
+      "sha256": "b01a20a9976e34356fd2e1344de33120d17ffabff017aa97d885d3ef4790023b",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS03-US03_P050.json",
+      "pair": [
+        "SYS03-US03",
+        "050"
+      ],
+      "prompt_sha256": "111160286bfa6a38154ba5aca2b1b0f90b2335ae37b105530465293dd1a52081",
+      "response_id": "resp_0c9771021028a833006ac309ed388c87d1bcc9a8f6bde6ac33",
+      "sha256": "c1592b8cc96edaac00ad18cf598492f98f0e3a9613869f4b329eac0e81d93186",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS04-US02_P003.json",
+      "pair": [
+        "SYS04-US02",
+        "003"
+      ],
+      "prompt_sha256": "54e68220ac4e5bd909fdcfe627750ac9e3371cfd394270f2c902c30c100e7503",
+      "response_id": "resp_09e59ec9d7de652f006ac309f43e4887d1bb3ac32f0e36bab8",
+      "sha256": "9c7723f37689fce8d00bec64440093ce2f80378d4bb88598001aa2356f1d3b43",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS04-US02_P028.json",
+      "pair": [
+        "SYS04-US02",
+        "028"
+      ],
+      "prompt_sha256": "cab55b07d7ac14c9f5c99d01a3396d7c43807c59dcf02dc57ccaf6433bf7eded",
+      "response_id": "resp_08b1a0e7a4144618006ac309fd98dc87d1ad8271b8468c3ba1",
+      "sha256": "57f97d82a583f0b2eed9e029627d9f2b15ae4ad95dd3949fe1aa6d1a39ac2ce1",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS04-US03_P001.json",
+      "pair": [
+        "SYS04-US03",
+        "001"
+      ],
+      "prompt_sha256": "5b5a5b34f15e61533fbae0638cebe743696949dac9d43066208e38bd363cea38",
+      "response_id": "resp_05150349bc8cf93d006ac30a06accc87d18b8c67b9db68f382",
+      "sha256": "632fb115d63d9905ce5a920afa9e54040e243c352899080b0d4c756969ad937b",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS04-US03_P003.json",
+      "pair": [
+        "SYS04-US03",
+        "003"
+      ],
+      "prompt_sha256": "7cb4f7efe498912a9ef1bd9544bf77d89c411ff6b1774cc724af38399bd8dab7",
+      "response_id": "resp_091063d49f6842bd006ac30cec3c3087d1babd35daa417b365",
+      "sha256": "224d3c5c7fff979b57474ccdb0eb03f5d7146c92920aa757e7837e166a40908d",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS04-US03_P014.json",
+      "pair": [
+        "SYS04-US03",
+        "014"
+      ],
+      "prompt_sha256": "2a784e3dde043f05844b73abd68ad0333e5f884b4e857ed519078c47a10ef913",
+      "response_id": "resp_05f53a4912dc9003006ac30cf668cc87d1986e9d538e8006a7",
+      "sha256": "b6dfda692ad49db902e8eec30cbf939d8382ea510a7a23b4d84d15afdda897a1",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS04-US03_P015.json",
+      "pair": [
+        "SYS04-US03",
+        "015"
+      ],
+      "prompt_sha256": "adc04f91aed778867a1be95375f35f208296a37d2f55ffdbd3c6399e0701f36e",
+      "response_id": "resp_06745be229fccaab006ac30d00ee4487d189b10e5c862f9bb3",
+      "sha256": "a60def51cb557c48785893182e253b4fb142d8f78a0cac09fe3af57295941a8c",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS04-US03_P028.json",
+      "pair": [
+        "SYS04-US03",
+        "028"
+      ],
+      "prompt_sha256": "6f7bca644a7e855f39ba521d707458515493f5faddbfb5d20c2e0fec889b0f70",
+      "response_id": "resp_096b4f9c45dbdb0f006ac30d0a93d087d1a83a7d6b24d49309",
+      "sha256": "3b3519562235446ddad51d8169854fe89fc2512b61e6fe645265a93138364873",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS04-US03_P036.json",
+      "pair": [
+        "SYS04-US03",
+        "036"
+      ],
+      "prompt_sha256": "b36b54c4e00d012c9f7d75b46b0416915d8153715cc6c2d924348457278ca9bb",
+      "response_id": "resp_0d50c4ba02dbb57a006ac30d14ba3487d1b2403c71852b26ac",
+      "sha256": "e18fe54f449e1ef0980a2408fe9568b17487aeb77f15faf71bddfda175b11735",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "SYS04-US03_P043.json",
+      "pair": [
+        "SYS04-US03",
+        "043"
+      ],
+      "prompt_sha256": "ed274c72ae539670da3699a08bf88708b448e06b644157a193d546e89f39563f",
+      "response_id": "resp_01544ef583a71c17006ac30d1ece0c87d1846a2d45ab33f746",
+      "sha256": "3ecc0ad8743a3ccd637799f0f67abdf95ecdae685b7386f52cd4ab10c34ae2cc",
+      "status": "Proposed"
+    },
+    {
+      "api_calls": 1,
+      "file": "pilot_SYS01-US01_P001.json",
+      "pair": [
+        "SYS01-US01",
+        "001"
+      ],
+      "prompt_sha256": "c7c79c3c28f660ef344de84893bc1c569075ddf82746e858466315c82b1eed1f",
+      "response_id": "resp_08587682ec64f283006ac304cbcd8887d29493de9450781994",
+      "sha256": "6167a069b4b8c70e784a91b31138d9679e07123e08395527b25d28a831b420e2",
+      "status": "Proposed"
+    }
+  ],
+  "schema": {
+    "additionalProperties": false,
+    "properties": {
+      "consequences": {
+        "type": "string"
+      },
+      "context": {
+        "type": "string"
+      },
+      "decision": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "title",
+      "context",
+      "decision",
+      "consequences"
+    ],
+    "type": "object"
+  },
+  "source_hash_note": "Artifacts refer to the original pre-ADR bytes now preserved in the backup; current pattern_selection_results.csv has an added ADR column.",
+  "source_sha256_used_at_generation": "e73066488063763a57fb2c53d907ccf8549e14353764bf5ee2d6c3382e6a85ad",
+  "task": "1.6",
+  "validation_scope": "Pair coverage, exact compiler outputs, structural validation, source/prompt hashes and execution metadata; not architectural adequacy."
+}
