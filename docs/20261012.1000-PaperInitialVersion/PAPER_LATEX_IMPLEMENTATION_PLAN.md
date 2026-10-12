@@ -1355,6 +1355,28 @@ The user approved the partial deliverable and authorized its separate commit.
 
 ### Task 7.3 — State research questions and contributions
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — approved with explicit expert-evidence contribution TBD, compiled and visually checked; commit authorized (2026-10-12).**
+
+The user authorized partial drafting with the current data.
+`latex-code/sections/01-introduction.tex` repeats the three RQs exactly as in the
+Methodology table and states the supported contributions: the traceable
+requirement-to-pattern-to-ADR approach, bounded 840-pair computational study
+and ADR generation audit, and frozen retrieval/reranking overlap comparison.
+The text preserves the distinction between output characterization and correctness.
+An explicit visible TBD marks the expected expert-evidence contribution as
+pending Phase 3 execution and consolidation; RQ3 is a question, not a claim of
+completed expert evaluation. Existing Introduction expert-review TBDs remain.
+No publicly available reproducibility package is claimed as a contribution:
+anonymization, release permissions, and availability at submission are not
+established. Task 7.3 remains partial until expert evidence is reconciled;
+Task 7.4 and Phase 7 remain unfinished. All three RQ wordings were checked
+against the Methodology source and match exactly. The 18-page PDF compiles
+without undefined citations/references or overfull boxes. The unresolved-expert
+warning and underfull-box notices remain. Pages 2--3 were rendered and visually
+checked, including the RQs, contributions, and visible expert-evidence TBD.
+The user approved the partial deliverable and authorized its separate commit
+with a task-identifying commit-message prefix.
+
 **Work**
 
 - Present final RQs exactly as in Methodology.

@@ -77,3 +77,35 @@ perceived usefulness, and pattern applicability.
 \textbf{TBD---Expert assessment execution, consolidated responses, and resulting
 validation evidence pending Phase~3; this stage is planned, not reported as
 completed.}
+
+We investigate three research questions, using the wording and scope defined in
+Section~\ref{sec:research-questions} and Table~\ref{tab:research-questions}:
+\begin{itemize}
+    \item \textbf{RQ1:}
+How does the LLM classify architectural-pattern applicability across the requirement cases, and which patterns does it identify as applicable?
+    \item \textbf{RQ2:}
+To what extent do the patterns classified as applicable by the LLM overlap with the frozen RAG baseline's final Top-5 candidates for the same requirement cases?
+    \item \textbf{RQ3:}
+How do experts assess the applicability of the LLM-selected patterns and the adequacy, grounding, consequences, and perceived usefulness of the corresponding generated ADRs?
+\end{itemize}
+RQ1 characterizes model outputs rather than their correctness, and RQ2 measures
+same-case candidate overlap rather than applicability accuracy. RQ3 concerns
+expert judgments of selected pairs and their ADRs, not missed-pattern recall or
+deployment success; its evidence remains pending.
+
+The contributions supported by the current computational artifacts are:
+(i) a traceable approach linking requirement-grounded AI-pattern applicability
+assessment to Proposed ADR drafts, preserving the selected pair and supporting
+evidence; (ii) a bounded empirical characterization of LLM classifications over
+\StudyAssessmentCount{} story--pattern pairs from \StudyStoryCount{} user
+stories in \StudySystemCount{} industrial systems and a
+\StudyPatternCount{}-pattern catalog, with a corresponding audit of ADR
+generation completeness and provenance; and (iii) a descriptive comparison of
+LLM-selected patterns with the frozen retrieval/reranking baseline's final
+Top-\RagFinalCount{} candidates for the same stories. These contributions do not
+establish architectural correctness or general effectiveness.
+\textbf{TBD---Expected expert-evidence contribution: item-specific assessments
+of selected-pattern applicability and ADR adequacy, grounding, consequences,
+and perceived usefulness, pending Phase~3 execution and consolidation.}
+This expected contribution will be revised to reflect the observed evidence;
+it is not a completed contribution in the current data version.
