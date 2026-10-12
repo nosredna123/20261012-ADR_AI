@@ -542,6 +542,37 @@ reordering tasks under the sequential execution directives.
 
 ### Task 3.2 — Validate respondent eligibility and sample composition
 
+**Status: POSTPONED — depends on the unavailable expert-response dataset
+and completion of Task 3.1 (checked 2026-10-12).**
+
+The current artifact version provides prepared cases and an approved analysis
+protocol, not a frozen raw/clean response dataset or verified respondent
+profiles and administration records. Task 3.1 remains postponed. Consequently,
+eligibility, experience summaries, respondent distribution across systems and
+raw-row disposition reconciliation cannot be established from the current
+data. Prepared route sizes are case counts, not participant counts, and
+simulation output is not human evidence.
+
+**Resume conditions**
+
+- Complete and approve Task 3.1, with protected raw-to-clean traceability and
+  the verified administered instrument/route mapping.
+- Provide authorized access to respondent profiles and the restricted
+  confirmations required by the Task 1.8 protocol: participation
+  authorization/consent, selected-system familiarity and route compatibility.
+- Apply the approved rules without inventing experience or knowledge cutoffs,
+  inferring consent from completion, or excluding unfavorable ratings.
+  Reconcile every raw row as included, excluded or held pending, retaining
+  reasons and unresolved eligibility/duplicate/route flags.
+- Distinguish route submissions from confirmed distinct evaluators; retain
+  unknown profile values explicitly and perform disclosure review before
+  reporting system/profile categories or potentially identifying small cells.
+
+No eligibility classification, sample statistic or final demographic table
+is produced while postponed. The Task 2.5 demographic shell and all unresolved
+human-result markers remain unchanged. This status does not authorize starting
+Task 3.3 or bypassing the sequential review gates.
+
 **Work**
 
 - Apply predeclared inclusion/exclusion rules.
