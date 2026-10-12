@@ -7,9 +7,12 @@ original `load_requirement_cases` validator without modifying the initial
 artifacts. It additionally checks generic system/story mappings and criterion
 ownership, aggregates counts by system, and writes:
 
-- `../latex-code/data/study-values.tex`: the four sample-count macros;
 - `../latex-code/tables/dataset-summary.tex`: an anonymized count table;
 - `outputs/dataset-summary-audit.json`: totals and input/validator SHA-256 values.
+
+Since Task 2.1, core count macros are owned exclusively by
+[prepare_study_values.py](scripts/prepare_study_values.py), documented below.
+The sample audit/table generator no longer overwrites that central file.
 
 Inputs are the original requirement CSV and validator under
 `../docs/20261012.0933-InitialArtifacts/adr4ai_app/`. No translated requirement
@@ -26,7 +29,7 @@ python -B scripts/prepare_dataset_summary.py --check
 python -B -m unittest discover -s tests -p 'test_dataset_summary.py'
 ```
 
-Generation replaces only the three outputs listed above after all input checks
+Generation replaces only the two outputs listed above after all input checks
 pass. `--check` does not write files and fails on absent or stale outputs.
 The output is deterministic for unchanged inputs and validator.
 
@@ -47,6 +50,8 @@ Inputs are read-only records under
 `../docs/20261012.0933-InitialArtifacts/adr4ai_app/catalogs/patterns/` and the
 original validator. No model calls or input normalization are performed.
 Generation and freshness checks are offline and use only the standard library.
+The pattern-count macro moved to the central study-value generator in Task 2.1;
+the catalog macro file retains only its field-inventory count.
 
 From this directory:
 
@@ -420,3 +425,89 @@ current repository anonymous, invent an open-data commitment, or release raw
 responses to satisfy reproducibility. Stored-output/ compiler reproducibility
 must be distinguished from model reruns: model revisions, unpinned dependencies,
 approximate indexing and hardware differences limit exact regeneration.
+
+## Task 2.1: centralized computational study values
+
+On 2026-10-12 the researcher approved the centralized count definitions,
+reconciliation audit, processing changes and verified manuscript PDF.
+
+[prepare_study_values.py](scripts/prepare_study_values.py) is the sole owner of
+the core-count definitions in
+[study-values.tex](../latex-code/data/study-values.tex). It reuses the offline
+requirement/catalog/applicability/RAG/ADR validators and the original frozen
+selection compiler/exporter; it does not invoke their write/experiment entry
+points. No model, retrieval index, Google service, or expert-response dataset
+is executed or opened.
+
+It verifies exact column order and reconstructed row equality for both
+assessment exports, the preserved pre-ADR positive CSV, and the 12-story
+summary (including the zero-positive story). The ADR validator also verifies
+the final ADR CSV and current ADR-enriched positive CSV against the frozen
+compiler, including their one-to-one positive-pair mapping and approved pilot.
+The richer RAG validator verifies final Top-5 IDs/names, subset membership and
+story coverage. Positive-set overlap is then recomputed by the original
+selection compiler from the frozen baseline, never from a reproduced ranking.
+
+It writes only:
+
+- `../latex-code/data/study-values.tex`: stable macros and inline
+  value/source/computation audit comments;
+- `outputs/study-values-audit.json`: the same values, reconciliation checks,
+  zero/positive story IDs, and source/validator SHA-256 fingerprints.
+
+### Value-to-source audit
+
+Source paths here are relative to the initial `adr4ai_app/` directory.
+The numbers are verification targets for this frozen sample, not population
+estimates or API-attempt counts.
+
+| Macro | Verified value | Source and computation |
+|---|---:|---|
+| `StudySystemCount` | 4 | `data/user_histories_orig.csv`: distinct validated systems |
+| `StudyStoryCount` | 12 | Same CSV: distinct validated stories |
+| `StudyStoriesPerSystem` | 3 | Same CSV: equal story count in each system |
+| `StudyCriterionCount` | 35 | Same CSV: validated acceptance-criterion rows |
+| `StudyPatternCount` | 70 | `catalogs/patterns/`: unique validated catalog IDs |
+| `StudyAssessmentCount` | 840 | Official `assessments.jsonl`: complete unique story-pattern pairs; reconciled with all-pair CSV |
+| `StudyApplicableCount` | 36 | Same JSONL: applicable labels, reconciled with positive exports and compiled CSV |
+| `StudyNotApplicableCount` | 31 | Same JSONL: not-applicable labels |
+| `StudyInsufficientInformationCount` | 773 | Same JSONL: insufficient-information labels |
+| `StudyPositiveStoryCount` | 11 | `research_results/pattern_selection_summary.csv`: stories with positive count |
+| `StudyAdrCount` | 36 | `experiments/adr_generation/outputs/`: unique completed final ADRs; exact compiled/enriched CSV equality |
+| `StudyRagOverlapCount` | 5 | Frozen `experiments/rag/outputs/rag_baseline.csv` joined with positive pairs by story and pattern ID: final Top-5 membership |
+| `StudyRagOutsideCount` | 31 | Positive count minus overlap; not false negatives |
+| `StudyRagOverlapStoryCount` | 5 | Verified summary: stories containing a positive Top-5 match |
+
+Core macro names already used by Methodology remain stable, but catalog,
+applicability and ADR macro files no longer redefine their counts.
+They retain configuration or field-inventory macros. Expert-preparation
+macros describe a distinct prepared instrument, not actual respondents, and
+remain with their preparation validator. Equal numeric values for different
+quantities must not be interpreted as identical concepts.
+
+From this directory (Python 3.10+, standard library only):
+
+```sh
+python -B scripts/prepare_study_values.py
+python -B scripts/prepare_study_values.py --check
+python -B -m unittest discover -s tests -p 'test_*.py'
+```
+
+Generation validates every input before writing. `--check` rejects stale or
+missing outputs and never writes. Tests cover exact totals/reconciliation,
+determinism, source metadata, leading-zero IDs, schema/value/row drift,
+zero-positive summary preservation, missing inputs, read-only freshness checks,
+and unique ownership of core macros.
+
+After changing count macros, rebuild the standalone pipeline figure **before**
+the manuscript, using the commands in the LaTeX README. The figure now imports
+the same central values instead of repeating core counts manually.
+The bounded-sample table uses the central totals; individual system rows are
+generated from source, not hand-maintained.
+
+These checks establish structural consistency and computational provenance,
+not expert-confirmed accuracy. Task 2.1 creates no Results subsection/table:
+distribution, overlap and generation findings will be written in Tasks 2.2--2.4.
+Original empirical artifacts are never overwritten. The audit contains source
+links/hashes and is not automatically cleared for anonymous/public release;
+Task 1.9 disclosure-review restrictions still apply.

@@ -2,6 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
 \usetikzlibrary{arrows.meta,positioning}
+\input{../data/study-values}
 \begin{document}
 \begin{tikzpicture}[
   font=\sffamily\small,
@@ -10,10 +11,10 @@
   flow/.style={-{Stealth[length=2mm]},thick},
   compare/.style={flow,dashed}
 ]
-\node[stage] (requirements) {Requirements\\12 stories, 4 systems};
-\node[stage,right=4mm of requirements] (assessment) {Exhaustive LLM\\assessment\\$12 \times 70$ pairs\\840 assessments};
-\node[stage,right=4mm of assessment] (selected) {LLM-positive pairs\\36 selected pairs};
-\node[stage,right=4mm of selected] (adrs) {ADR generation\\36 ADRs\\Status: Proposed};
+\node[stage] (requirements) {Requirements\\\StudyStoryCount{} stories, \StudySystemCount{} systems};
+\node[stage,right=4mm of requirements] (assessment) {Exhaustive LLM\\assessment\\$\StudyStoryCount \times \StudyPatternCount$ pairs\\\StudyAssessmentCount{} assessments};
+\node[stage,right=4mm of assessment] (selected) {LLM-positive pairs\\\StudyApplicableCount{} selected pairs};
+\node[stage,right=4mm of selected] (adrs) {ADR generation\\\StudyAdrCount{} ADRs\\Status: Proposed};
 \node[stage,dashed,right=4mm of adrs] (experts) {Expert\\assessment\\Consolidated\\results pending};
 \draw[flow] (requirements) -- (assessment);
 \draw[flow] (assessment) -- (selected);

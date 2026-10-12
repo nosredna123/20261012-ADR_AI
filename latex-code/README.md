@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9 review draft
+# Tasks 1.1--1.9 and 2.1 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -34,7 +34,8 @@ The LaTeX build needs no external datasets, API access, or data processing.
   Regeneration and verification are documented in
   [the processing README](../processing/README.md); the LaTeX build itself
   does not need the research data or processing scripts.
-- The catalog subsection uses [verified catalog values](data/catalog-values.tex)
+- The catalog subsection uses [central study counts](data/study-values.tex)
+  and [catalog field-inventory values](data/catalog-values.tex)
   and [source citations](bibliography/references.bib). Catalog and public-source
   verification commands are documented in the processing README.
 - The applicability subsection describes the strict response schema, grounding
@@ -92,3 +93,15 @@ irreversibly anonymous. The
 [governance and release inputs](../processing/README.md#task-19-governance-and-artifact-availability-inputs)
 distinguish verified evidence from proposed controls and supply Phase 10
 without creating a premature availability statement or public URL.
+
+Task 2.1 centralizes the required computational counts in
+[study-values.tex](data/study-values.tex), with a value/source/computation
+audit in its comments and the
+[processing audit](../processing/outputs/study-values-audit.json).
+The dataset table and Methodology retain their existing count-macro names;
+the standalone pipeline figure now imports the same file. Rebuild the
+figure before the manuscript whenever these counts change.
+Configuration and expert-preparation macros remain separate.
+JSONL, assessment exports, compiled positive/summary CSVs, final ADRs and
+ADR-enriched CSVs are reconciled offline; no external rerun or expert responses
+are used. Computational Results prose/tables remain for Tasks 2.2--2.4.

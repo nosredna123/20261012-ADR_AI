@@ -16,7 +16,7 @@ SPEC.loader.exec_module(summary)
 
 
 class DatasetSummaryTests(unittest.TestCase):
-    def test_totals_and_generated_macros(self):
+    def test_totals_and_generated_table(self):
         outputs = summary.render_outputs()
         audit = json.loads(outputs[
             summary.PROJECT / "processing/outputs/dataset-summary-audit.json"
@@ -28,9 +28,10 @@ class DatasetSummaryTests(unittest.TestCase):
         self.assertEqual(sum(g["criteria"] for g in audit["systems"].values()), 35)
         self.assertTrue(all(g["stories"] == 3 for g in audit["systems"].values()))
         self.assertIn(
-            r"\newcommand{\StudyCriterionCount}{35}",
-            outputs[summary.LATEX / "data/study-values.tex"],
+            r"Total & \StudyStoryCount{} & \StudyCriterionCount{}",
+            outputs[summary.LATEX / "tables/dataset-summary.tex"],
         )
+        self.assertNotIn(summary.LATEX / "data/study-values.tex", outputs)
         self.assertEqual(summary.render_outputs(), outputs)
 
     def test_missing_input_is_rejected(self):
