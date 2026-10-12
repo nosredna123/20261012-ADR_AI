@@ -175,3 +175,107 @@ is assessed separately.
 % processing/outputs/catalog-upstream-verification.json (project-root paths).
 % Bibliographic metadata checked on 2026-10-12 against Crossref's DOI record
 % 10.1109/CAIN58948.2023.00035 and the pinned SWE4AI/ai-patterns repository.
+
+\subsection{Exhaustive Pattern-Applicability Assessment}
+\label{sec:applicability-experiment}
+
+The experiment crosses all \StudyStoryCount{} requirement cases with all
+\StudyPatternCount{} catalog patterns, yielding
+$\StudyStoryCount \times \StudyPatternCount = \StudyAssessmentCount$ planned
+pairwise assessments. Each request contains one complete requirement case and
+one pattern, with no prior assessment or conversation history supplied. This
+exhaustive design does not retrieve or prefilter candidates. Separate requests
+do not imply statistical independence: assessments share stories, systems,
+catalog entries, and a model. The resulting classifications are model
+predictions, not expert-provided ground-truth labels.
+
+\paragraph{Model and structured response}
+The recorded model identifier is \texttt{\ApplicabilityModel}, with reasoning
+effort \texttt{\ApplicabilityReasoningEffort}. The implementation uses the
+Responses API with strict JSON-schema output named
+\texttt{pattern\_assessment}. The schema requires exactly three fields:
+\texttt{classification} (one of the three labels below),
+\texttt{requirement\_refs} (an array of strings), and \texttt{rationale}
+(a string); additional properties are disallowed. Each stored result also
+includes the story ID, pattern ID, model identifier, and reasoning effort.
+No temperature or seed is set in the request, and the recorded model identifier
+does not pin a dated model snapshot.
+
+\paragraph{Decision and grounding rules}
+The instructions distinguish:
+\begin{itemize}
+  \item \texttt{applicable}: the story and/or its acceptance criteria provide
+  positive evidence of a need, problem, constraint, or quality concern addressed
+  by the pattern.
+  \item \texttt{not\_applicable}: those requirements provide evidence that the
+  pattern does not fit the stated need, problem, constraint, or context.
+  \item \texttt{insufficient\_information}: the story and criteria do not provide
+  enough evidence to establish either applicability or non-applicability.
+\end{itemize}
+System purpose supplies context but cannot alone justify applicability.
+The prompt prohibits assuming unstated requirements, technologies, constraints,
+or system characteristics. Absence of contradiction, possible usefulness, or
+the possibility of implementing, testing, or improving a requirement using a
+pattern is not sufficient positive evidence. Assessment concerns underlying
+architectural intent rather than literal terminology. An applicable response
+must cite at least one identifier belonging to the current story or one of its
+criteria, and briefly explain the evidence--pattern relationship; it must not
+propose an architecture, implementation, technology, or new requirement.
+These are prompting and reference-validation constraints, not proof that a
+model's rationale is semantically correct.
+
+\paragraph{Execution, retries, and validation}
+Execution is sequential, in CSV story order and ascending pattern-ID order.
+SDK retries are disabled. The runner permits at most
+\ApplicabilityMaxAttempts{} attempts per pair, revisiting unresolved pairs
+in up to \ApplicabilityMaxAttempts{} ordered passes rather than immediately
+retrying each failed request. Before a request, it atomically persists an
+attempt reservation, so interrupted requests consume the attempt budget.
+A request failure updates that entry with its error type and a whitespace-
+normalized message, truncated to 300 characters with the configured API key
+redacted. Successful validation removes the pair from this unresolved-failure
+state.
+
+The response must have completed, contain no refusal, and provide parseable
+structured output. Local validation checks the exact fields, label, reference
+array and identifier membership, a nonempty reference array for
+\texttt{applicable}, and a string-valued rationale. These checks do not require
+a nonempty rationale string or test the factual entailment of cited text.
+Only validated results are appended to the official log, flushed, and synced
+to disk; storage failures stop execution rather than risk duplicate writes.
+A nonblocking file lock prevents concurrent official runners.
+
+On resume, the runner validates existing JSONL records, model configuration,
+pair uniqueness, and failure-state attempt counts. Malformed records,
+unknown identifiers, and interrupted writes lacking a final newline stop
+the run rather than being repaired or discarded. Completed pairs are skipped;
+unresolved attempt counts are retained, and exhausted pairs are not retried.
+The final on-disk check requires exactly all \StudyAssessmentCount{} expected
+pairs and \StudyPatternCount{} records per story before exporting
+story-specific applicable-pattern selections.
+
+\paragraph{Official dataset and replication artifact}
+The official dataset is the top-level \texttt{assessments.jsonl} under the
+pattern-selection experiment's \texttt{outputs} directory, accompanied by
+\texttt{failures.jsonl}. Separate \path{pilot_SYS01-US01} directories
+(including the \texttt{\_v1} and \texttt{\_v2} variants) and
+\path{test_assessment.json} and \path{test_assessment_v2.json} are excluded,
+not merged with official records. An offline audit verifies complete official
+coverage and records input/source hashes, the exact instructions, JSON schema,
+and input template. The template presents system purpose, identified story and
+criteria, followed by the five pattern fields in Section~\ref{sec:pattern-catalog};
+the full instructions remain in the artifact rather than this space-bounded
+description.
+
+The frozen log contains \StudyAssessmentCount{} validated pair outcomes and
+an empty final unresolved-failure file. This establishes completion, not that
+no retries occurred: successful records omit attempt counts, and successful
+retries remove failure-state entries. Thus, \StudyAssessmentCount{} describes
+the planned first-pass requests and retained outcomes, not an independently
+verified total number of API attempts. We do not claim exact stochastic
+reproduction from the stored configuration.
+
+% Task 1.4 provenance: original pattern_selection/{assess_pattern,
+% run_experiment,prepare_data,run_pilot}.py and top-level outputs/*.jsonl.
+% Offline audit/prompt/schema: processing/outputs/applicability-protocol-audit.json.
+% Reproduction/check: processing/scripts/prepare_applicability_protocol.py.

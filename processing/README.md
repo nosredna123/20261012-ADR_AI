@@ -82,3 +82,51 @@ exact-byte identity with that source snapshot, not pattern effectiveness.
 - Local numeric resource IDs are retained in the audit, not converted into
   guessed citations. No claim is made that every individual pattern's original
   source or maturity has been independently evaluated.
+
+## Task 1.4: exhaustive applicability protocol
+
+[prepare_applicability_protocol.py](scripts/prepare_applicability_protocol.py)
+loads the original input, assessment, and runner modules without executing
+their entry points. It uses their validators to check all 12 x 70 official
+pairs, response fields, model metadata, references, uniqueness, JSONL
+termination, and failure state. It makes **no API or network calls**, requires
+no API key or OpenAI SDK installation, and writes:
+
+- `outputs/applicability-protocol-audit.json`: input/source/catalog SHA-256
+  hashes, official coverage by story, configuration, exact instructions and
+  schema, a placeholder-only input template, and explicit pilot exclusions;
+- `../latex-code/data/applicability-values.tex`: assessment-count and model/
+  reasoning/attempt-budget macros.
+
+Inputs are the original pattern-selection scripts, requirement CSV, catalog,
+and **top-level** `outputs/assessments.jsonl` and `outputs/failures.jsonl`.
+No pilot/test record contributes to coverage; no classified distribution or
+later-task result table is generated here. Requirement text and model
+rationales are not copied into the audit. The full prompt is the original
+`INSTRUCTIONS` string plus `build_prompt` input template; the authoritative
+source files and their hashes are recorded. Inspect the originals for the
+execution/SDK-retry mechanics; the audit does not infer those from outcome
+counts. Modules' temporary sibling-import registrations are restored afterward.
+
+From this directory:
+
+```sh
+python -B scripts/prepare_applicability_protocol.py
+python -B scripts/prepare_applicability_protocol.py --check
+python -B -m unittest discover -s tests -p 'test_*.py'
+```
+
+Generation validates all inputs before writing either output. `--check` is
+read-only and fails on absent/stale artifacts. Frozen inputs remain untouched.
+Tests use temporary, explicitly synthetic altered logs and a mock API client;
+they do not execute the experiment or contact a model.
+
+The final empty failure log contains no unresolved state. It is **not** a
+complete attempt history: successful records omit attempt counts and successful
+requests remove their failure entries. The audit therefore records total API
+attempts as unknown (`null`), rather than assuming 840 issued requests or no
+retries. Per-pair requests contain no previous assessment history, but outcomes
+are not statistically independent because they share requirements and a model.
+
+No separate workflow figure is added in Task 1.4: prose suffices for the
+single-pair sequential workflow without introducing a figure dependency.
