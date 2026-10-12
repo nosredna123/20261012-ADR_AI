@@ -1225,6 +1225,20 @@ The deliverable has passed compilation and visual inspection; commit permission 
 
 ### Task 6.3 — Synthesize LLM-based ADR and design-rationale research
 
+**Status: COMPLETED AND REVIEWED — comparative synthesis of ADR generation and
+design rationale research with verified citations (2026-10-12).**
+
+The subsection in `latex-code/sections/02-background-related-work.tex` compares
+prior empirical studies on LLM-based decision and rationale generation:
+Decision-field generation from pre-written ADR context paragraphs (Dhar et al., ICSA 2024)
+and design rationale argument recovery from developer forum discussions (Zhou et al., TOSEM 2026).
+It contrasts input granularities, target artifact completeness (isolated field vs. complete
+multi-field Nygard ADRs), evaluation methodologies, and risks of unsupported trade-off reasoning.
+It establishes the distinctive characteristics of ADR4AI's requirement-grounded,
+pattern-conditioned, and traceable decision synthesis pipeline.
+Verified BibTeX entries are added to `latex-code/bibliography/references.bib`.
+The deliverable has passed compilation and visual inspection; commit permission remains separate.
+
 **Work**
 
 - Compare prior ADR-generation and design-rationale studies with this requirement-and-pattern-grounded workflow.

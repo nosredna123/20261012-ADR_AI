@@ -106,3 +106,58 @@ evaluation that enforces strict textual grounding rules, compares generative
 reasoning against dense semantic retrieval baselines, and generates verifiable,
 structured ADRs for professional evaluation.
 
+\subsection{LLM-Based ADR and Design Rationale Generation}
+\label{sec:related-work-adr}
+
+Documenting architecture decisions through structured records (ADRs) and
+capturing the underlying design rationale (DR) are central challenges in
+architectural knowledge management. Because manual documentation is often
+neglected in fast-paced software development, recent studies have investigated
+whether LLMs can automate or support decision authoring.
+
+Dhar et al.~\cite{dhar2024generating} conducted an exploratory empirical study
+evaluating the feasibility of generating architectural decisions using LLMs.
+Focusing on existing open-source ADR corpora, they formulated the task as
+generating the \emph{Decision} section of an ADR conditioned on a human-authored
+\emph{Context} section. They evaluated zero-shot, few-shot, and fine-tuning
+approaches across models including GPT-4, GPT-3.5, and Flan-T5, using automated
+lexical and semantic similarity metrics (BLEU, ROUGE, BERTScore) against
+human-written reference decisions. Their results showed that advanced models like
+GPT-4 can generate plausible decisions in zero-shot settings, but highlighted
+key limitations: lexical overlap metrics correlate poorly with architectural
+soundness, and the generation pipeline presupposes that an architect has
+already synthesized and documented an explicit decision context.
+
+Focusing on the argumentative reasoning behind architectural choices,
+Zhou et al.~\cite{zhou2026rationale} investigated LLM generation of design
+rationale across 100 architecture-related problems mined from Stack Overflow
+and GitHub issues and discussions. Evaluating five LLMs across zero-shot,
+Chain-of-Thought (CoT), and LLM-based agent strategies against human-expert
+ground truth, they observed moderate recall (0.63--0.72) but low precision
+(0.27--0.28) in generating trade-off arguments. While a substantial majority of
+generated arguments not originally mentioned by experts were deemed helpful,
+between 1.6\% and 3.2\% were potentially misleading or incorrect, underscoring
+the risk of hallucinated trade-offs in automated rationale recovery.
+
+These investigations provide important baseline evidence regarding LLM
+competence in decision and rationale formulation. However, important differences
+distinguish prior efforts from the workflow evaluated in this paper:
+\begin{itemize}
+    \item \emph{Input Grounding and Granularity:} Prior studies condition
+    generation on pre-formulated ADR context paragraphs~\cite{dhar2024generating}
+    or informal forum discussions~\cite{zhou2026rationale}. In contrast, our
+    pipeline operates directly on structured industrial requirements (user
+    stories and acceptance criteria) and evaluates applicability across an
+    established catalog of codified architectural patterns.
+    \item \emph{Artifact Completeness:} Rather than predicting an isolated
+    field (such as the decision statement or rationale arguments), our
+    generator produces complete, multi-field Nygard ADRs (Title, Status,
+    Context, Decision, and Consequences), maintaining internal consistency
+    between cited requirement evidence and pattern trade-offs.
+    \item \emph{Pipeline Traceability:} We evaluate ADR generation as an
+    explicit downstream stage conditioned on a verified applicability
+    assessment, establishing an unbroken audit trail from functional
+    requirements to candidate pattern selection and final decision records.
+\end{itemize}
+
+

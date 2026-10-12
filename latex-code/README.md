@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, and 6.1--6.2 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, and 6.1--6.3 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -325,6 +325,14 @@ exploration (Cervantes et al., IEEE Software 2026), and structured methodology g
 (Cervantes et al., 2025). The text compares inputs, model roles, outputs, and the necessity of human oversight,
 positioning ADR4AI's requirement-grounded, pattern-by-pattern census evaluation. Verified BibTeX entries are added
 to `bibliography/references.bib`.
+
+Task 6.3 adds the [LLM-Based ADR and Design Rationale Generation subsection](sections/02-background-related-work.tex).
+It compares prior ADR and design rationale generation studies: Decision-field generation from existing ADR contexts
+(Dhar et al., ICSA 2024) and rationale argument recovery from developer forums (Zhou et al., TOSEM 2026).
+The synthesis contrasts prompting approaches, target fields, evaluation metrics, and known trade-off hallucination
+risks, positioning ADR4AI's requirement-grounded, multi-field Nygard ADR generation and end-to-end pipeline traceability.
+Verified BibTeX entries are added to `bibliography/references.bib`.
+
 
 
 
