@@ -61,3 +61,48 @@ architectural decision support. In this context, two primary paradigms exist:
 Understanding the operational relationship, overlap, and practical boundaries
 between dense semantic retrieval and generative reasoning is central to designing
 effective, requirement-grounded architectural assistance pipelines.
+
+\subsection{LLM-Assisted Software Architecture Design}
+\label{sec:related-work-architecture}
+
+Recent research has increasingly investigated the capabilities and boundaries
+of LLMs as intelligent assistants in software architecture design.
+Soliman and Keim~\cite{soliman2025architectural} conducted an exploratory
+empirical evaluation probing whether large language models embody reliable
+software architectural knowledge (AK), assessing GPT responses against
+established ground truth on the large-scale HDFS system. While the model
+demonstrated moderate recall in retrieving general architectural concepts, it
+exhibited substantially lower precision, particularly when tasked with identifying
+quality attribute solutions and capturing nuanced design rationales.
+Their findings established that while LLMs can serve as an exploratory source
+for initial architectural ideas, independent expert verification remains
+indispensable due to the absence of reliable semantic self-grounding.
+
+Beyond unstructured knowledge queries, researchers have explored structured,
+methodology-guided interactions between human architects and generative models.
+Cervantes et al.~\cite{cervantes2026assistants} examined the broader framing
+of LLMs as collaborative architectural assistants, identifying their strengths
+in brainstorming design concepts, structuring documentation, and exploring
+technology trade-offs. To operationalize this collaboration within a formal
+architectural method, Cervantes et al.~\cite{cervantes2025add} proposed an
+LLM-assisted approach embedded within the Attribute-Driven Design (ADD) framework.
+By supplying the model with an explicit ADD method description, an architect persona,
+and a structured iteration plan, the system guides the LLM to co-create
+architectural design artifacts. Their case-study evaluations with professional
+architects revealed that while generated designs partially satisfy architectural
+drivers, continuous human oversight, explicit decision boundaries, and iterative
+refinement are essential to prevent ungrounded architectural drift.
+
+These studies demonstrate the feasibility of employing LLMs across diverse
+architectural tasks, including conceptual design, quality-attribute reasoning,
+and structured method execution. However, existing work has predominantly focused
+on open-ended conversational prompting, broad architectural drivers, or manual
+prompt-response loops across general software systems.
+Systematic, requirement-grounded pattern selection across codified catalogs of
+AI-specific architectural patterns---coupled with the automated synthesis of
+traceable decision records---remains underexplored.
+Our work addresses this gap by formalizing a requirement-by-pattern census
+evaluation that enforces strict textual grounding rules, compares generative
+reasoning against dense semantic retrieval baselines, and generates verifiable,
+structured ADRs for professional evaluation.
+

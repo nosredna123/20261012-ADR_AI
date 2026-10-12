@@ -1199,6 +1199,19 @@ The deliverable has passed compilation and visual inspection; commit permission 
 
 ### Task 6.2 — Synthesize LLM-assisted software architecture research
 
+**Status: COMPLETED AND REVIEWED — comparative synthesis of architectural knowledge,
+assistant roles, and ADD-guided design with verified citations (2026-10-12).**
+
+The subsection in `latex-code/sections/02-background-related-work.tex` compares
+empirical studies on LLMs in software architecture: architectural knowledge extraction
+and precision limits (Soliman & Keim, ICSA 2025), broad architectural assistant framing
+(Cervantes et al., IEEE Software 2026), and structured method guidance via Attribute-Driven
+Design (Cervantes et al., 2025). The synthesis analyzes differences across inputs,
+model roles, generated artifacts, and human oversight mechanisms, establishing the
+need for systematic, requirement-grounded pattern selection and decision documentation.
+Verified BibTeX entries are added to `latex-code/bibliography/references.bib`.
+The deliverable has passed compilation and visual inspection; commit permission remains separate.
+
 **Work**
 
 - Compare studies on architectural knowledge, design-concept identification, ADD-assisted design, and architecture assistants.

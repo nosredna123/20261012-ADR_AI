@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, and 6.1 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, and 6.1--6.2 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -317,6 +317,15 @@ decision models, architectural patterns for AI-enabled systems codified by Washi
 repository, and the distinction between dense semantic retrieval (RAG) and generative model-based reasoning.
 Verified citations are added to `bibliography/references.bib`. Background is kept strictly scoped to the concepts
 necessary to understand the study method.
+
+Task 6.2 adds the [LLM-Assisted Software Architecture Design subsection](sections/02-background-related-work.tex).
+It synthesizes foundational and empirical studies investigating LLMs in architectural roles: architectural knowledge
+probing and limits on precision/design rationale (Soliman & Keim, ICSA 2025), general assistant roles and trade-off
+exploration (Cervantes et al., IEEE Software 2026), and structured methodology guidance using Attribute-Driven Design
+(Cervantes et al., 2025). The text compares inputs, model roles, outputs, and the necessity of human oversight,
+positioning ADR4AI's requirement-grounded, pattern-by-pattern census evaluation. Verified BibTeX entries are added
+to `bibliography/references.bib`.
+
 
 
 
