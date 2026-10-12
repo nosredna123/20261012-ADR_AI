@@ -591,6 +591,41 @@ Task 3.3 or bypassing the sequential review gates.
 
 ### Task 3.3 — Compute case- and question-level expert results
 
+**Status: POSTPONED — verified expert ratings and prerequisite Tasks 3.1--3.2
+are unavailable in the current artifact version (checked 2026-10-12).**
+
+No authoritative consolidated human-response export or frozen clean rating
+dataset is available in the workspace. Dataset freezing and eligibility/sample
+validation remain postponed. The approved Task 1.8 protocol defines how to
+analyze responses, but prepared cases, computational outputs and local
+simulations do not supply Q1--Q5 observations. Quantitative results and
+agreement estimability therefore cannot be established from the current data.
+
+**Resume conditions**
+
+- Complete and approve Tasks 3.1 and 3.2: provide a frozen, traceable clean
+  dataset, administered case/item/route mapping and reconciled eligibility
+  dispositions under the confirmed governance arrangements.
+- Validate selected-route ratings and distinguish structural blanks from
+  missing and invalid eligible opportunities; preserve raw values and report
+  denominators without imputation.
+- Implement and test the approved ordinal analysis in persistent processing
+  scripts before generating manuscript values: separate Q1--Q5 distributions,
+  inverse-CDF medians/quartile category intervals, raw valid counts and coverage,
+  balanced case-to-story-to-system-to-study aggregation, and complete-route
+  sensitivity. Do not average medians or introduce composite scores,
+  significance tests or pass/fail thresholds.
+- Assess within-system/item ordinal Krippendorff alpha only with an unambiguous
+  mapping of confirmed distinct raters, shared cases and positive expected
+  disagreement; otherwise report non-estimability and its reason, not zero
+  or a substituted coefficient.
+
+No quantitative expert analysis, synthetic substitute, result figure or
+replacement of Task 2.5 TBD macros is performed while postponed. The rating
+shell, unresolved-data warning and neutral RQ3 templates remain unchanged.
+This status does not authorize starting Task 3.4 or bypassing sequential
+review gates.
+
 **Work**
 
 - Compute predeclared ordinal summaries and response distributions for Q1–Q5.
