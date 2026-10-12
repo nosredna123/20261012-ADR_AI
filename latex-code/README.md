@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, 6.1--6.4, partial 7.1--7.4, and partial 8.1--8.2 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, 6.1--6.4, partial 7.1--7.4, partial 8.1--8.2, and partial 9.1 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -25,6 +25,9 @@ The LaTeX build needs no external datasets, API access, or data processing.
 
 ## Review scope
 
+- [Abstract draft](sections/00-abstract.tex): partial Task 9.1 self-contained
+  computational narrative with an explicit final-expert-evidence TBD;
+  not a final submission Abstract.
 - [Conclusion draft](sections/07-conclusion.tex): partial Tasks 8.1--8.2 outcome
   synthesis, bounded implications, and priority future work with explicit
   expert-evidence/feedback TBDs; Phase 8 remains partial.
@@ -414,3 +417,14 @@ and catalog representations. The ending retains human responsibility for
 checking evidence, reviewing trade-offs, and accepting or revising decisions.
 The Conclusion is structurally drafted through Tasks 8.1--8.2, but Task 8.2
 and Phase 8 remain partial pending expert evidence and final reconciliation.
+
+Task 9.1 adds the [Abstract draft](sections/00-abstract.tex) after the title,
+under an authorized partial exception to the completed-section dependency and
+final-only expert-reporting rule. It covers context, objective, method,
+computational findings, and bounded conclusion using existing numerical macros.
+LLM and ADR are defined; no citations, promises, or completed expert-validation
+claims are introduced. A visible TBD reserves final expert participant/evidence
+values and the principal finding. All reported numbers and interpretation limits
+are supported in the existing Results, Discussion, and Conclusion.
+Task 9.1 and Phase 9 remain partial pending consolidated expert evidence and
+final substantive-section reconciliation.

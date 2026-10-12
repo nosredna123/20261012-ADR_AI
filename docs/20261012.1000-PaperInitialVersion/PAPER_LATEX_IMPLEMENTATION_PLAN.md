@@ -1518,6 +1518,32 @@ with the `[Task 8.2]` prefix.
 
 ### Task 9.1 — Write the structured narrative
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — partial Abstract approved with explicit final-expert-evidence TBD, compiled and visually checked; commit authorized (2026-10-12).**
+
+The user authorized a partial review Abstract despite unresolved Phase 3
+evidence and partial substantive sections, including a visible placeholder
+exception to the final-only expert-reporting rule. This is not the final
+submission Abstract.
+`latex-code/sections/00-abstract.tex` covers context/problem, objective, method,
+verified computational results, and a bounded conclusion. It defines LLM and
+ADR, uses existing numerical macros and denominators, and introduces no
+citations, promises, or completed expert-validation claims. A visible TBD
+reserves final expert participant/evidence values and the principal finding
+on selected-pattern applicability and the assessed ADR dimensions. The
+computational narrative preserves the distinctions between labels and accuracy,
+overlap and superiority, and generation completeness and architectural quality.
+The file is included immediately after the title. Existing manuscript TBDs
+remain. Task 9.1 and Phase 9 remain partial until expert evidence and final
+substantive-section claims are reconciled.
+The 19-page PDF compiles without undefined citations/references or overfull
+boxes; the unresolved-expert warning and underfull-box notices remain.
+Pages 1--2 were rendered and visually checked. The Abstract occupies one
+first-page column with its expert-evidence TBD visible; a whitespace-based
+count of the extracted Abstract block is approximately 207 words including
+the heading and placeholder (PDF line-break hyphenation affects this count).
+The user approved the partial deliverable and authorized its separate commit
+with the `[Task 9.1]` prefix.
+
 **Work**
 
 - Cover context/problem, objective, method, results, and conclusion in one self-contained abstract.

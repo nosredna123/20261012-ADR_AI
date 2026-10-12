@@ -1,0 +1,32 @@
+% !TeX root = ../main.tex
+\begin{abstract}
+Translating requirements for AI-enabled systems into architectural choices
+requires contextual pattern selection and inspectable decision rationale.
+This study investigates ADR4AI, a large language model (LLM)-based approach
+linking requirement-grounded pattern assessment to Architectural Decision
+Record (ADR) drafts. The computational study exhaustively assesses
+\StudyStoryCount{} industrial user stories and their acceptance criteria from
+\StudySystemCount{} systems against \StudyPatternCount{} patterns, yielding
+\StudyAssessmentCount{} story--pattern pairs. Each pair receives an applicable,
+not-applicable, or insufficient-information classification; positive judgments
+require supporting requirement references and supply the inputs for a Proposed
+ADR. A separate frozen dense-retrieval and reranking baseline provides final
+Top-\RagFinalCount{} candidates for same-story overlap comparison.
+The LLM classified \StudyApplicableCount{}/\StudyAssessmentCount{} pairs
+(\RqOneApplicablePercent{}\%) as applicable and
+\StudyInsufficientInformationCount{}/\StudyAssessmentCount{}
+(\RqOneInsufficientInformationPercent{}\%) as insufficient information.
+Of the \StudyApplicableCount{} positive pairs, \StudyRagOverlapCount{}
+(\RqTwoOverlapPercent{}\%) appeared in the same-story final
+Top-\RagFinalCount{}. All \StudyApplicableCount{} selected pairs have exactly
+one structurally complete, traceable Proposed ADR.
+\textbf{TBD---Final expert participant and evidence values, and principal
+finding on selected-pattern applicability and ADR adequacy, grounding,
+consequences, and perceived usefulness, pending Phase~3 consolidation.}
+These computational findings characterize model outputs, candidate overlap,
+and generation completeness, not architectural correctness or comparative
+superiority. Input-language and catalog-representation differences further
+limit the comparison. The resulting records are inspectable material for
+architect review, not a validated replacement for architectural judgment;
+the expert-supported conclusion remains unresolved.
+\end{abstract}
