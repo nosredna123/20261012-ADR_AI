@@ -16,6 +16,40 @@ The finished paper must:
 
 This plan is ordered by research dependency rather than final reading order. It starts with Methodology, Results, and Discussion because the evidence and claims must stabilize before the Introduction and Abstract are written.
 
+### Mandatory execution directives
+
+These directives apply to every numbered task and take precedence over any suggestion of parallel implementation elsewhere in this plan.
+
+#### Sequential execution
+
+- Implement **one task at a time**, in numerical order: Task 1.1, then Task 1.2, through the last task of Phase 1, then Task 2.1, and so on.
+- Do not start the next task or phase until the current task has passed validation and the human review gate below.
+- Read related evidence as needed, but do not implement later tasks speculatively or bundle their deliverables into the current task.
+- The team's expert-data collection and consolidation may continue independently. If missing data or a prerequisite blocks the current writing task, report the blocker and stop. Obtain explicit human approval before skipping, reordering, or proceeding with placeholder-based work.
+- A minimal LaTeX scaffold may be created as a declared prerequisite within the first task that needs it. Limit this to what is needed to build and validate that task, include it in the task's review, and leave final assembly/compliance work for Phase 11.
+- These are ordering directives, not calendar-duration estimates. Do not invent task deadlines or assume approval based on elapsed time.
+
+#### Human review and commit permission after every task
+
+1. Implement the current task and run the smallest relevant validation.
+2. Present a review handoff containing the task ID, changed files, evidence used, deliverables, validation results, unresolved issues, and any proposed deviation from the plan.
+3. Ask the human to review the deliverables and wait for an explicit response. If revisions are requested, revise and validate the same task, then resubmit it for review.
+4. After review acceptance, separately ask permission to commit the reviewed task changes. Review acceptance alone is **not** commit authorization.
+5. If a commit is authorized, inspect the repository state and commit only the approved task files; do not stage unrelated changes. Report the resulting commit identifier.
+6. If the human explicitly chooses to continue without a commit, preserve the reviewed changes and record that decision. If permission is pending or declined without permission to continue, stop before the next task.
+
+Do not automatically initialize a Git repository, choose a repository/branch, push changes, or amend commits. The workspace was not a Git repository at the initial inspection; if a commit cannot be made, explain the blocker and ask whether to configure version control or continue without committing.
+
+#### Persistent, reproducible data processing
+
+- Persist every script used to derive, verify, transform, aggregate, or visualize data that supports manuscript content. Do not leave substantive processing only in terminal one-liners, temporary files, or unrecorded interactive sessions.
+- Reuse suitable existing research scripts without modifying frozen initial artifacts. Put new manuscript-specific processing scripts under `processing/scripts/` beside `latex-code/`, with focused tests under `processing/tests/` where applicable.
+- Document inputs, output paths, commands, required runtime/dependencies, analytical assumptions, and validation checks in `processing/README.md`. Declare actual dependencies in the appropriate manifest; do not install tooling unnecessarily.
+- Keep non-LaTeX derived analysis outputs under `processing/outputs/`. Write publication-ready generated macros, tables, and figures to the appropriate subdirectories of `latex-code/`. This preserves a self-contained LaTeX build while keeping analysis implementation separate.
+- Read original data without overwriting it. Track source identifiers and input versions/checksums; fail explicitly on malformed records, unexpected counts, invalid joins, or missing required inputs.
+- Keep synthetic fixtures separate from empirical outputs and clearly labeled. Do not copy identifiable or restricted expert-response data into the manuscript tree or commit it.
+- Include relevant processing scripts, documentation, tests, and generated manuscript artifacts in the same task's human review and commit-permission gate.
+
 ## 2. Inputs and authoritative evidence
 
 The writing process must start from the following artifacts:
@@ -43,6 +77,11 @@ Create the following structure during implementation:
 ```text
 docs/20261012.1000-PaperInitialVersion/
 ├── PAPER_LATEX_IMPLEMENTATION_PLAN.md
+├── processing/
+│   ├── README.md
+│   ├── scripts/
+│   ├── tests/
+│   └── outputs/
 └── latex-code/
     ├── main.tex
     ├── preamble.tex
@@ -88,6 +127,7 @@ Rules for this structure:
 - Tables must be separate `.tex` fragments. Figures must be generated or curated as publication-ready vector PDFs whenever possible.
 - Bibliography entries must be manually verified against the original publications. The draft literature worksheet is not itself a citable source.
 - No paper source may depend on a path outside `latex-code/` at build time. External research artifacts are evidence inputs, not LaTeX build dependencies.
+- Create `processing/` contents only as relevant tasks require them. Script and test names must describe their actual function; do not create speculative analysis modules.
 
 ## 4. Target paper structure
 
@@ -1013,8 +1053,11 @@ Phase 1 Methodology
                                       └── Phase 9 Abstract
 
 Phase 10 Artifact Availability depends on the curated submission artifact.
-Phase 11 Assembly and validation runs throughout, with final checks after all phases.
+Task-level validation runs after every task; final assembly and compliance tasks
+execute in Phase 11. Minimal prerequisite scaffolding follows the execution directives.
 ```
+
+This diagram describes evidence dependencies, not permission for parallel task implementation. Execution remains numerical and sequential, with human review and commit permission between tasks. Any dependency-driven reordering requires explicit human approval.
 
 ## 6. Definition of done
 
@@ -1025,6 +1068,8 @@ The paper-writing task is complete only when:
 - the final structure includes Abstract, Introduction, Background and Related Work, Methodology, Results, Discussion, Threats to Validity, Conclusion, and Artifact Availability;
 - all computational values are traceable to frozen official artifacts;
 - all expert values are traceable to a frozen response dataset and reproducible analysis;
+- all relevant manuscript data-processing scripts are persisted, organized, documented, and validated under `processing/` or reused from documented existing research scripts;
+- every task has passed human review and has either an explicitly authorized commit or an explicit decision to continue without committing;
 - no expert-result placeholder remains;
 - RAG overlap is not misrepresented as applicability accuracy;
 - LLM classifications are not misrepresented as ground truth;
