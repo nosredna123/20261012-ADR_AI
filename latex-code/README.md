@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, and partial 5.1--5.4 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, and 6.1 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -309,5 +309,14 @@ existing expert warnings and placeholder macros remain active.
 With Tasks 5.1--5.4 drafted in partial form, Phase 5 drafting is completed under the authorized
 exceptions; final completion of Phase 5 remains dependent on Phase 3 resolution.
 The PDF draft continues to exceed the 10-content-page limit, deferred to Phase 11 compression.
+
+Task 6.1 adds the [Background subsection](sections/02-background-related-work.tex) to the newly created
+Section II (`sections/02-background-related-work.tex`). It introduces foundational definitions and concepts:
+architectural design decisions and Architectural Decision Records (ADRs) under Nygard's format and classical
+decision models, architectural patterns for AI-enabled systems codified by Washizaki et al. and the SWE4AI
+repository, and the distinction between dense semantic retrieval (RAG) and generative model-based reasoning.
+Verified citations are added to `bibliography/references.bib`. Background is kept strictly scoped to the concepts
+necessary to understand the study method.
+
 
 

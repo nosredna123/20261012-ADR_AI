@@ -1,0 +1,63 @@
+% !TeX root = ../main.tex
+\section{Background and Related Work}
+\label{sec:background-related-work}
+
+\subsection{Background}
+\label{sec:background}
+
+\emph{Architectural Design Decisions and ADRs.}
+Software architecture is widely characterized as the composition of fundamental
+design decisions that shape a system's structure, behavior, and quality
+attributes~\cite{jansen2005decisions,kruchten2006architectural}.
+Capturing the context, trade-offs, and rationale behind these choices is critical
+for system evolution, knowledge transfer, and preventing architectural drift.
+Architectural Decision Records (ADRs) provide a lightweight, structured
+documentation format to record individual decisions~\cite{nygard2011adr}.
+In Nygard's established formulation, an ADR captures a title, status (e.g.,
+Proposed, Accepted, Superseded), business and technical context, the decision
+made, and its resulting consequences (both positive and negative trade-offs).
+Despite their recognized value in maintaining architectural traceability,
+consistent ADR adoption in industrial practice is frequently hampered by time
+constraints, high cognitive overhead, and the burden of manual authoring.
+
+\emph{Architectural Patterns for AI-Enabled Systems.}
+Architectural patterns offer reusable, proven solutions to recurring design
+problems within specific operational contexts. While traditional software
+patterns address general modularity, loose coupling, and component
+interaction, AI-enabled systems introduce distinct engineering concerns.
+These include managing non-deterministic model inference, training and
+serving pipeline orchestration, data drift, continuous monitoring, and
+specialized compute infrastructure.
+In response, recent software engineering research has codified specialized
+catalogs and taxonomies of design patterns tailored for machine learning and
+AI-based applications~\cite{washizaki2019patterns,heiland2023patterns}.
+These patterns span key lifecycle stages, including data acquisition,
+feature preparation, model training, model deployment, serving, and runtime
+observability~\cite{aiPatternsRepository}.
+However, matching concrete system requirements to appropriate AI patterns
+remains an unstructured, manual task that requires deep familiarity with both
+the operational domain and extensive pattern repositories.
+
+\emph{LLMs in Architecture: Retrieval versus Generative Reasoning.}
+The emergence of Large Language Models (LLMs) with advanced natural language
+understanding and reasoning capabilities presents new opportunities for
+architectural decision support. In this context, two primary paradigms exist:
+\begin{enumerate}
+    \item \emph{Dense Semantic Retrieval (RAG):} Retrieval-Augmented
+    Generation techniques embed requirement statements and pattern definitions
+    into continuous vector spaces to retrieve top-ranking candidates based on
+    semantic proximity~\cite{lewis2020rag}. Dense retrieval is computationally
+    efficient and scalable across large catalogs, but operates primarily on
+    lexical and semantic surface similarity without evaluating domain-specific
+    trade-offs, structural constraints, or verifiable requirement satisfaction.
+    \item \emph{Generative Applicability and Decision Synthesis:} Prompting
+    frontier LLMs with explicit requirement contexts, acceptance criteria,
+    and structured pattern specifications enables direct reasoning over
+    compatibility. Beyond simple similarity, generative models can categorize
+    applicability under formalized decision rules, cite explicit textual
+    evidence from requirements, and synthesize complete, structured ADR drafts
+    documenting context and trade-offs.
+\end{enumerate}
+Understanding the operational relationship, overlap, and practical boundaries
+between dense semantic retrieval and generative reasoning is central to designing
+effective, requirement-grounded architectural assistance pipelines.

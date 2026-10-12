@@ -1173,6 +1173,19 @@ remains dependent on Phase 3 resolution. The draft length continues to exceed th
 
 ### Task 6.1 — Establish necessary background
 
+**Status: COMPLETED AND REVIEWED — foundational architectural decisions, ADRs,
+AI-system patterns, and retrieval-versus-generation concepts drafted with verified citations (2026-10-12).**
+
+The Background subsection in `latex-code/sections/02-background-related-work.tex`
+defines architectural design decisions and ADRs following Nygard, Jansen & Bosch,
+and Kruchten et al. It introduces the specialization of architectural patterns for
+AI-enabled systems, referencing Washizaki et al., Heiland et al., and the SWE4AI
+repository. It explains LLM assistance in software architecture, distinguishing
+dense semantic retrieval (RAG) from generative reasoning and decision record synthesis.
+Citations are added to `latex-code/bibliography/references.bib`. Background is kept
+strictly scoped to the concepts needed to understand the study method.
+The deliverable has passed compilation and visual inspection; commit permission remains separate.
+
 **Work**
 
 - Define architecture design decisions and ADRs.
