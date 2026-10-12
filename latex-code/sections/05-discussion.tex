@@ -1,0 +1,51 @@
+% !TeX root = ../main.tex
+\section{Discussion}
+\label{sec:discussion}
+
+\noindent\textbf{Partial Task 4.1 draft.} The computational answers below
+use the approved Results; the expert-assessment answer remains unresolved.
+
+\subsection{Answers to the Research Questions}
+
+\emph{RQ1---Observed applicability classifications.}
+Within the sampled requirements and catalog, the LLM predominantly
+returned insufficient information: \StudyInsufficientInformationCount{}
+of \StudyAssessmentCount{} pairs
+(\RqOneInsufficientInformationPercent{}\%).
+It identified \StudyApplicableCount{} pairs as applicable
+(\RqOneApplicablePercent{}\%), spanning \StudyPositiveStoryCount{}
+of \StudyStoryCount{} stories; \StudyNotApplicableCount{} pairs were
+classified as not applicable (Table~\ref{tab:applicability-results}).
+Thus, the output is a bounded set of story-specific pattern candidates,
+not a universal recommendation list. The dominant unresolved category
+limits what can be concluded about catalog applicability from this run:
+it does not establish that those patterns are unsuitable or that the
+requirements are defective. Likewise, positive classifications are model
+judgments, not validated architectural choices. Differences across stories
+describe this sample; explaining them would require evidence beyond the
+reported label frequencies.
+
+\emph{RQ2---Overlap with the frozen retrieval baseline.}
+The methods' outputs intersect on \StudyRagOverlapCount{} of the
+\StudyApplicableCount{} LLM-positive pairs
+(\RqTwoOverlapPercent{}\%), across \StudyRagOverlapStoryCount{} stories;
+\StudyRagOutsideCount{} positive pairs lie outside the same-story final
+Top-5 (Table~\ref{tab:rag-comparison}).
+This answers a candidate-membership question: the final Top-5 does not
+contain most pairs labeled applicable by the exhaustive assessment.
+It does not establish which method makes better architectural selections.
+The selected-pair set is not an independent reference, and the two
+protocols differ in input language and catalog representation.
+Consequently, non-overlap cannot be interpreted as retrieval error,
+additional validated discoveries, or superiority of exhaustive assessment.
+
+\emph{RQ3---Expert assessment pending.}
+\ExpertResultsUnresolved{}. Table~\ref{tab:expert-evaluation-results}
+is an unresolved reporting shell, not evidence of expert judgments.
+The expert judgments remain unknown. The complete, traceable ADR outputs
+(Section~\ref{sec:adr-results}) establish generation completion, not
+professional acceptance or semantic quality.
+Whether experts corroborate, qualify or challenge the recommendations
+remains undetermined. Revisit this answer and the combined interpretation
+after Phase 3 verifies ratings, coverage and eligible comments;
+no outcome is assumed.

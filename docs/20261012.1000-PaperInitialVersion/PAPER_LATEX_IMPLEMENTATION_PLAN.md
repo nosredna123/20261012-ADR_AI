@@ -766,6 +766,43 @@ placeholders requires explicit human approval under the execution directives.
 
 ### Task 4.1 — Answer each research question directly
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — RQ1--RQ2 Discussion answers and
+explicit unresolved RQ3 paragraph approved; RQ3 completion postponed pending Phase 3
+(2026-10-12).**
+
+Phase 2 supplies approved descriptive RQ1 classification results, RQ2 retrieval
+overlap and ADR-completion/provenance results. These support bounded answers
+to RQ1 and RQ2, but not an expert-assessment answer to RQ3. All Phase 3 tasks
+remain postponed. Without verified expert results, the required account of
+whether experts corroborate, qualify or challenge the selected patterns and
+generated ADRs cannot be written as an evidence-based finding.
+
+The researcher explicitly authorized a partial scope and exception to the
+Phase 3 dependency: draft evidence-based RQ1--RQ2 Discussion answers now and
+retain an explicitly unresolved RQ3 paragraph. This is not approval of the
+resulting text, completion of Task 4.1, or authorization to start Task 4.2.
+The partial opening is in `latex-code/sections/05-discussion.tex`, included
+in the review PDF. It reuses approved Results tables and numerical macros,
+introduces no new result, and selects no expert interpretation.
+
+**Resume conditions**
+
+- Complete and approve Phase 3, resolving the expert-result placeholders with
+  verified analyses or documented non-estimability/absence where applicable.
+- Use the approved Results tables/figures and analysis outputs to answer
+  RQ1--RQ3, separating model-label frequencies, retrieval overlap and
+  generation completeness from expert judgments and architectural correctness.
+- State whether the actual expert evidence corroborates, qualifies or
+  challenges the recommendations only to the extent supported by the assessed
+  cases, item distributions, coverage and qualitative reservations.
+- Introduce no new numerical results in Discussion and avoid generalization
+  beyond the bounded sample and catalog.
+
+The partial deliverable has passed PDF validation and human review;
+commit permission is a separate gate. After Phase 3, complete RQ3 and revisit the
+combined interpretation before marking Task 4.1 complete. The remaining
+dependency is not waived; this exception does not authorize later tasks.
+
 **Work**
 
 - Start with concise evidence-based answers to RQ1–RQ3.

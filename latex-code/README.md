@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9 and 2.1--2.5 review draft
+# Tasks 1.1--1.9, 2.1--2.5, and partial 4.1 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -164,3 +164,14 @@ synthetic test/layout data must remain outside empirical results, labeled
 Future verified non-estimable statistics must state the reason, not retain a
 TBD or silently substitute zero. The conditional interpretation paragraph
 selects no favorable, mixed or unfavorable branch and claims no expert finding.
+
+Task 4.1 adds a [partial Discussion opening](sections/05-discussion.tex)
+under an explicit researcher-authorized exception to Phase 4's Phase 3
+dependency. RQ1 and RQ2 answers reuse approved Results, central/generated
+macros and existing tables; no new numerical result or analysis is introduced.
+RQ3 remains visibly unresolved and makes no expert-quality or acceptance claim.
+This partial draft has been approved after human review, not as completion
+of Task 4.1 or verification of any expert result.
+After Phase 3, finish the RQ3 answer and revisit the combined interpretation
+against actual coverage, item distributions and eligible comments.
+The exception does not authorize Task 4.2 or any other later task.
