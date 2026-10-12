@@ -1,8 +1,9 @@
-# Task 1.1 review draft
+# Tasks 1.1--1.2 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
-claim boundaries. It is not the full manuscript. Later sections, bibliography,
-data macros, and final metadata configuration have not been implemented.
+claim boundaries and the industrial requirement sample. It is not the full
+manuscript. Later sections, bibliography, result macros, and final metadata
+configuration have not been implemented.
 
 ## Build
 
@@ -13,7 +14,8 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 ```
 
 The build requires a local TeX installation with IEEEtran and latexmk. The
-configuration writes the review PDF and intermediate files to `build/`.
+configuration writes the review PDF to `main.pdf` in this project-root
+`latex-code/` directory, along with ignored intermediate build files.
 The LaTeX build needs no external datasets, API access, or data processing.
 
 ## Review scope
@@ -23,6 +25,11 @@ The LaTeX build needs no external datasets, API access, or data processing.
   matrix in source comments.
 - [Research-question table](tables/research-questions.tex): question wording,
   units, evidence, and intended analysis.
+- [Dataset table](tables/dataset-summary.tex) and
+  [sample values](data/study-values.tex): generated from the validated source.
+  Regeneration and verification are documented in
+  [the processing README](../processing/README.md); the LaTeX build itself
+  does not need the research data or processing scripts.
 
 RQ3 is defined for the prepared questionnaire. Preliminary responses have been
 reported by the researcher but have not been supplied as a consolidated dataset

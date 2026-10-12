@@ -1,3 +1,4 @@
+% !TeX root = ../main.tex
 \section{Methodology}
 \label{sec:methodology}
 
@@ -48,8 +49,9 @@ must not be treated as independent replications when interpreting the results.
 Conclusions remain bounded to the sampled requirements, catalog, generated
 records, and participating experts.
 
-% Claim-to-evidence matrix for Task 1.1. Paths are relative to the paper directory;
-% these comments are provenance pointers, not external LaTeX build inputs.
+% Claim-to-evidence matrix for Task 1.1. The E1--E6 paths below are relative to
+% docs/20261012.1000-PaperInitialVersion/, not this relocated LaTeX directory.
+% These comments are provenance pointers, not external LaTeX build inputs.
 % E1: ../20261012.0933-InitialArtifacts/adr4ai_app/experiments/pattern_selection/
 %     assess_pattern.py and outputs/assessments.jsonl.
 % E2: ../20261012.0933-InitialArtifacts/adr4ai_app/data/user_histories_orig.csv
@@ -78,3 +80,48 @@ records, and participating experts.
 %     Blocked pending consolidation; no synthetic or favorable mock findings.
 %     Excluded: missed-pattern recall, population-wide effectiveness, deployment
 %     success, cost savings, and a composite score without justification.
+
+\subsection{Industrial Requirement Sample}
+\label{sec:requirement-sample}
+
+The study uses a bounded industrial sample comprising
+\StudySystemCount{} systems, \StudyStoryCount{} user stories
+(\StudyStoriesPerSystem{} per system), and \StudyCriterionCount{} acceptance
+criteria (Table~\ref{tab:dataset-summary}). The supplied data-scope document
+defines this as a minimal, delimited sample for studying architectural-pattern
+selection and decision documentation for AI-enabled systems. It is not a
+representative sample of industrial requirements or AI-enabled systems.
+The available artifacts do not establish a probabilistic sampling procedure;
+we therefore do not interpret these counts as population estimates.
+
+\input{tables/dataset-summary}
+
+Each requirement case consists of the system purpose, one stakeholder user
+story, and all of that story's acceptance criteria. The source CSV stores one
+acceptance criterion per row, repeating the corresponding purpose and story.
+Grouping by the stable user-story identifier reconstructs the case without
+rewriting the original Portuguese requirement text or changing criterion order.
+The criterion-row count must not be confused with the number of requirement
+cases.
+
+System purpose provides contextual information, but is not sufficient on its
+own to establish pattern applicability. Positive evidence must be grounded in
+the user story and/or its acceptance criteria. The model is not authorized to
+infer unstated technologies, requirements, or constraints from the purpose.
+
+The source uses generic names \texttt{System\_01}--\texttt{System\_04}; the
+paper uses the corresponding stable identifiers \texttt{SYS01}--\texttt{SYS04}.
+Story and criterion identifiers preserve traceability within each system
+without exposing real system names. The organization is not named in this
+review draft. According to the supplied scope document, the study input is
+restricted to purposes, identifiers, user stories, and acceptance criteria;
+it does not include operational databases, personal data, credentials, customer
+records, or production content. This delimitation does not itself establish
+participant consent, ethics approval, or permission for unrestricted public
+release.
+
+% Task 1.2 provenance: original data/user_histories_orig.csv and the supplied
+% Escopo_Dados_Estudo_Cagece_v4.pdf in the initial-artifact collection.
+% Generated counts/table and audit: processing/scripts/prepare_dataset_summary.py
+% and
+% processing/outputs/dataset-summary-audit.json, relative to the project root.

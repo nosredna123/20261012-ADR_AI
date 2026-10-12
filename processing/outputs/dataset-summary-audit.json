@@ -1,0 +1,28 @@
+{
+  "criterion_count": 35,
+  "source": "docs/20261012.0933-InitialArtifacts/adr4ai_app/data/user_histories_orig.csv",
+  "source_sha256": "7a43d6bea96ada7c20cf2b0f2a48d5305283d8832a0950f50087ddc4a76b06d3",
+  "story_count": 12,
+  "system_count": 4,
+  "systems": {
+    "SYS01": {
+      "criteria": 6,
+      "stories": 3
+    },
+    "SYS02": {
+      "criteria": 11,
+      "stories": 3
+    },
+    "SYS03": {
+      "criteria": 7,
+      "stories": 3
+    },
+    "SYS04": {
+      "criteria": 11,
+      "stories": 3
+    }
+  },
+  "task": "1.2",
+  "validator": "docs/20261012.0933-InitialArtifacts/adr4ai_app/experiments/pattern_selection/prepare_data.py",
+  "validator_sha256": "fffc5769885d3aef281a69f63313a32a6a1821d36b3000dfeb7aa6fe664798a9"
+}

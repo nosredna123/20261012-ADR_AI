@@ -14,6 +14,11 @@ The finished paper must:
 - make only claims supported by traceable study evidence; and
 - keep **all LaTeX source, bibliography data, tables, figures, and build configuration under `latex-code/`**.
 
+`latex-code/` means the directory at the **project root**, not a directory
+inside `docs/`. The review PDF is `<project-root>/latex-code/main.pdf`.
+`processing/` is also at the **project root**, alongside `latex-code/`.
+Only this plan remains under `docs/20261012.1000-PaperInitialVersion/`.
+
 This plan is ordered by research dependency rather than final reading order. It starts with Methodology, Results, and Discussion because the evidence and claims must stabilize before the Introduction and Abstract are written.
 
 ### Mandatory execution directives
@@ -32,10 +37,17 @@ These directives apply to every numbered task and take precedence over any sugge
 #### Human review and commit permission after every task
 
 1. Implement the current task and run the smallest relevant validation.
+   Before requesting approval, inspect the generated `latex-code/main.pdf`
+   itself, not only source files or compilation logs. Verify that it reflects
+   the current task's prose, values, tables, and references; visually inspect
+   affected pages for clipping, overlap, unreadable content, and layout issues.
+   If the build writes a PDF elsewhere, ensure the review copy at this exact
+   path is current and verify it before handing the task over.
 2. Present a review handoff containing the task ID, changed files, evidence used, deliverables, validation results, unresolved issues, and any proposed deviation from the plan.
 3. Ask the human to review the deliverables and wait for an explicit response. If revisions are requested, revise and validate the same task, then resubmit it for review.
 4. After review acceptance, separately ask permission to commit the reviewed task changes. Review acceptance alone is **not** commit authorization.
 5. If a commit is authorized, inspect the repository state and commit only the approved task files; do not stage unrelated changes. Report the resulting commit identifier.
+   Prefix each commit subject with the task identifier, for example `[Task 1.2]`.
 6. If the human explicitly chooses to continue without a commit, preserve the reviewed changes and record that decision. If permission is pending or declined without permission to continue, stop before the next task.
 
 Do not automatically initialize a Git repository, choose a repository/branch, push changes, or amend commits. The workspace was not a Git repository at the initial inspection; if a commit cannot be made, explain the blocker and ask whether to configure version control or continue without committing.
@@ -43,7 +55,7 @@ Do not automatically initialize a Git repository, choose a repository/branch, pu
 #### Persistent, reproducible data processing
 
 - Persist every script used to derive, verify, transform, aggregate, or visualize data that supports manuscript content. Do not leave substantive processing only in terminal one-liners, temporary files, or unrecorded interactive sessions.
-- Reuse suitable existing research scripts without modifying frozen initial artifacts. Put new manuscript-specific processing scripts under `processing/scripts/` beside `latex-code/`, with focused tests under `processing/tests/` where applicable.
+- Reuse suitable existing research scripts without modifying frozen initial artifacts. Put new manuscript-specific processing scripts under project-root `processing/scripts/`, with focused tests under `processing/tests/` where applicable.
 - Document inputs, output paths, commands, required runtime/dependencies, analytical assumptions, and validation checks in `processing/README.md`. Declare actual dependencies in the appropriate manifest; do not install tooling unnecessarily.
 - Keep non-LaTeX derived analysis outputs under `processing/outputs/`. Write publication-ready generated macros, tables, and figures to the appropriate subdirectories of `latex-code/`. This preserves a self-contained LaTeX build while keeping analysis implementation separate.
 - Read original data without overwriting it. Track source identifiers and input versions/checksums; fail explicitly on malformed records, unexpected counts, invalid joins, or missing required inputs.
@@ -75,8 +87,9 @@ The paper must not treat the 36 LLM-positive classifications as ground truth. Un
 Create the following structure during implementation:
 
 ```text
-docs/20261012.1000-PaperInitialVersion/
-├── PAPER_LATEX_IMPLEMENTATION_PLAN.md
+<project-root>/
+├── docs/20261012.1000-PaperInitialVersion/
+│   └── PAPER_LATEX_IMPLEMENTATION_PLAN.md
 ├── processing/
 │   ├── README.md
 │   ├── scripts/
@@ -84,6 +97,7 @@ docs/20261012.1000-PaperInitialVersion/
 │   └── outputs/
 └── latex-code/
     ├── main.tex
+    ├── main.pdf
     ├── preamble.tex
     ├── metadata.tex
     ├── README.md
