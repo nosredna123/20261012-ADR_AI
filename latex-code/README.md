@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9 and 2.1--2.4 review draft
+# Tasks 1.1--1.9 and 2.1--2.5 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -117,8 +117,7 @@ central count macros. Regeneration and audit details are in
 [the processing README](../processing/README.md#task-22-rq1-applicability-outcomes).
 No chart is added because the compact table provides exact counts and
 denominators without a second visual repeating them.
-ADR-completion results are added in Task 2.4 below; expert placeholders remain
-a later task.
+ADR-completion results and expert placeholders are described below.
 
 Task 2.3 adds the RQ2 subsection to [Results](sections/04-results.tex) and
 the generated [RAG comparison table](tables/rag-comparison.tex). It reports
@@ -140,3 +139,28 @@ derivation or generator is needed. No example is included: Methodology already
 defines the structure, the page budget is tight, and requirement-bearing
 examples remain subject to disclosure permission. Completion is explicitly
 distinguished from architectural quality or expert acceptance.
+
+Task 2.5 adds an unresolved RQ3 subsection to [Results](sections/04-results.tex),
+[expert values](data/expert-values.tex), the
+[demographic/accounting shell](tables/expert-demographics.tex), and the
+[rating-summary shell](tables/expert-evaluation-results.tex).
+Every human-result macro expands to bold `TBD`: participant/profile results,
+complete/partial route evaluations, missingness/coverage, Q1--Q5 distributions,
+ordinal medians and quartile category intervals, raw valid counts, conditional
+within-system/item agreement, sensitivity, themes, comment coverage and
+interpretation. Neither preparation counts nor computational counts substitute
+for human findings. These placeholder structures have been approved after
+human review; approval does not verify any expert result.
+
+The values file emits an unconditional `ADR4AI` unresolved-results build warning;
+the title page and RQ3 text also show `EXPERT RESULTS UNRESOLVED---TBD`.
+There is no release-mode switch to suppress these safeguards. No expert
+dataset is loaded, and no preliminary or synthetic value is embedded.
+Keep the warning and visible marker until Phase 3 freezes and verifies the
+expert dataset and all reported results. Any preliminary coordination material
+must remain outside the manuscript, labeled `PRELIMINARY--NOT VERIFIED`;
+synthetic test/layout data must remain outside empirical results, labeled
+`SYNTHETIC--NOT STUDY DATA`. Do not populate manuscript macros from either.
+Future verified non-estimable statistics must state the reason, not retain a
+TBD or silently substitute zero. The conditional interpretation paragraph
+selects no favorable, mixed or unfavorable branch and claims no expert finding.
