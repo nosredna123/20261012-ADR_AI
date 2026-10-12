@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, and partial 5.1 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, and partial 5.1--5.2 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -250,3 +250,24 @@ eligibility, coverage and deviations, then revising the limitations.
 Existing expert-result warnings remain. Task 5.1 is not complete, and this
 exception does not authorize Task 5.2. Page-budget correction remains deferred
 to later compression; no approved material or format is silently changed.
+
+Task 5.2 adds [partial internal-validity threats](sections/06-threats-to-validity.tex)
+under a separately authorized exception to the final Methodology/Results
+dependency. The text covers prompt/single-configuration effects, model
+variability, translation and authorized corrections, distinct retry policies
+and potential evaluator learning/fatigue. Preserved prompts/outputs,
+structured validation, reference checks and audit trails are distinguished
+from semantic assurance. Separate requests are not statistically independent
+replications, and routing/pre-inspection analysis are not evidence of
+counterbalanced administration or completed human-data analysis.
+
+The partial subsection has been approved after human review. Its visible
+`TBD---expert-administration and analysis reconciliation pending` marker
+retains the need to check actual routing/order, administration, completion,
+coverage and protocol deviations after Phase 3. No fatigue effect, translation
+equivalence or executed expert safeguard is invented. No new data, statistic,
+generator or model run is introduced; expert warnings remain active.
+Task 5.2 remains incomplete and this exception does not authorize Task 5.3.
+The PDF now has 13 pages with content on page 13 before References.
+This disclosed draft limitation requires later compression; approval does
+not waive the submission page limit.

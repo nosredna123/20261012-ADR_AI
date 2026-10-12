@@ -65,3 +65,68 @@ eligibility and coverage, document deviations from the prepared protocol,
 and revise these construct limits against the supported findings.
 No completed instrument validation or expert-based mitigation effect is
 claimed in this partial draft.
+
+\subsection{Internal Validity (Partial)}
+\label{sec:internal-validity}
+
+\emph{Prompt design and model variability.}
+The decision rules, supplied catalog fields and ADR prompt's instructional
+example may influence classifications and generated decisions.
+The frozen study uses one recorded model/reasoning configuration for
+these stages, without a controlled prompt comparison or repeated-run
+robustness analysis (Sections~\ref{sec:applicability-experiment}
+and~\ref{sec:adr-generation}). No temperature or seed is supplied.
+Separate requests exclude prior conversation and generated outputs,
+limiting conversational carryover, but do not guarantee deterministic
+responses or statistical independence across shared stories and patterns.
+Prompt/source hashes and preserved outputs identify the evaluated run;
+they do not isolate prompt effects or prove that another run would agree.
+Controlled prompt/model comparisons and repeated executions remain
+future checks, not safeguards already shown to remove these threats.
+
+\emph{Translation and authorized corrections.}
+Portuguese presentation may alter how evaluators perceive the selected
+patterns and ADRs. The preparation process retains the original
+requirements literally and records source text, translation candidates,
+final presentation and authorized field-level corrections separately
+(Section~\ref{sec:expert-preparation}). Exact mapping and preservation
+checks make changes auditable, but do not independently establish
+translation equivalence or exclude presentation bias.
+Linguistic corrections are not architectural corrections; they must not
+be interpreted as improving the generated decisions.
+Actual administered text must be reconciled with these frozen versions,
+with deviations reported rather than attributed to the original outputs.
+
+\emph{Execution and retry effects.}
+Strict structured outputs, identifier/reference checks, retained completed
+records and provenance audits reduce malformed-output and join errors,
+not unsupported reasoning. Applicability attempt reservations and its
+bounded retry policy differ from ADR generation's stop-on-failure and
+explicit manual retry authorization. These policies can affect which
+response becomes the retained outcome; failures are not applicability
+labels or extra observations. The preserved pilot boundaries and attempt
+history make those choices inspectable. The authorized ADR connection-error
+retry is linked to its prior attempt and yields one final record
+(Section~\ref{sec:adr-results}); failed dispatch remains unknown.
+Complete pair coverage limits missing-output ambiguity but does not
+establish retry-neutral results, semantic correctness or an exact global
+API-call count.
+
+\emph{Evaluator learning, fatigue and analysis choices.}
+Repeated cases and unequal prepared route lengths may induce learning,
+anchoring or fatigue, changing judgments across a session.
+System-specific routing limits the prepared workload to the selected
+system, but fixed presentation order does not counterbalance order effects.
+Static routing checks do not establish actual live behavior, completion
+patterns or the absence of fatigue. The approved pre-inspection analysis
+protocol specifies eligibility, missingness, aggregation, sensitivity
+and comment coding, reducing discretion in later analysis; it is not
+preregistration before collection and does not control administration.
+Any amendments and prior exposure to responses must remain documented.
+
+\noindent\textbf{TBD---expert-administration and analysis reconciliation
+pending.} After Phase 3, confirm actual routing, presentation order,
+administration conditions, completion/coverage and protocol deviations.
+Report only supported evidence of evaluator effects and executed
+safeguards; do not infer fatigue from route size or claim that planned
+analysis procedures have already been applied.

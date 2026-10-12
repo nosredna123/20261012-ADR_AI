@@ -1017,6 +1017,43 @@ incomplete; the exception does not authorize Task 5.2.
 
 ### Task 5.2 — Address internal validity
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — frozen computational
+threats/safeguards and potential evaluator threats approved;
+expert-administration/analysis reconciliation remains TBD pending Phase 3
+(2026-10-12).**
+
+The researcher explicitly authorized partial work despite Phase 5's pending
+final Methodology/Results dependency. The subsection in
+`latex-code/sections/06-threats-to-validity.tex` addresses prompt design,
+single model/reasoning configuration, nondeterminism, translation, authorized
+corrections, retry policies and potential evaluator learning/fatigue.
+Independent request inputs, structured validation, evidence-reference checks,
+preserved records and audit trails are described with their limits.
+No semantic assurance, statistically independent replication, translation
+equivalence or completed expert safeguard is inferred from structural checks.
+
+**Remaining work and resume conditions**
+
+- Complete and approve Phase 3, then reconcile actual administered text,
+  routing, presentation order and administration conditions with the frozen
+  preparation artifacts.
+- Examine verified completion/coverage and documented administration evidence
+  for relevant learning, anchoring or fatigue limitations; route size alone
+  cannot establish an observed evaluator effect.
+- Confirm which predeclared analysis and coding procedures were actually
+  executed; document deviations, amendments and prior exposure to responses.
+  Do not describe pre-inspection planning as preregistration before collection.
+- Revise the internal-validity account and resolve the visible
+  `TBD---expert-administration and analysis reconciliation pending` marker
+  only after verified evidence and limitations have been reviewed.
+
+The partial deliverable has passed build, exact-PDF inspection and human review;
+commit permission remains separate. Expert-result warnings remain.
+The 13-page draft has content on page 13 before References; this disclosed
+limit violation was accepted for partial review, not waived for submission.
+Page-limit compliance still needs later compression. Task 5.2 remains incomplete;
+this exception does not authorize Task 5.3.
+
 **Work**
 
 - Discuss prompt design, single-model configuration, model nondeterminism, translation, manual corrections, retry handling, and potential evaluator learning/fatigue.
