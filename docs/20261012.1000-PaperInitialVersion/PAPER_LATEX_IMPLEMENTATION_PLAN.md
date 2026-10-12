@@ -1323,6 +1323,26 @@ The user approved the partial deliverable and authorized its separate commit.
 
 ### Task 7.2 — Present the research gap and approach
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — approved with explicit expert-assessment TBD, compiled and visually checked; commit authorized (2026-10-12).**
+
+The current artifacts support the implemented computational pipeline and its
+connection to the reviewed literature. The user authorized partial drafting.
+One paragraph in `latex-code/sections/01-introduction.tex` presents the bounded
+exhaustive applicability assessment, evidence-linked Proposed ADR generation,
+and separate dense-retrieval/reranking Top-5 comparison. It references the existing
+approach figure without duplicating it and uses the centralized study counts.
+Overlap is explicitly descriptive, not evidence of correctness or superiority.
+The expert protocol is presented as prepared, with a visible TBD marking execution,
+consolidated responses, and resulting validation evidence as pending Phase 3.
+The Task 7.1 TBD remains. Task 7.2 remains partial until expert evidence is
+reconciled; Tasks 7.3--7.4 and Phase 7 remain unfinished.
+The 17-page PDF compiles without undefined citations/references or overfull
+boxes. The existing unresolved-expert warning remains, and underfull-box
+notices persist. Pages 1--2 were rendered and visually checked; the overview
+resolves its study counts and existing figure reference, and both Introduction
+expert-review TBDs are visible.
+The user approved the partial deliverable and authorized its separate commit.
+
 **Work**
 
 - Connect the Related Work gap to the implemented pipeline.

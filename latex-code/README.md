@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, 6.1--6.4, and partial 7.1 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, 6.1--6.4, and partial 7.1--7.2 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -25,8 +25,9 @@ The LaTeX build needs no external datasets, API access, or data processing.
 
 ## Review scope
 
-- [Introduction opening](sections/01-introduction.tex): Task 7.1 motivation and
-  problem statement only; Tasks 7.2--7.4 remain unfinished.
+- [Introduction draft](sections/01-introduction.tex): partial Tasks 7.1--7.2
+  motivation, problem statement, gap, and approach overview with explicit
+  expert-review TBDs; Tasks 7.3--7.4 remain unfinished.
 - [Methodology fragment](sections/03-methodology.tex): protocol scope,
   questionnaire constructs, interpretation limits, and the claim-to-evidence
   matrix in source comments.
@@ -351,9 +352,19 @@ claim of completed expert validation or demonstrated architectural correctness.
 An explicit, visible TBD placeholder beside the expected expert review marks
 recommendation adequacy and documented rationale as pending Phase 3 execution
 and consolidation. Task 7.1 is partial pending that evidence, and existing
-expert-result placeholders remain unresolved. The approach overview, RQs/contributions, and results/roadmap
-paragraphs are reserved for Tasks 7.2--7.4, so the Introduction is not yet complete.
+expert-result placeholders remain unresolved.
 
+Task 7.2 adds one gap-and-approach paragraph to the
+[Introduction draft](sections/01-introduction.tex), referencing the existing
+approach figure in Methodology rather than duplicating it. It connects the
+reviewed literature to exhaustive, requirement-grounded applicability assessment,
+traceable Proposed ADR drafts, and a separate retrieval/reranking Top-5 overlap
+comparison. Counts use existing study macros. The prepared expert protocol is
+described prospectively with a visible TBD for execution, consolidated responses,
+and resulting evidence. Task 7.2 is partial pending Phase 3, and no correctness,
+superiority, or completed expert-validation claim is made.
+RQ/contribution and results/roadmap paragraphs remain reserved for Tasks 7.3--7.4,
+so the Introduction and Phase 7 are not yet complete.
 
 
 

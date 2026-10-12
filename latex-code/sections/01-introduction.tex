@@ -51,3 +51,29 @@ architects, not autonomous acceptance of architectural decisions.
 pending Phase~3 execution and consolidation.}
 The assessment of recommendation adequacy and documented rationale remains
 pending; no expert-validation outcome is claimed in this Introduction.
+
+The literature reviewed in Section~\ref{sec:background-related-work} examines
+LLM-assisted architectural design, ADR decision generation, and AI-pattern
+solution synthesis~\cite{cervantes2026assistants,dhar2024generating,oliveira2026designpartners}.
+These lines of work motivate investigating their intersection: requirement-grounded
+selection from an AI-pattern catalog linked to decision documentation and
+comparison with retrieval-based candidates. ADR4AI operationalizes this
+investigation through the pipeline in Figure~\ref{fig:approach-overview}.
+It assesses each of \StudyPatternCount{} catalog patterns against each of
+\StudyStoryCount{} industrial user stories and their acceptance criteria from
+\StudySystemCount{} systems, yielding an exhaustive census of
+\StudyAssessmentCount{} story--pattern pairs within this bounded sample.
+The LLM classifies each pair as applicable, not applicable, or insufficient
+information, requiring requirement references for positive judgments.
+Each pair classified as applicable supplies the requirement context, pattern,
+and applicability evidence for a traceable ADR draft with Proposed status.
+A separate dense-retrieval and reranking baseline supplies a final
+Top-\RagFinalCount{} candidate set for same-story overlap comparison; this is
+an output-set comparison, not a test of architectural correctness or superiority.
+The prepared expert-assessment protocol complements these computational stages
+by asking practitioners familiar with the respective systems to assess selected
+patterns and their ADRs, including decision adequacy, grounding, consequences,
+perceived usefulness, and pattern applicability.
+\textbf{TBD---Expert assessment execution, consolidated responses, and resulting
+validation evidence pending Phase~3; this stage is planned, not reported as
+completed.}
