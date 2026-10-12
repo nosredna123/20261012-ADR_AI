@@ -821,6 +821,35 @@ dependency is not waived; this exception does not authorize later tasks.
 
 ### Task 4.2 — Interpret the LLM-versus-RAG relationship
 
+**Status: COMPLETED AND REVIEWED — bounded computational
+interpretation under an explicitly authorized dependency exception
+(2026-10-12).**
+
+The researcher authorized proceeding with this task despite postponed
+Phase 3 and the unresolved RQ3 portion of Task 4.1. Its specified comparative
+subsection can be completed using the approved computational Results and
+protocols, without claiming expert findings. This exception applies only
+to Task 4.2; it neither completes Phase 3/Task 4.1 nor authorizes Task 4.3.
+
+The subsection in `latex-code/sections/05-discussion.tex` distinguishes
+exhaustive per-pair applicability from fixed-size ranked candidate membership,
+uses the approved overlap table, and retains language/catalog-representation
+limitations. Non-overlap is not treated as error or evidence of superiority.
+Retrieval-first assessment is labeled an unexecuted future design hypothesis:
+end-to-end cost, latency and quality effects are explicitly not evaluated.
+No numerical TBD, invented result, new model run or derived dataset is added.
+The existing expert-result warnings remain active.
+
+The deliverable has passed the build, exact-PDF visual inspection and human
+review gates; commit permission remains separate. The current PDF has
+11 pages with Discussion on page 11 before References, so it exceeds the
+10-content-page limit. This issue was disclosed and accepted for this task's
+draft review; later compression is required, not a waiver of submission limits.
+Later expert findings may
+contextualize the discussion but cannot establish recall over unassessed
+alternatives. Any future hybrid-pipeline benefit requires a controlled study,
+not completion of a placeholder in this manuscript.
+
 **Work**
 
 - Explain why exhaustive pairwise applicability assessment and semantic Top-5 retrieval answer different questions.

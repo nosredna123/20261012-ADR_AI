@@ -49,3 +49,46 @@ Whether experts corroborate, qualify or challenge the recommendations
 remains undetermined. Revisit this answer and the combined interpretation
 after Phase 3 verifies ratings, coverage and eligible comments;
 no outcome is assumed.
+
+\subsection{Interpreting Exhaustive Assessment and Retrieval}
+\label{sec:llm-rag-discussion}
+
+The two protocols have different decision boundaries.
+Exhaustive assessment evaluates each story--pattern pair against the
+supplied requirements and returns an applicability category with
+supporting evidence for positive classifications
+(Section~\ref{sec:applicability-experiment}).
+The retrieval baseline instead ranks catalog documents by their
+relationship to a story query and retains a fixed-size candidate set
+(Section~\ref{sec:rag-baseline}). A ranking position is not an
+applicability judgment: even a story with no LLM-positive pair receives
+retrieval candidates. Conversely, exhaustive assessment is not constrained
+to return a fixed number of positives. Their intersection therefore
+describes agreement in candidate membership, not agreement on a common
+classification task.
+
+Table~\ref{tab:rag-comparison} shows that the frozen final Top-5 omits
+most LLM-positive pairs. This observation neither proves that retrieval
+misses appropriate patterns nor validates the additional LLM selections.
+English retrieval queries, Portuguese assessment inputs and unequal
+catalog representations prevent attributing the difference solely to
+the selection mechanism. The current comparison also does not establish
+why individual candidates rank outside the cutoff. Architectural quality
+and relevance require evidence independent of either output set; expert
+assessment of selected pairs alone cannot establish recall across the
+unassessed alternatives.
+
+\emph{Future design hypothesis---not evaluated.}
+Retrieval could serve as a candidate-generation stage before pairwise
+LLM assessment, potentially reducing the number of pairs sent for
+assessment. Such filtering would also exclude the current LLM-positive
+pairs outside the cutoff from consideration; the architectural importance
+of those exclusions is unknown. No hybrid pipeline was executed, and
+end-to-end cost savings, latency and quality effects are
+\textbf{not evaluated}, not demonstrated benefits.
+A controlled follow-up should align input language and catalog fields,
+vary the candidate budget, account for retrieval/reranking overhead
+alongside generation costs, and independently assess candidates both
+inside and outside the shortlist. Until those trade-offs are measured,
+retrieval-first assessment remains a proposed alternative rather than
+a validated replacement for exhaustive assessment.

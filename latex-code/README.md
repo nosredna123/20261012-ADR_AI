@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, and partial 4.1 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, and 4.2 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -175,3 +175,21 @@ of Task 4.1 or verification of any expert result.
 After Phase 3, finish the RQ3 answer and revisit the combined interpretation
 against actual coverage, item distributions and eligible comments.
 The exception does not authorize Task 4.2 or any other later task.
+
+Task 4.2 adds the comparative interpretation subsection to
+[Discussion](sections/05-discussion.tex), under a separate researcher-authorized
+exception to the pending Phase 3 and remaining Task 4.1 dependencies.
+It distinguishes ranked candidate membership from per-pair applicability,
+retains the language/representation limitations and cites the approved
+protocols and overlap table. No new statistic, model run or data processing
+is introduced. Retrieval-first assessment is explicitly an unexecuted future
+design: cost, latency and quality effects are marked **not evaluated**, and
+potential filtering exclusions are not labeled architectural errors.
+The specified Task 4.2 subsection has been completed and approved after review;
+Phase 3 and the RQ3 portion of Task 4.1 remain unresolved. No additional TBD
+value is needed because the proposed hybrid experiment is future work,
+not a missing result of the current study. Existing expert safeguards remain.
+This exception does not authorize Task 4.3 or other later tasks.
+The current PDF has 11 pages with Discussion extending onto page 11 before
+References; the 10-content-page limit is not yet met. Later compression is
+required, without silently deleting approved material or changing the format.
