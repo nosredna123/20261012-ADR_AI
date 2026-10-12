@@ -411,6 +411,10 @@ These are planning formulations, not final protocol statements. They must be rec
 - Create unresolved macros in `data/expert-values.tex` for participant count, experience, completed system evaluations, missing responses, rating summaries, agreement values, and qualitative themes.
 - Create table shells with captions and defined intended content, but no invented numbers.
 - Add visible LaTeX warnings or bold `TBD` output so the manuscript cannot silently appear complete.
+- Draft the RQ3 prose as claim-neutral sentence templates whose subjects, statistics, direction, and interpretation are supplied only by verified macros after consolidation. For example: “For Q1, the response distribution was \ExpertQOneDistributionTBD{}; the median was \ExpertQOneMedianTBD{} (IQR \ExpertQOneIQRTBD{}).”
+- If preliminary internal summaries are useful for coordinating the team, label them `PRELIMINARY—NOT VERIFIED`, keep them outside the submission manuscript, and never use them to select only favorable examples or conclusions.
+- Do not mock favorable observations, respondent quotations, sample sizes, statistics, agreement values, or themes. Synthetic data may be used only to test analysis code or table layout, must be stored outside the empirical results, and must be unmistakably labeled `SYNTHETIC—NOT STUDY DATA`.
+- Keep the draft Discussion conditional and direction-neutral: enumerate interpretations for favorable, mixed, and unfavorable outcomes, then retain only the branch supported by the frozen expert dataset.
 
 **Deliverables**
 
@@ -422,6 +426,7 @@ These are planning formulations, not final protocol statements. They must be rec
 
 - A draft build succeeds while making every unresolved human result unmistakable.
 - No placeholder resembles a real observation.
+- No preliminary or synthetic value can be included in the submission build without triggering an explicit unresolved-data marker.
 
 ---
 
