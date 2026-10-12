@@ -705,6 +705,41 @@ sequential review gates.
 
 ### Task 3.5 — Remove all result placeholders and run consistency checks
 
+**Status: POSTPONED — verified expert-analysis outputs from Tasks 3.1--3.4
+are unavailable in the current artifact version (checked 2026-10-12).**
+
+Tasks 3.1--3.4 remain postponed: no frozen expert-response dataset,
+reconciled eligibility/sample results, quantitative rating outputs or
+qualitative findings are available to replace the Task 2.5 placeholders.
+The existing expert-value macros still explicitly represent unresolved
+human results. Removing their TBD output or suppressing the unresolved-data
+warning now would conceal missing evidence, not complete the expert Results.
+A placeholder search alone cannot satisfy this task's evidence and
+consistency criteria.
+
+**Resume conditions**
+
+- Complete and approve Tasks 3.1--3.4 with traceable, reproducible outputs
+  from the frozen expert dataset and the required governance/disclosure review.
+- Replace each empirical placeholder only with its verified result.
+  Where the actual data cannot support a planned statistic or qualitative
+  output, report the documented non-estimability reason or verified absence;
+  do not invent a value, substitute zero or silently omit a limitation.
+- Cross-check all expert counts, denominators, coverage, item summaries,
+  agreement and themes across Methodology, Results, tables and any figures;
+  ensure disposition totals reconcile with the frozen raw export and all
+  claims remain within the actual sample and assessed cases.
+- Adjust RQ3 wording and retain only evidence-supported interpretations.
+  Remove the Task 2.5 unresolved-result warning and visible markers only after
+  every human-result placeholder has been resolved and the final checks pass;
+  rebuild and visually inspect the exact review PDF before human approval.
+
+No placeholder replacement, warning suppression or expert-result completion
+is performed while postponed. The manuscript and PDF retain the approved
+Task 2.5 safeguards. Phase 3 is postponed, not completed; Phase 4's dependency
+on Phases 2 and 3 remains unsatisfied. Starting later work or using conditional
+placeholders requires explicit human approval under the execution directives.
+
 **Work**
 
 - Replace every `TBD` expert macro.
