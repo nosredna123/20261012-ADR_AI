@@ -648,6 +648,45 @@ review gates.
 
 ### Task 3.4 — Analyze optional comments
 
+**Status: POSTPONED — eligible expert comments and prerequisite dataset/sample
+validation are unavailable in the current artifact version
+(checked 2026-10-12).**
+
+The workspace has no authoritative consolidated human-response export or
+traceable eligible comment corpus. Tasks 3.1--3.2 remain postponed, and the
+sequential Task 3.3 review gate has not been completed. Prepared questionnaire
+prompts, generated ADR text and local simulations are not respondent comments.
+The Task 1.8 protocol's initial coding domains are guidance, not observed
+themes. The absence of a supplied export does not establish that experts
+submitted no optional comments.
+
+**Resume conditions**
+
+- Complete and approve the preceding Phase 3 tasks, providing frozen
+  raw-to-clean traceability, reconciled eligibility dispositions and verified
+  selected-route case/comment mapping under confirmed governance arrangements.
+- Identify nonblank eligible selected-route comments and optional-comment
+  opportunities; preserve internal submission/case links under restricted
+  access. Blank optional comments are not disagreement, and off-route comments
+  require mapping review rather than automatic inclusion.
+- Execute the approved independent dual-coding and reconciliation procedure,
+  preserving initial assignments, reasons, final codes and versioned codebooks.
+  Retain critical, mixed and counterexample observations. If dual coding is
+  infeasible, document the deviation and actual procedure rather than claiming
+  it occurred.
+- Report unique comments per theme with nonblank/opportunity denominators and
+  multiple-code accounting, without prevalence or representativeness claims.
+  If the verified corpus has no eligible comments, report that documented
+  absence rather than inventing themes.
+- Complete disclosure review before publication; use short quotations only
+  with documented quotation authorization and de-identification review.
+  Otherwise summarize without quotations, without suppressing criticism.
+
+No comment ingestion, coding, theme count or respondent quotation is produced
+while postponed. The Task 2.5 qualitative placeholders remain unresolved.
+Postponement does not authorize Task 3.5 placeholder removal or bypass the
+sequential review gates.
+
 **Work**
 
 - Apply the predeclared qualitative procedure.
