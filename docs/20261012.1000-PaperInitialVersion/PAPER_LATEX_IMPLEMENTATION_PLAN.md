@@ -1065,6 +1065,42 @@ this exception does not authorize Task 5.3.
 
 ### Task 5.3 — Address external validity
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — industrial requirement sample,
+pattern catalog boundaries, language/domain context and model/pipeline
+specificity threats approved; evaluator sample/practitioner representativeness
+remains TBD pending Phase 3 (2026-10-12).**
+
+The researcher explicitly authorized partial work as an exception to Phase 5's
+final Methodology/Results dependency. The subsection in
+`latex-code/sections/06-threats-to-validity.tex` addresses the small industrial
+sample (four systems, 12 stories, single Brazilian public-sector organization),
+the 70-pattern catalog boundary (AI-specific patterns without general software
+styles or traditional tactics), language and domain context (verbatim Portuguese
+requirements aligned with English catalog definitions and prompts), and single-model/pipeline
+specificity (`gpt-4o-2024-08-06` and `text-embedding-3-small`).
+Each threat is paired with an explicit impact statement and concrete study mitigations,
+avoiding generic boilerplate and population-wide generalizability claims.
+
+**Remaining work and resume conditions**
+
+- Complete and approve Phase 3, consolidating verified participant response
+  datasets and demographic profiles.
+- Analyze the empirical participant cohort (professional tenure, architecture
+  experience, familiarity with SYS01--SYS04, and organizational roles).
+- Revisit and update the external validity subsection to bound human evaluator
+  representativeness and perceived ADR quality generalizability to the observed
+  rater sample, explicitly avoiding unsupported extrapolation to the wider
+  software engineering population.
+- Resolve the visible `TBD---Evaluator sample and practitioner representativeness
+  pending Phase~3 expert consolidation` marker only after these analyses have
+  been completed and reviewed.
+
+The partial deliverable has passed the build, exact-PDF visual inspection, and
+human review gates; commit permission remains separate. Existing expert warnings
+and unresolved placeholders remain active. The draft length continues to exceed
+the 10-content-page budget, which remains deferred to Phase 11 compression.
+Task 5.3 remains incomplete; this exception does not authorize Task 5.4.
+
 **Work**
 
 - Discuss the small industrial sample, four systems, 12 stories, 70-pattern catalog, language/context, organization-specific requirements, and expert sample.

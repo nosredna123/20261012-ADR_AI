@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, and partial 5.1--5.2 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, and partial 5.1--5.3 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -271,3 +271,23 @@ Task 5.2 remains incomplete and this exception does not authorize Task 5.3.
 The PDF now has 13 pages with content on page 13 before References.
 This disclosed draft limitation requires later compression; approval does
 not waive the submission page limit.
+
+Task 5.3 adds [partial external-validity threats](sections/06-threats-to-validity.tex)
+under a separately authorized exception to the final Methodology/Results
+dependency. The text covers the small industrial sample (four systems, 12 stories,
+single public-sector organization), the 70-pattern AI catalog boundaries,
+language and translation domain context, and single-model/pipeline specificity.
+Each limitation is paired with its specific impact and concrete study mitigations,
+avoiding generic boilerplate or population-wide claims.
+
+The partial subsection includes an explicit visible
+`TBD---Evaluator sample and practitioner representativeness pending Phase~3 expert consolidation`
+marker. This preserves the requirement that upon completion of Phase 3, the
+subsection must be updated with the actual participant demographics (professional
+experience, architecture tenure, system familiarity, and organizational roles),
+explicitly bounding expert generalizability to the observed rater cohort.
+No participant data or demographics are invented; existing expert warnings remain active.
+Task 5.3 remains incomplete and this exception does not authorize Task 5.4.
+The PDF remains 13 pages (or 14 pages depending on layout) with content before References;
+page-budget correction remains deferred to Phase 11 compression.
+

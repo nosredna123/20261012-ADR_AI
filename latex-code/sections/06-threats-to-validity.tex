@@ -130,3 +130,80 @@ administration conditions, completion/coverage and protocol deviations.
 Report only supported evidence of evaluator effects and executed
 safeguards; do not infer fatigue from route size or claim that planned
 analysis procedures have already been applied.
+
+\subsection{External Validity (Partial)}
+\label{sec:external-validity}
+
+\emph{Industrial sample and requirement scope.}
+The empirical evaluation relies on \StudySystemCount{} AI-enabled systems
+(SYS01--SYS04), comprising \StudyStoryCount{} user stories
+(\StudyStoriesPerSystem{} per system) and \StudyCriterionCount{} validated
+acceptance criteria (Section~\ref{sec:requirement-sample}).
+All four systems originate from a single public-sector organization in
+Brazil. Consequently, requirements reflect specific organizational practices,
+enterprise workflows, regulatory constraints, and public-administration
+governance. Architectural tradeoffs prevalent in other domains---such as
+high-frequency financial transactions, ultra-low-latency edge devices,
+or safety-critical autonomous systems---are not represented in this corpus.
+While the four systems span distinct functional capabilities (e.g., text
+summarization, legal analysis, conversational assistance, and automated triage),
+and the evaluation covers an exhaustive census of all \StudyAssessmentCount{}
+story-pattern pairs without subsampling, the findings cannot be generalized
+to all AI-enabled systems or different organizational cultures without
+multi-organization replication.
+
+\emph{Pattern catalog boundaries and coverage.}
+The study uses a curated catalog of \StudyPatternCount{} architectural patterns
+for AI-enabled systems drawn from literature and the SWE4AI
+repository~\cite{heiland2023patterns,aiPatternsRepository}.
+These patterns emphasize data management, model training, deployment, and
+monitoring. The catalog does not cover general software architectural styles
+(e.g., event-driven architectures, microservices, or layered designs) or
+traditional quality-attribute tactics (e.g., hardware fault tolerance or
+network redundancy), nor does it incorporate recent generative AI design
+motifs emerging after the catalog freeze.
+The structured catalog schema ensures uniform field representation
+across all \StudyPatternCount{} patterns during prompting, but pattern
+selection frequencies, insufficient-information rates, and generated ADR
+structures may differ under alternative, expanded, or differently structured
+architectural taxonomies.
+
+\emph{Language, translation and domain context.}
+The original industrial requirements and acceptance criteria were formulated
+in Brazilian Portuguese, whereas the pattern catalog definitions and the
+primary prompt templates are in English (Section~\ref{sec:expert-preparation}).
+Model-based pattern assessment therefore requires multilingual semantic
+alignment between Portuguese operational needs and English architectural
+specifications. While the study preserves original Portuguese requirements
+verbatim and audits translation artifacts to avoid semantic distortion,
+domain-specific public-administration vocabulary and linguistic nuances
+may influence prompt comprehension. The observed model behaviors and
+ADR generation qualities may not transfer identically to monolingual
+English requirements or other linguistic and regional contexts.
+
+\emph{Model and pipeline specificity.}
+The selection and generation pipelines rely exclusively on a single
+commercial frontier model (\texttt{gpt-4o-2024-08-06}), structured JSON
+generation, and a specific embedding model (\texttt{text-embedding-3-small})
+for the RAG baseline (Sections~\ref{sec:applicability-experiment}
+and~\ref{sec:rag-baseline}).
+The resulting applicability distributions, high proportion of
+insufficient-information outcomes (\StudyInsufficientInformationCount{} of
+\StudyAssessmentCount{}), and specific ADR trade-off formulations reflect
+the reasoning capacity, instruction-following behavior, and pre-training
+distribution of this specific model snapshot.
+These results do not generalize to alternative commercial models, open-weight
+architectures (e.g., Llama or Mistral variants), different prompt strategies
+(such as multi-step chain-of-thought or multi-agent debate), or other
+retrieval configurations without direct comparative evaluation.
+
+\noindent\textbf{TBD---Evaluator sample and practitioner representativeness
+pending Phase~3 expert consolidation.} When human evaluation data is
+consolidated in Phase 3, this subsection must be updated with the empirical
+demographics of the participant cohort, including professional tenure,
+software architecture experience, evaluated-system familiarity, and the
+balance between internal system engineers and independent architects.
+The generalizability of expert ratings and qualitative feedback must be
+explicitly bounded by the rater sample composition, avoiding unsupported
+extrapolations to the wider software engineering community.
+
