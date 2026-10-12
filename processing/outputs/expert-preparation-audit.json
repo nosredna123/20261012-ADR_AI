@@ -1,0 +1,131 @@
+{
+  "case_count": 36,
+  "inputs": [
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/compile_expert_evaluation.py",
+      "sha256": "cc535fa57f920d455060ad7fd7296be470cd1978549794ff5a13599e09bb0ff7"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/translate_expert_evaluation.py",
+      "sha256": "c2bd816e1cc2a75973e897a913e7b1c365673b4aff220e5714a299a953c87011"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/adr_generation_results.csv",
+      "sha256": "50222b4ceab5760e0cc41b8f258bd71460ed19ce404d5aed04ba4d132b3880df"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/expert_evaluation_language_classification.csv",
+      "sha256": "3a5bb9631766bd17f182ace2e0d9d3c5baf88ad4bf05a2d73c8ac127732ec42c"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/expert_evaluation_translations_pt.csv",
+      "sha256": "14cc1510f3a5f0bd8c3faf3f3571642d6bbf831ba3f6fbaa6f00678cb4b5b2a4"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/expert_evaluation_manual_corrections.csv",
+      "sha256": "c86c0b016b923fe3639fe1e67e960170831b5d48b60e7ae0a1092490ac0a32a4"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/expert_evaluation_cases_pt.csv",
+      "sha256": "47a1223809b70d6b3846e75a75f14b842adedb5a9ee749de569c59a92634fb1c"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/expert_evaluation_translation_audit.csv",
+      "sha256": "aad04703935aeb934d69c83e2d6dcd76456f9de76fc7896d7a2a502da9c26560"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/expert_evaluation_preparation_report.md",
+      "sha256": "5703d04f120f5284c15c016b32799a7b32af997f47c6a9cca84b82e386a3c1cc"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/expert_evaluation_translation_run/translations_candidate.csv",
+      "sha256": "46c9ac0d7d1668dd0b2ee10a3836232b3e017a0e662c288db2791377a93d1a41"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/expert_evaluation_translation_run/manual_authorization.txt",
+      "sha256": "cd947fcfa2939c57922b10236d4ee88bb55aea9724e0b82090e84242a90fd5fe"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/google_forms/README.md",
+      "sha256": "2da07066d05b1fa1c3266752bfe0c9d25c9d6db05c086579eb1b6b49052a7471"
+    },
+    {
+      "path": "docs/20261012.0933-InitialArtifacts/adr4ai_app/research_results/google_forms/create_expert_evaluation_form.gs",
+      "sha256": "1b75bb2af50d8ffa590fac8f591f5581924beee83a61620cb40852bb8c478e79"
+    }
+  ],
+  "language_categories": {
+    "empty": 9,
+    "mixed_portuguese_non_portuguese": 14,
+    "non_portuguese": 289,
+    "portuguese": 12
+  },
+  "manual_correction_count": 5,
+  "mapping_count": 324,
+  "pending_procedures": [
+    "Deployment and exact administered instrument version",
+    "Evaluator eligibility and recruitment",
+    "Consent and ethics approval/exemption",
+    "Administration dates and instructions",
+    "Account-level access, privacy, storage/access/retention arrangements",
+    "Post-collection procedural confirmation and consolidated responses"
+  ],
+  "questionnaire": {
+    "cases_per_system": {
+      "SYS01": 7,
+      "SYS02": 12,
+      "SYS03": 8,
+      "SYS04": 9
+    },
+    "evaluation_questions": [
+      {
+        "construct_en": "Decision adequacy for the stated requirements",
+        "id": "Q1",
+        "wording_pt": "A decisão proposta no ADR é adequada para atender às necessidades expressas na história de usuário e em seus critérios de aceitação?"
+      },
+      {
+        "construct_en": "Decision grounding and comprehensibility of its rationale",
+        "id": "Q2",
+        "wording_pt": "O ADR apresenta uma decisão arquitetural suficientemente fundamentada, permitindo compreender por que essa decisão foi proposta para esse contexto?"
+      },
+      {
+        "construct_en": "Presentation of relevant consequences, benefits and trade-offs",
+        "id": "Q3",
+        "wording_pt": "O ADR apresenta adequadamente as consequências relevantes da decisão, incluindo seus benefícios e possíveis impactos ou trade-offs?"
+      },
+      {
+        "construct_en": "Perceived usefulness as a decision record in the evaluator's system",
+        "id": "Q4",
+        "wording_pt": "Considerando o sistema em que você atua, este ADR seria útil como registro para apoiar a compreensão, discussão ou evolução dessa decisão arquitetural?"
+      },
+      {
+        "construct_en": "Pattern applicability to the stated requirements",
+        "id": "Q5",
+        "wording_pt": "O padrão arquitetural utilizado como base para gerar este ADR é aplicável às necessidades expressas na história de usuário e em seus critérios de aceitação?"
+      }
+    ],
+    "form_creation_enabled_in_archive": false,
+    "optional_comments_per_system": {
+      "SYS01": 7,
+      "SYS02": 12,
+      "SYS03": 8,
+      "SYS04": 9
+    },
+    "profile_questions_pt": [
+      "Tempo de experiência profissional em desenvolvimento, arquitetura ou engenharia de software",
+      "Tempo de experiência com arquitetura de software",
+      "Como você avalia seu nível de conhecimento sobre o sistema que será avaliado?"
+    ],
+    "required_rating_count_across_all_routes": 180,
+    "required_ratings_per_system": {
+      "SYS01": 35,
+      "SYS02": 60,
+      "SYS03": 40,
+      "SYS04": 45
+    },
+    "verification_scope": "Embedded-value equality and static source contracts only; not Google execution, route simulation, deployment, permissions or respondent access."
+  },
+  "requirements_preserved": true,
+  "results_inspected": false,
+  "task": "1.7"
+}

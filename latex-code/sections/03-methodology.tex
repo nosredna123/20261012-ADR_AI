@@ -463,3 +463,109 @@ assessment is still pending in this draft.
 % top-level outputs and attempts, research_results/README.md and immutable
 % pre-ADR backup. Offline verification: processing/scripts/prepare_adr_protocol.py.
 % Exact prompt/schema, hashes and retry links: processing/outputs/adr-protocol-audit.json.
+
+\subsection{Translation and Expert-Evaluation Preparation}
+\label{sec:expert-preparation}
+
+\paragraph{Completed preparation: Portuguese presentation material}
+Evaluator-facing material was prepared for the
+\ExpertPreparedCaseCount{} selected pairs. The original system purpose,
+story, and acceptance criteria are retained literally; translation operates
+on four pattern fields (name, motivation, solution, consequences) and five
+ADR fields (title, status, context, decision, consequences), yielding
+\ExpertMappingCount{} field mappings. The linguistic inventory distinguishes
+12 Portuguese fields preserved, 289 non-Portuguese fields translated,
+14 mixed-language fields translated partially, and nine empty fields
+preserved. The translation prompt prohibits improving, completing, or
+architecturally correcting the source. Portuguese portions of mixed fields
+are protected by placeholders and restored locally; the fixed status
+\texttt{Proposed} is presented as \emph{Proposto}. The preparation report
+records 36 translation requests in the prior translation stage; the subsequent
+review/compilation stage made no additional model calls.
+
+Five field-specific linguistic corrections were explicitly authorized:
+``Commercial'' to ``Comercial'' in four ADR fields for
+\texttt{SYS03-US02}--Pattern~\texttt{014}, and ``Machine Learning'' to
+``aprendizado de m\'aquina'' in the pattern motivation for
+\texttt{SYS04-US03}--Pattern~\texttt{014}. Original text, translation candidate,
+final presentation, action category, and correction authorization remain
+separate in the audit. An offline compiler checks exact source/mapping
+alignment, preserved Portuguese spans, authorized changes, requirement
+preservation, and pair equality before producing the presentation CSV.
+These checks establish linguistic provenance and preservation constraints,
+not architectural validation or independently measured translation quality.
+
+\paragraph{Prepared instrument: items and routing}
+The archived Google Apps Script embeds all presentation cases verbatim.
+Three required profile questions ask about professional experience in software
+development/architecture/engineering, architecture-specific experience, and
+self-rated knowledge of the evaluated system. Both experience items use
+four categories: less than two years, two--five, six--ten, and more than ten;
+system knowledge uses a 1--5 scale from very low to very high. These items
+describe respondents but do not themselves enforce expert eligibility.
+The instructions ask evaluators to select only the system they know or have
+experience with; the required single-choice selection routes each evaluator
+to that system and then to the common final page, not onward to another
+system.
+
+The prepared routes contain 7, 12, 8, and 9 cases for SYS01--SYS04,
+respectively. Within a route, purpose, story, and criteria are displayed once
+per story, followed by each pattern and ADR. Empty pattern descriptions are
+omitted from display without filling their stored values. Q1--Q4 address
+the ADR and Q5 its underlying pattern (Table~\ref{tab:expert-constructs}).
+All five ratings per case are required on the selected route, using a
+1--5 agreement scale anchored by \emph{Discordo totalmente} (strongly disagree)
+and \emph{Concordo totalmente} (strongly agree); no verbal anchors are assigned
+to the intermediate values. Each case also has an optional paragraph comment
+asking about problems or needed improvements. Question titles encode the
+story ID, pattern ID, and item ID for traceable export. This yields 35, 60,
+40, or 45 required case ratings per evaluator's route, not 180 ratings
+per evaluator. Unselected-route response columns are structurally blank,
+not evidence that the evaluator omitted selected-route ratings.
+\input{tables/expert-constructs}
+
+The five items are separate professional judgments, not a validated composite
+score. In particular, Q4 measures perceived usefulness as a record, not
+observed improvements in practice; Q5 cannot establish missed-pattern recall
+because only LLM-positive pairs are presented.
+
+\paragraph{Implementation checks and unconfirmed administration}
+The questionnaire README reports local stand-in tests of item construction,
+embedded-case equality, and routing. Those simulations validate implementation,
+not expert judgments, Google deployment, live appearance, or account
+permissions. The manuscript audit independently checks frozen translation
+outputs, embedded values, and static questionnaire source contracts; it does
+not rerun the Google service or establish live routing behavior.
+Creation is disabled in the archived script until deliberately enabled by a
+researcher. The script requests no name, e-mail, or employee identifier,
+disables e-mail collection, response summaries, and question shuffling, and
+does not restrict submissions to one per signed-in user. These are intended
+settings, not a guarantee of anonymity: organization policies and responder
+permissions require account-side review and signed-out access testing.
+Profile combinations and free-text comments may also permit indirect
+identification.
+
+\paragraph{Pending protocol and post-collection confirmation}
+\textbf{Protocol details pending confirmation:}
+document the deployed form/version and live route/access checks; evaluator
+eligibility and recruitment; consent and the applicable ethics approval or
+exemption; administration dates and instructions; and actual privacy,
+response-storage access, and retention arrangements. The preparatory
+research-purpose notice does not itself establish informed consent or ethics
+approval. The archived scripts alone do not establish that a form was
+deployed or that responses were collected.
+
+The researcher reports preliminary responses being consolidated separately.
+No consolidated response dataset or verified administration record has been
+inspected for this draft. After collection, replace the pending procedural
+details with confirmed execution information, documenting any differences
+from the prepared instrument. This subsection contains no expert-result
+values or claims of agreement. Response eligibility, ordinal analysis, and
+comment handling will be specified separately before inspecting results.
+
+% Task 1.7 provenance: research_results/compile_expert_evaluation.py,
+% translation mappings/inventory/corrections/audit, preparation report,
+% google_forms/create_expert_evaluation_form.gs and README.md.
+% Verification: processing/scripts/prepare_expert_protocol.py and
+% processing/outputs/expert-preparation-audit.json. Procedural placeholders
+% explicitly authorized by researcher on 2026-10-12; no response data inspected.

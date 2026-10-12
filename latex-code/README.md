@@ -1,8 +1,8 @@
-# Tasks 1.1--1.6 review draft
+# Tasks 1.1--1.7 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
-catalog, applicability protocol, RAG baseline, and ADR-generation protocol.
+catalog, applicability/RAG/ADR protocols, and expert-evaluation preparation.
 It is not the full manuscript.
 Later sections, further bibliography
 entries, result macros, and final metadata
@@ -64,3 +64,12 @@ The LaTeX build needs no external datasets, API access, or data processing.
 RQ3 is defined for the prepared questionnaire. Preliminary responses have been
 reported by the researcher but have not been supplied as a consolidated dataset
 for this task. No expert finding or statistic is asserted in this draft.
+
+Task 1.7 adds the verified translation/preparation subsection and
+[construct table](tables/expert-constructs.tex). The
+[preparation audit](../processing/outputs/expert-preparation-audit.json)
+retains exact Portuguese item wording and source hashes; English construct
+descriptions in the manuscript are explanatory translations, not a replacement
+instrument. Deployment, recruitment/eligibility, consent/ethics,
+administration, and actual access/privacy details remain explicit procedural
+placeholders, as authorized by the researcher. No respondent data is included.

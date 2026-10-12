@@ -234,3 +234,55 @@ The Nygard citation was checked against the original Cognitect article
 context, decision, status, and consequences description. The pipeline figure
 is maintained as standalone LaTeX under `../latex-code/figures/`; its build
 commands are in the manuscript README, not a data-processing script.
+
+## Task 1.7: translation and questionnaire preparation
+
+[prepare_expert_protocol.py](scripts/prepare_expert_protocol.py) reuses the
+original preparation compiler's validation and in-memory compilation functions,
+without calling its publication entry point. It checks 324 mappings for the
+36 source pairs, original requirement preservation, language categories,
+preserved Portuguese spans, candidate/final provenance, and the five authorized
+corrections. Both frozen presentation/audit CSVs must equal the in-memory
+outputs byte-for-byte. No original file is overwritten.
+
+It decodes the form script's JSON-embedded cases and checks exact equality with
+the presentation CSV, extracts the five Portuguese evaluation statements and
+three profile questions, and checks explicit static source contracts for
+route exits, scale anchors, comments, omission of empty fields, creation guard,
+and intended privacy settings. Static checks are **not** a new route simulation
+or a Google execution test. The archived README's local simulation is reported
+as implementation validation only, not deployment or empirical evidence.
+
+Outputs:
+
+- `outputs/expert-preparation-audit.json`: source hashes, verified category/
+  correction/case counts, per-route item counts, exact Portuguese wording,
+  English construct descriptions, validation limits, and pending procedures;
+- `../latex-code/data/expert-preparation-values.tex`: preparation count macros.
+
+Inputs are the original ADR results, translation inventory/mappings/candidates,
+authorized-correction records, final evaluator CSV/audit, compiler/translation
+scripts, preparation report, and form script/README. No expert responses,
+Google account, form URL, API call, or translation generation is used.
+The script requires Python 3.10+ and the standard library only. Portuguese
+Unicode is retained in the audit to preserve exact source wording.
+
+From this directory:
+
+```sh
+python -B scripts/prepare_expert_protocol.py
+python -B scripts/prepare_expert_protocol.py --check
+python -B -m unittest discover -s tests -p 'test_*.py'
+```
+
+Validation precedes generation; `--check` is read-only and rejects absent/stale
+outputs. Tests cover deterministic outputs, form-value/settings drift, missing
+questions, unapproved translation changes, changed requirements, and missing
+form source; mutations remain in-memory, not empirical files.
+
+On 2026-10-12, the researcher authorized explicit pending-protocol placeholders
+for unconfirmed deployment, eligibility/recruitment, consent/ethics,
+administration, and actual access/privacy arrangements. No such procedure is
+asserted as completed. Profile questions are not eligibility rules; disabling
+email collection does not prove anonymous live access. Response analysis
+choices belong to Task 1.8 and are not implemented here.
