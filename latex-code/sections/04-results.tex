@@ -35,3 +35,35 @@ accounted for most outcomes overall. The observed differences describe this
 bounded sample; they do not identify causes, establish that the requirements
 are defective, or imply that non-positive outcomes are missed applicable
 patterns. Architectural adequacy requires separate evidence.
+
+\subsection{RQ2: Overlap with the Retrieval Baseline}
+\label{sec:rq2-results}
+
+Of the \StudyApplicableCount{} LLM-positive story--pattern pairs,
+\StudyRagOverlapCount{} appeared in the frozen baseline's final Top-5 for
+the same story, yielding a pooled overlap of \RqTwoOverlapPercent{}\%
+(Equation~\ref{eq:rag-overlap}). These matches spanned
+\StudyRagOverlapStoryCount{} of \StudyStoryCount{} sampled stories.
+The remaining \StudyRagOutsideCount{} positive pairs were outside that
+story's final Top-5; they are not established false negatives.
+
+\input{tables/rag-comparison}
+
+Table~\ref{tab:rag-comparison} retains every sampled story and reports
+the positive-set size, pairs inside and outside the final Top-5, and
+the overlap percentage among that story's LLM-positive pairs.
+For \texttt{SYS04-US01}, the positive set is empty: the intersection count
+is zero, but its percentage is undefined, not zero.
+The pooled percentage divides total matches by all positive pairs;
+it is not the average of the story percentages or a proportion of
+retrieval candidates.
+
+This comparison concerns final Top-5 membership only; vector Top-15
+membership, ranking positions, and scores do not contribute to this measure.
+The LLM labels are predictions rather than an independent reference set,
+so the intersection does not measure precision, recall, classification
+accuracy, or superiority of either approach. As documented in
+Section~\ref{sec:rag-baseline}, the baseline uses English queries and a
+richer catalog representation than the Portuguese-input applicability
+assessment. Consequently, observed overlap differences cannot be
+attributed solely to the selection mechanism.

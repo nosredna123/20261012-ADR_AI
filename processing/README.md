@@ -566,3 +566,54 @@ adequacy. No RAG or ADR-result subsection is implemented in Task 2.2.
 The table is sufficient for this result, so no duplicate chart is generated.
 The new audit inherits internal source links and remains subject to the
 Task 1.9 disclosure/release review.
+
+## Task 2.3: RQ2 retrieval overlap
+
+On 2026-10-12 the researcher approved the RQ2 text, comparison table,
+processing artifacts and verified manuscript PDF.
+
+[prepare_rag_results.py](scripts/prepare_rag_results.py) reuses the central
+offline reconciliation, including the frozen ranking validator. It independently
+intersects each story's compiled LLM-positive pattern set with that same story's
+final Top-5 IDs in the official `rag_baseline.csv`, then verifies every story
+count against the frozen summary and totals against the central macros.
+Reproduced rankings, vector Top-15, positions and scores are not used for
+the intersection. Neither models nor indexes nor expert responses are accessed.
+
+Outputs:
+
+- `outputs/rag-results-audit.json`: per-story positive/inside/outside counts,
+  matched IDs, frozen final Top-5 IDs, percentages, definitions and source hashes;
+- `../latex-code/data/rag-results-values.tex`: pooled percentage macro;
+- `../latex-code/tables/rag-comparison.tex`: every story, including the
+  zero-positive story, and pooled totals using central count macros.
+
+The pooled ratio is 5/36 (13.89%); matches occur in five of the 12 stories,
+and 31 positive pairs are outside final Top-5. Story percentages divide
+intersections by that story's LLM-positive count, not by five retrieved
+candidates. The pooled ratio is not the mean of story percentages.
+For SYS04-US01, positive/inside/outside counts are zero, but the percentage
+is undefined (`null` in the audit, `--` in the table). Empty sets are never
+silently converted to a zero percentage. Display rounding is two decimals.
+
+From this directory (Python 3.10+, standard library only):
+
+```sh
+python -B scripts/prepare_rag_results.py
+python -B scripts/prepare_rag_results.py --check
+python -B -m unittest discover -s tests -p 'test_*.py'
+```
+
+Validation precedes all writes. `--check` is read-only and rejects stale/missing
+outputs. Tests cover the exact empirical intersection IDs/counts, deterministic
+outputs, undefined zero denominators, pooled rather than averaged percentages,
+rank-order independence, same-story membership, malformed ranking/coverage/IDs,
+and read-only freshness failures. Synthetic fixtures remain in tests or temporary
+directories, not empirical outputs.
+
+The paper interprets only candidate-set overlap. Model positives are not an
+independent ground-truth reference; outside candidates are not false negatives.
+English query versus Portuguese applicability input and richer retrieval
+catalog fields remain comparison limitations, not causally tested explanations.
+Task 2.4's generation findings are not implemented here. Internal hashes/links
+and ranking IDs in this audit remain subject to Task 1.9 release review.

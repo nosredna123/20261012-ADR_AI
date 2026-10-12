@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9 and 2.1--2.2 review draft
+# Tasks 1.1--1.9 and 2.1--2.3 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -106,7 +106,7 @@ Configuration and expert-preparation macros remain separate.
 JSONL, assessment exports, compiled positive/summary CSVs, final ADRs and
 ADR-enriched CSVs are reconciled offline; no external rerun or expert responses
 are used. Task 2.2 adds RQ1 below; other computational Results remain for
-Tasks 2.3--2.4.
+Task 2.4; RQ2 is described below.
 
 Task 2.2 adds [RQ1 Results](sections/04-results.tex) and the generated
 [applicability table](tables/applicability-results.tex). The compact table
@@ -117,5 +117,16 @@ The zero-positive story remains visible. The prose uses
 central count macros. Regeneration and audit details are in
 [the processing README](../processing/README.md#task-22-rq1-applicability-outcomes).
 No chart is added because the compact table provides exact counts and
-denominators without a second visual repeating them. RAG comparison,
+denominators without a second visual repeating them.
 ADR-completion results and expert placeholders remain later tasks.
+
+Task 2.3 adds the RQ2 subsection to [Results](sections/04-results.tex) and
+the generated [RAG comparison table](tables/rag-comparison.tex). It reports
+same-story final Top-5 intersection, outside counts and percentages with the
+LLM-positive set as denominator. An empty positive set has an undefined
+percentage, displayed as `--`, rather than zero.
+The pooled percentage in [RQ2 values](data/rag-results-values.tex) is
+computed from total matches/positives, not an average of story percentages.
+See [processing documentation](../processing/README.md#task-23-rq2-retrieval-overlap)
+for audit and regeneration commands. No retrieval models are rerun, and
+overlap is not presented as precision, recall, accuracy or superiority.
