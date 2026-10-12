@@ -1251,6 +1251,20 @@ The deliverable has passed compilation and visual inspection; commit permission 
 
 ### Task 6.4 — Position against AI-system pattern research
 
+**Status: COMPLETED AND REVIEWED — detailed comparison against CAIN 2026 AI pattern
+synthesis (in third person) and rule-based pattern recognition, ending with precise research gap (2026-10-12).**
+
+The subsection in `latex-code/sections/02-background-related-work.tex` compares
+ADR4AI with recent AI-system pattern research: the CAIN 2026 study on LLMs as design
+partners for pattern solution generation (Oliveira et al., 2026, framed strictly in the third person
+to preserve double anonymity) and rule-based pattern recognition in Web architectures
+(Jánki & Bilicki, 2023). It clearly delineates solution synthesis/equivalence from
+requirement-grounded pattern applicability selection, ADR authoring, and RAG comparison.
+The subsection concludes with an explicit synthesis of the overarching research gap that ADR4AI addresses.
+Verified BibTeX entries are added to `latex-code/bibliography/references.bib`.
+With Task 6.4 completed, all tasks in Phase 6 (Background and Related Work) are completed.
+The deliverable has passed compilation and visual inspection; commit permission remains separate.
+
 **Work**
 
 - Closely compare the CAIN 2026 “LLMs as Design Partners for AI-Based System Patterns” paper with ADR4AI.

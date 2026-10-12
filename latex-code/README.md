@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, and 6.1--6.3 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, partial 5.1--5.4, and 6.1--6.4 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -332,6 +332,15 @@ It compares prior ADR and design rationale generation studies: Decision-field ge
 The synthesis contrasts prompting approaches, target fields, evaluation metrics, and known trade-off hallucination
 risks, positioning ADR4AI's requirement-grounded, multi-field Nygard ADR generation and end-to-end pipeline traceability.
 Verified BibTeX entries are added to `bibliography/references.bib`.
+
+Task 6.4 adds the [Positioning Against AI-System Pattern Research subsection](sections/02-background-related-work.tex).
+It provides a detailed comparison against recent AI-system pattern research: the CAIN 2026 empirical study on LLMs as
+design partners for pattern solution synthesis (Oliveira et al., CAIN 2026, discussed strictly in the third person to
+preserve double anonymity) and rule-based pattern recognition in Web architectures (Jánki & Bilicki, 2023).
+The text contrasts abstract pattern solution generation with requirement-grounded pattern applicability selection,
+ADR authoring, and RAG comparison. It concludes with a synthesis of the overarching research gap that ADR4AI addresses.
+With Task 6.4 completed, Phase 6 (Background and Related Work) is fully drafted with verified citations.
+
 
 
 

@@ -160,4 +160,67 @@ distinguish prior efforts from the workflow evaluated in this paper:
     requirements to candidate pattern selection and final decision records.
 \end{itemize}
 
+\subsection{Positioning Against AI-System Pattern Research}
+\label{sec:related-work-positioning}
+
+The codification and operational use of architectural design patterns for
+AI-enabled systems represent an active and rapidly expanding research frontier.
+Closest to our investigation, Oliveira et al.~\cite{oliveira2026designpartners}
+evaluated the capacity of state-of-the-art LLMs (Gemini 1.5 Flash, Claude 3.5 Sonnet,
+and o1-mini) to serve as ``design partners'' by generating architectural pattern
+solutions across 65 documented AI patterns from the SWE4AI repository~\cite{aiPatternsRepository}.
+Using a mixed-methods evaluation combining cosine similarity, expert review of
+divergent solutions, and blind practitioner preference, they observed that LLMs
+can synthesize conceptual pattern solutions that match or surpass literature-defined
+descriptions in over 90\% of cases.
+
+While both studies investigate architectural patterns for AI-enabled systems using
+overlapping pattern taxonomies derived from the SWE4AI corpus~\cite{heiland2023patterns,aiPatternsRepository},
+their research objectives, inputs, and evaluation tasks diverge fundamentally:
+\begin{enumerate}
+    \item \emph{Pattern Generation versus Requirement-Grounded Selection:}
+    Oliveira et al. evaluated \emph{solution synthesis in the abstract}: given a
+    pattern's documented problem statement and intent, can an LLM generate an
+    equivalent or improved pattern structure? In contrast, ADR4AI evaluates
+    \emph{requirement-driven applicability}: given concrete, uncurated industrial
+    user stories and acceptance criteria from four production systems, can a model
+    discern which existing, codified patterns actually apply under strict textual
+    evidence rules?
+    \item \emph{Architectural Artifact Production:} Whereas Oliveira et al. focused
+    on conceptual pattern descriptions, our workflow connects pattern selection
+    directly to the automated authoring of complete Architectural Decision Records
+    (ADRs) documenting operational context, chosen solutions, and positive and
+    negative trade-offs.
+    \item \emph{Retrieval versus Reasoning Comparison:} While prior pattern
+    generation research assessed LLM generative capacity in isolation, our study
+    empirically compares generative applicability reasoning against a standard dense
+    semantic retrieval (RAG) baseline, quantifying overlap and divergence across
+    an exhaustive census of 840 story-pattern pairs.
+\end{enumerate}
+
+From a complementary perspective, automated pattern identification has also been
+investigated in retrospective code analysis. J{\'a}nki and Bilicki~\cite{janki2023recognition}
+demonstrated that GPT models guided by formal rule systems can achieve 90\%
+accuracy in detecting Model-View-Whatever (MVW) architectural patterns within
+Angular web application source code. Their work addresses pattern \emph{recognition}
+in existing software artifacts based on deterministic structural rules. By contrast,
+ADR4AI addresses \emph{prospective selection and architectural decision documentation}
+during requirements engineering and early design, before code artifacts exist.
+
+\emph{Research Gap.}
+In summary, while prior research has probed LLM architectural knowledge~\cite{soliman2025architectural},
+method-guided design assistance~\cite{cervantes2026assistants,cervantes2025add},
+isolated ADR decision completion~\cite{dhar2024generating}, rationale argument
+recovery~\cite{zhou2026rationale}, abstract pattern solution synthesis~\cite{oliveira2026designpartners},
+and code-level pattern recognition~\cite{janki2023recognition}, no prior study provides:
+(i) an empirical evaluation of requirement-grounded architectural pattern selection
+over a codified catalog of AI-enabled design patterns;
+(ii) a systematic comparative analysis between generative LLM reasoning and dense
+semantic retrieval across an exhaustive census of industrial requirements; and
+(iii) an end-to-end, traceable pipeline that transforms requirement-grounded pattern
+selections into complete, inspectable Architectural Decision Records evaluated by
+practicing software architects.
+This study directly addresses this research gap.
+
+
 
