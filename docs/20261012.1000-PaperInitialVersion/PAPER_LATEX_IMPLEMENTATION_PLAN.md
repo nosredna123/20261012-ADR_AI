@@ -492,6 +492,38 @@ These are planning formulations, not final protocol statements. They must be rec
 
 ### Task 3.1 — Freeze and document the expert-response dataset
 
+**Status: POSTPONED — prerequisites unavailable in the current artifact version
+(checked 2026-10-12 after Task 2.5).**
+
+The workspace contains prepared evaluator cases, translations, questionnaire
+design and local simulation artifacts, but no authoritative consolidated
+human-response export was found. These preparation/computational artifacts
+cannot substitute for expert responses. Completion of expert validation,
+collection dates, the administered form version and case/route mapping,
+and the applicable participation authorization/consent and actual restricted
+storage/access arrangements remain unconfirmed. The Task 1.8 analysis protocol
+is approved, but this alone does not satisfy the data and governance gates.
+This status does not assert that no responses exist outside the workspace.
+
+**Resume conditions**
+
+- Confirm that expert validation is complete for the dataset to be frozen and
+  provide the authoritative raw export through approved restricted storage,
+  outside the LaTeX tree and public/version-controlled artifacts.
+- Supply collection dates, export provenance, and the administered form version
+  with its actual system-route and case/item mapping.
+- Document the applicable participation authorization/consent and privacy
+  arrangements, including authorized analyst access, storage, retention and
+  protection of identifiers and linking keys, as required by Task 1.9.
+- Then execute Task 3.1: preserve the raw export, record its checksum and row
+  count, and create the traceable clean version without overwriting raw data.
+
+No expert-response ingestion, synthetic substitute, dataset freeze, or
+Methodology change is performed while postponed. The approved Task 2.5
+unresolved-result markers remain in place. Tasks 3.2--3.4 remain dependent on
+the required expert dataset; postponement does not authorize skipping or
+reordering tasks under the sequential execution directives.
+
 **Work**
 
 - Save an immutable raw export and record collection dates, form version, response count, and checksum.
