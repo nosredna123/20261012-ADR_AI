@@ -511,3 +511,58 @@ distribution, overlap and generation findings will be written in Tasks 2.2--2.4.
 Original empirical artifacts are never overwritten. The audit contains source
 links/hashes and is not automatically cleared for anonymous/public release;
 Task 1.9 disclosure-review restrictions still apply.
+
+## Task 2.2: RQ1 applicability outcomes
+
+On 2026-10-12 the researcher approved the RQ1 text, generated table,
+processing artifacts and verified manuscript PDF.
+
+[prepare_applicability_results.py](scripts/prepare_applicability_results.py)
+reuses Task 2.1's offline reconciliation, then loads the official all-pair
+JSONL through the original exporter in memory. It validates the complete
+unique story-pattern grid, known labels and system/story ownership, aggregates
+all three labels by story and system, and checks positive counts against the
+frozen 12-story summary. It never runs the exporter's write entry point.
+Original artifacts remain read-only; no API/model/index or expert data is used.
+
+Outputs:
+
+- `outputs/applicability-results-audit.json`: all label counts by story,
+  system and overall, explicit denominators, rounding policy and source/script
+  hashes inherited from the central reconciliation;
+- `../latex-code/data/applicability-results-values.tex`: generated percentages,
+  story minimum/maximum and maximum-story IDs, and system positive counts;
+- `../latex-code/tables/applicability-results.tex`: compact single-column
+  overall distribution plus story rows and system subtotals.
+
+Each percentage is `100 * label count / assessed pairs in that row`, rounded
+to two decimal places for display without adjusting rounded values to force
+100%. Overall denominator: 840; story denominator: 70; system denominator:
+210 (3 stories times 70 patterns). System percentages are **not** shares of
+the 36-positive set. All stories, including SYS04-US01 with zero positives,
+are retained. Story positives sum to system positives and system totals sum
+to the study totals for every label. The public-facing table reports all
+labels overall and only applicable counts by story/system, as required;
+the audit retains the complete label breakdown.
+
+From this directory (Python 3.10+, standard library only):
+
+```sh
+python -B scripts/prepare_applicability_results.py
+python -B scripts/prepare_applicability_results.py --check
+python -B -m unittest discover -s tests -p 'test_*.py'
+```
+
+All validation precedes output writes. `--check` is read-only and rejects
+stale/missing artifacts. Tests verify the exact frozen distributions,
+story/system totals and denominators, retained zero-positive story, generated
+percentages, deterministic outputs, unequal synthetic system sizes,
+invalid/missing/duplicate pairs, label/ownership errors, and freshness failures.
+Synthetic test fixtures are temporary and never written as empirical outputs.
+
+The manuscript reports model-label frequencies and descriptive variation,
+not accuracy, missed-pattern recall, causal explanations or expert-confirmed
+adequacy. No RAG or ADR-result subsection is implemented in Task 2.2.
+The table is sufficient for this result, so no duplicate chart is generated.
+The new audit inherits internal source links and remains subject to the
+Task 1.9 disclosure/release review.

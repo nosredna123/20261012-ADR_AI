@@ -1,0 +1,37 @@
+% !TeX root = ../main.tex
+\section{Results}
+\label{sec:results}
+
+\subsection{RQ1: Applicability-Classification Outcomes}
+\label{sec:rq1-results}
+
+The exhaustive assessment produced \StudyAssessmentCount{} unique
+story--pattern outcomes. Of these, \StudyApplicableCount{}
+(\RqOneApplicablePercent{}\%) were classified as applicable,
+\StudyNotApplicableCount{} (\RqOneNotApplicablePercent{}\%) as not applicable,
+and \StudyInsufficientInformationCount{}
+(\RqOneInsufficientInformationPercent{}\%) as insufficient information
+(Table~\ref{tab:applicability-results}). Each percentage uses all assessed
+pairs as its denominator. These are model-label frequencies, not estimates
+of classification accuracy or expert-confirmed applicability.
+
+\input{tables/applicability-results}
+
+Applicable outcomes occurred in \StudyPositiveStoryCount{} of
+\StudyStoryCount{} stories. Counts ranged from \RqOneStoryMinimum{} to
+\RqOneStoryMaximum{} per story, with each story assessed against
+\StudyPatternCount{} patterns. \texttt{SYS04-US01} had no applicable
+outcome; this is a retained classification result, not an execution failure
+or evidence that no pattern could apply in practice.
+The largest positive set belonged to \texttt{\RqOneMaximumStories{}},
+with \RqOneStoryMaximum{} applicable outcomes.
+
+At system level, applicable counts were \RqOneSystemOneApplicableCount{},
+\RqOneSystemTwoApplicableCount{}, \RqOneSystemThreeApplicableCount{}, and
+\RqOneSystemFourApplicableCount{} for SYS01--SYS04, respectively.
+System percentages in the table use the assessed pairs within that system,
+rather than the total positive set. The insufficient-information category
+accounted for most outcomes overall. The observed differences describe this
+bounded sample; they do not identify causes, establish that the requirements
+are defective, or imply that non-positive outcomes are missed applicable
+patterns. Architectural adequacy requires separate evidence.

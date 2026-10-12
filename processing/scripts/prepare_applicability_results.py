@@ -1,0 +1,185 @@
+"""Render descriptive RQ1 outcomes from validated frozen official assessments."""
+
+from collections import Counter
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import sys
+
+PROJECT = Path(__file__).resolve().parents[2]
+SCRIPT = Path(__file__).with_name("prepare_study_values.py")
+SPEC = importlib.util.spec_from_file_location("study_values", SCRIPT)
+if SPEC is None or SPEC.loader is None:
+    raise ImportError(f"Cannot load study-value validator: {SCRIPT}")
+study = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(study)
+LABELS = ("applicable", "not_applicable", "insufficient_information")
+SYSTEM_MACROS = {
+    "SYS01": "RqOneSystemOneApplicableCount",
+    "SYS02": "RqOneSystemTwoApplicableCount",
+    "SYS03": "RqOneSystemThreeApplicableCount",
+    "SYS04": "RqOneSystemFourApplicableCount",
+}
+AUDIT = PROJECT / "processing/outputs/applicability-results-audit.json"
+MACROS = PROJECT / "latex-code/data/applicability-results-values.tex"
+TABLE = PROJECT / "latex-code/tables/applicability-results.tex"
+
+
+def aggregate(rows: list[dict[str, str]], story_ids: list[str], pattern_count: int) -> dict:
+    if not story_ids or len(set(story_ids)) != len(story_ids) or pattern_count < 1:
+        raise ValueError("Expected unique nonempty story IDs and a positive pattern count")
+    counts = {uid: Counter({label: 0 for label in LABELS}) for uid in story_ids}
+    pairs = set()
+    expected_patterns = {f"{number:03d}" for number in range(1, pattern_count + 1)}
+    for row in rows:
+        uid, pid, label = row["user_story_id"], row["pattern_id"], row["classification"]
+        if uid not in counts or pid not in expected_patterns or label not in LABELS:
+            raise ValueError("Unknown story, pattern or classification")
+        if row["system"] != uid.split("-", 1)[0] or (uid, pid) in pairs:
+            raise ValueError("System mismatch or duplicate assessment pair")
+        pairs.add((uid, pid))
+        counts[uid][label] += 1
+    if pairs != {(uid, pid) for uid in story_ids for pid in expected_patterns}:
+        raise ValueError("Incomplete story-pattern assessment grid")
+    systems = {}
+    for uid, labels in sorted(counts.items()):
+        system = uid.split("-", 1)[0]
+        group = systems.setdefault(system, Counter({label: 0 for label in LABELS}))
+        group.update(labels)
+    total = Counter({label: 0 for label in LABELS})
+    for labels in counts.values():
+        total.update(labels)
+    return {
+        "labels": dict(total),
+        "stories": {uid: {"labels": dict(labels), "denominator": sum(labels.values())}
+                    for uid, labels in sorted(counts.items())},
+        "systems": {sid: {"labels": dict(labels), "denominator": sum(labels.values())}
+                    for sid, labels in sorted(systems.items())},
+        "denominator": sum(total.values()),
+    }
+
+
+def audit_results() -> dict:
+    central = study.audit_values()
+    compiler = study.load_module(study.RESULTS / "compile_results.py")
+    _, summary, _ = compiler.compile_results()
+    exporter = study.load_module(study.SOURCE / "experiments/pattern_selection/export_results.py")
+    rows, _ = exporter.load_rows(study.ASSESSMENTS / "assessments.jsonl")
+    result = aggregate(rows, [row["user_story_id"] for row in summary],
+                       central["values"]["StudyPatternCount"]["value"])
+    if result["labels"] != central["reconciliation"]["classification_totals"]:
+        raise ValueError("RQ1 and central label counts disagree")
+    for row in summary:
+        if result["stories"][row["user_story_id"]]["labels"]["applicable"] != row["applicable_count"]:
+            raise ValueError("Story positive count differs from frozen summary")
+    return {
+        "task": "2.2", **result,
+        "inputs": central["inputs"] + [
+            {"path": Path(__file__).resolve().relative_to(PROJECT).as_posix(),
+             "sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},
+        ],
+        "scope": "Model-label distributions; no accuracy, causal or expert-validation claims.",
+        "percentages": "100 * count / row denominator, formatted to two decimal places; no adjustment to force rounded sums to 100.",
+    }
+
+
+def percentage(count: int, denominator: int) -> str:
+    if denominator <= 0 or count < 0 or count > denominator:
+        raise ValueError("Invalid count/denominator for percentage")
+    return f"{100 * count / denominator:.2f}"
+
+
+def render_outputs(audit: dict) -> dict[Path, str]:
+    label_names = {
+        "applicable": ("Applicable", "StudyApplicableCount", "Applicable"),
+        "not_applicable": ("Not applicable", "StudyNotApplicableCount", "NotApplicable"),
+        "insufficient_information": ("Insufficient information", "StudyInsufficientInformationCount",
+                                     "InsufficientInformation"),
+    }
+    macros = [
+        "% !TeX root = ../main.tex",
+        "% Generated by processing/scripts/prepare_applicability_results.py.",
+    ]
+    table = [
+        "% !TeX root = ../main.tex",
+        "% Generated by processing/scripts/prepare_applicability_results.py.",
+        r"\begin{table}[t]",
+        r"\caption{RQ1 model-classification outcomes. Percentages use assessed pairs in the indicated row, not expert judgments.}",
+        r"\label{tab:applicability-results}",
+        r"\centering",
+        r"\small",
+        r"\begin{tabular}{lrrr}",
+        r"\hline",
+        r"\multicolumn{4}{l}{\textbf{Overall classification distribution}} \\",
+        r"Classification & Count & Pairs & \% \\",
+        r"\hline",
+    ]
+    for label, (text, count_macro, prefix) in label_names.items():
+        percent = percentage(audit["labels"][label], audit["denominator"])
+        macros.append(f"\\newcommand{{\\RqOne{prefix}Percent}}{{{percent}}}")
+        table.append(
+            f"{text} & \\{count_macro}{{}} & \\StudyAssessmentCount{{}}"
+            f" & \\RqOne{prefix}Percent{{}} " + r"\\"
+        )
+    table.extend([
+        r"\hline",
+        r"\multicolumn{4}{l}{\textbf{Applicable outcomes by story and system}} \\",
+        r"Story / subtotal & Applicable & Pairs & \% \\",
+        r"\hline",
+    ])
+    for sid, system in audit["systems"].items():
+        for uid, story in audit["stories"].items():
+            if uid.split("-", 1)[0] == sid:
+                count = story["labels"]["applicable"]
+                table.append(
+                    f"{uid} & {count} & \\StudyPatternCount{{}} & "
+                    f"{percentage(count, story['denominator'])} " + r"\\"
+                )
+        count = system["labels"]["applicable"]
+        table.append(f"\\textbf{{{sid} subtotal}} & \\{SYSTEM_MACROS[sid]}{{}} & {system['denominator']}"
+                     f" & {percentage(count, system['denominator'])} " + r"\\")
+        table.append(r"\hline")
+    table.extend([
+        r"All systems & \StudyApplicableCount{} & \StudyAssessmentCount{} & \RqOneApplicablePercent{} \\",
+        r"\hline", r"\end{tabular}", r"\end{table}",
+    ])
+    positives = {uid: story["labels"]["applicable"] for uid, story in audit["stories"].items()}
+    maximum = max(positives.values())
+    max_stories = [uid for uid, count in positives.items() if count == maximum]
+    macros.extend([
+        f"\\newcommand{{\\RqOneStoryMinimum}}{{{min(positives.values())}}}",
+        f"\\newcommand{{\\RqOneStoryMaximum}}{{{maximum}}}",
+        f"\\newcommand{{\\RqOneMaximumStories}}{{{', '.join(max_stories)}}}",
+    ])
+    for sid, system in audit["systems"].items():
+        macros.append(f"\\newcommand{{\\{SYSTEM_MACROS[sid]}}}{{{system['labels']['applicable']}}}")
+    return {
+        AUDIT: json.dumps(audit, indent=2, sort_keys=True) + "\n",
+        MACROS: "\n".join(macros) + "\n",
+        TABLE: "\n".join(table) + "\n",
+    }
+
+
+def main() -> int:
+    if sys.argv[1:] not in ([], ["--check"]):
+        raise ValueError("Usage: prepare_applicability_results.py [--check]")
+    outputs = render_outputs(audit_results())
+    for path, content in outputs.items():
+        if sys.argv[1:] == ["--check"]:
+            if path.read_text(encoding="utf-8") != content:
+                raise ValueError(f"Stale RQ1 artifact: {path}")
+        else:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(content, encoding="utf-8")
+            print(f"Wrote {path.relative_to(PROJECT)}")
+    print("PASS: RQ1 distribution and story/system counts reconciled")
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except (OSError, ValueError, ImportError, KeyError) as error:
+        print(f"RQ1 preparation failed: {error}", file=sys.stderr)
+        sys.exit(1)

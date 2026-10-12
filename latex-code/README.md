@@ -1,9 +1,10 @@
-# Tasks 1.1--1.9 and 2.1 review draft
+# Tasks 1.1--1.9 and 2.1--2.2 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
 catalog, applicability/RAG/ADR protocols, expert preparation and analysis plan,
 and ethics, data governance and reproducibility procedures.
+Task 2.2 adds the first computational Results subsection.
 It is not the full manuscript.
 Later sections, further bibliography
 entries, result macros, and final metadata
@@ -104,4 +105,17 @@ figure before the manuscript whenever these counts change.
 Configuration and expert-preparation macros remain separate.
 JSONL, assessment exports, compiled positive/summary CSVs, final ADRs and
 ADR-enriched CSVs are reconciled offline; no external rerun or expert responses
-are used. Computational Results prose/tables remain for Tasks 2.2--2.4.
+are used. Task 2.2 adds RQ1 below; other computational Results remain for
+Tasks 2.3--2.4.
+
+Task 2.2 adds [RQ1 Results](sections/04-results.tex) and the generated
+[applicability table](tables/applicability-results.tex). The compact table
+reports the three-label overall distribution and applicable counts/percentages
+for every story and system, with explicit assessed-pair denominators.
+The zero-positive story remains visible. The prose uses
+[generated RQ1 values](data/applicability-results-values.tex) alongside the
+central count macros. Regeneration and audit details are in
+[the processing README](../processing/README.md#task-22-rq1-applicability-outcomes).
+No chart is added because the compact table provides exact counts and
+denominators without a second visual repeating them. RAG comparison,
+ADR-completion results and expert placeholders remain later tasks.
