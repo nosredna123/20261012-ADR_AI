@@ -1,4 +1,4 @@
-# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, and partial 5.1--5.3 review draft
+# Tasks 1.1--1.9, 2.1--2.5, partial 4.1, 4.2, partial 4.3, 4.4, and partial 5.1--5.4 review draft
 
 This is a minimal IEEEtran scaffold for reviewing the research questions and
 claim boundaries, industrial requirement sample, and architectural pattern
@@ -290,4 +290,24 @@ No participant data or demographics are invented; existing expert warnings remai
 Task 5.3 remains incomplete and this exception does not authorize Task 5.4.
 The PDF remains 13 pages (or 14 pages depending on layout) with content before References;
 page-budget correction remains deferred to Phase 11 compression.
+
+Task 5.4 adds [partial conclusion and reproducibility validity threats](sections/06-threats-to-validity.tex)
+under a separately authorized exception to the final Methodology/Results dependency.
+The text covers descriptive/exploratory quantitative analysis limits (absence of inferential
+testing or $p$-values over census data), hierarchical aggregation and small cell counts,
+third-party model evolution and unpinned service revisions, and cryptographic artifact preservation
+alongside deterministic compilation strengths.
+
+The partial subsection includes an explicit visible
+`TBD---Statistical conclusion validity and inter-rater agreement pending Phase~3 expert consolidation`
+marker. This preserves the requirement that upon completion of Phase 3, the subsection must be
+updated with actual participant counts, response missingness, rater coverage, and within-system
+inter-rater agreement (ordinal Krippendorff's $\alpha$) where estimable (or formal documentation of
+its non-estimability).
+No inter-rater agreement, statistical consensus, or significance claims are invented;
+existing expert warnings and placeholder macros remain active.
+With Tasks 5.1--5.4 drafted in partial form, Phase 5 drafting is completed under the authorized
+exceptions; final completion of Phase 5 remains dependent on Phase 3 resolution.
+The PDF draft continues to exceed the 10-content-page limit, deferred to Phase 11 compression.
+
 

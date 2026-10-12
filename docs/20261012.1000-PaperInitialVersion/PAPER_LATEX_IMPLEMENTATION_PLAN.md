@@ -1112,6 +1112,42 @@ Task 5.3 remains incomplete; this exception does not authorize Task 5.4.
 
 ### Task 5.4 — Address conclusion and reproducibility validity
 
+**Status: PARTIALLY COMPLETED AND REVIEWED — descriptive/exploratory analysis
+boundaries, hierarchical aggregation, third-party API evolution, and artifact
+preservation/deterministic compilation approved; statistical conclusion validity
+and inter-rater agreement remain TBD pending Phase 3 (2026-10-12).**
+
+The researcher explicitly authorized partial work as an exception to Phase 5's
+final Methodology/Results dependency. The subsection in
+`latex-code/sections/06-threats-to-validity.tex` addresses the descriptive and
+exploratory nature of the quantitative findings (absence of inferential tests or
+$p$-values over census data), multi-level aggregation dependencies and rare-outcome
+limits, external model evolution and unpinned service revisions, and cryptographic
+artifact preservation alongside deterministic LaTeX macro compilation.
+Each threat is paired with an explicit impact statement and concrete study mitigations,
+avoiding generic boilerplate.
+
+**Remaining work and resume conditions**
+
+- Complete and approve Phase 3, consolidating verified participant response
+  datasets and coverage metrics.
+- Analyze sample sizes, missingness rates, and rater coverage across evaluated cases.
+- Assess within-system and item-level inter-rater agreement (ordinal Krippendorff's
+  $\alpha$) only where distinct raters evaluate shared cases with positive expected
+  disagreement; otherwise report non-estimability and its exact mathematical cause.
+- Revisit and update the conclusion validity subsection with the empirical findings,
+  avoiding unsupported statistical consensus or significance claims.
+- Resolve the visible `TBD---Statistical conclusion validity and inter-rater agreement
+  pending Phase~3 expert consolidation` marker only after these analyses have been
+  completed and reviewed.
+
+The partial deliverable has passed the build, exact-PDF visual inspection, and
+human review gates; commit permission remains separate. Existing expert warnings
+and unresolved placeholders remain active. With Tasks 5.1--5.4 drafted in partial form,
+Phase 5 drafting is completed under the authorized exceptions; final completion of Phase 5
+remains dependent on Phase 3 resolution. The draft length continues to exceed the
+10-content-page budget, which remains deferred to Phase 11 compression.
+
 **Work**
 
 - Discuss descriptive/exploratory analysis, sample size, ordinal responses, multiple aggregation levels, and agreement limits.

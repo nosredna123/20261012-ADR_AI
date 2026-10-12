@@ -207,3 +207,63 @@ The generalizability of expert ratings and qualitative feedback must be
 explicitly bounded by the rater sample composition, avoiding unsupported
 extrapolations to the wider software engineering community.
 
+\subsection{Conclusion and Reproducibility Validity (Partial)}
+\label{sec:conclusion-validity}
+
+\emph{Descriptive analysis and ordinal limits.}
+The quantitative findings in this study are strictly descriptive and
+exploratory. Model classifications and retrieval overlaps are reported
+as exact counts and percentages over clear census denominators
+(Sections~\ref{sec:rq1-results} and~\ref{sec:rq2-results}).
+Because the study conducts an exhaustive census of all \StudyAssessmentCount{}
+story-pattern pairs across the four participating systems without random
+sampling, inferential statistical tests, $p$-values, and confidence
+intervals are not computed for the computational outcomes.
+Similarly, the pre-declared expert evaluation protocol specifies ordinal
+medians and quartile intervals rather than parametric means or composite scores,
+preventing unwarranted interval-scale assumptions.
+
+\emph{Hierarchical aggregation and small cell counts.}
+The multi-level structure of the data---spanning \StudyAssessmentCount{}
+assessments across \StudyStoryCount{} stories and \StudySystemCount{} systems---involves
+inherent dependencies. The computational results present transparent, unpooled
+story-level and system-level breakdowns alongside overall totals
+(Tables~\ref{tab:applicability-results} and~\ref{tab:rag-comparison}),
+avoiding Simpson's paradox or distorted conclusions driven by high-yield stories.
+However, for rare outcomes (such as the \StudyRagOverlapCount{} overlapping
+pairs in RQ2 or the single story SYS03-US03 with zero positive classifications),
+small sample sizes limit fine-grained sub-group inferences.
+
+\emph{Third-party model evolution and unpinned service revisions.}
+The experimental pipeline depends on commercial black-box APIs hosted by
+OpenAI (specifically \texttt{gpt-4o-2024-08-06} for inference and
+\texttt{text-embedding-3-small} for dense retrieval).
+While dated model snapshots were targeted during execution, external API
+providers may apply backend infrastructure updates, unversioned floating-point
+optimizations, or deprecate model snapshots over time.
+Furthermore, unpinned embedding revisions could alter nearest-neighbor
+retrieval rankings. Exact bit-level replication across external cloud
+endpoints cannot be guaranteed independently of the service provider's lifecycle.
+
+\emph{Artifact preservation and deterministic compilation.}
+To maximize reproducibility within the boundaries of closed-model APIs, all
+intermediate prompt inputs, system instructions, raw JSONL model outputs,
+retrieval rankings, and final Markdown ADRs are immutably preserved with
+cryptographic SHA-256 hashes and timestamped audit logs (Section~\ref{sec:ethics-reproducibility}).
+All manuscript numerical values, summary tables, and protocol parameters
+are programmatically compiled from verified offline data records into isolated
+LaTeX macro definitions, ensuring that the reported empirical results are
+fully deterministic and auditable from the preserved experimental outputs.
+
+\noindent\textbf{TBD---Statistical conclusion validity and inter-rater agreement
+pending Phase~3 expert consolidation.} When human evaluation data is
+consolidated in Phase 3, this subsection must be updated with the empirical
+sample sizes, missingness rates, and rater coverage across evaluated cases.
+Within-system and item-level inter-rater agreement (ordinal Krippendorff's
+$\alpha$) must be calculated only where distinct raters evaluate shared cases
+with positive expected disagreement; otherwise, non-estimability and its exact
+mathematical cause must be formally documented. No inter-rater reliability,
+statistical consensus, or significance claims may be asserted prior to verified
+Phase 3 execution.
+
+
